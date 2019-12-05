@@ -1,0 +1,12 @@
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\bin\Debug\Library.exe.config
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\bin\Debug\Library.exe
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\bin\Debug\Library.pdb
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.exe
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.pdb
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.FormMain.resources
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\bin\Debug\MySql.Data.dll
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\bin\Debug\MySql.Data.xml
+C:\Users\alexander\Desktop\4 cours\BD\курсач\Library\Library\obj\Debug\Library.csproj.CopyComplete
