@@ -340,7 +340,7 @@ namespace Library
             return checkFIO.IsMatch(partOfFio) ? true : false;
         }
 
-        private static bool IsContactNumberCorrect(string phoneNumber)
+        public static bool IsContactNumberCorrect(string phoneNumber)
         {
             Regex checkFIO = new Regex(@"[0-9]{2}.[0-9]{3}.[0-9]{2}.[0-9]{2}");
 

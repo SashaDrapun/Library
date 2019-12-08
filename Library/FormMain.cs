@@ -282,15 +282,19 @@ namespace Library
             List<Book> books = DatabaseSelectorAllInformation.GetAllBooks(GetSearchSettingsBooks());
             dataGridViewBooks.Rows.Clear();
 
+           
+
             for (int i = 0; i < books.Count; i++)
             {
+                Image picture = Image.FromFile(books[i].Picture);
                 dataGridViewBooks.Rows.Add(new object[]
                 {
                     books[i].NameBook,
                     books[i].FioAutor,
                     books[i].CountInStock,
                     books[i].Category,
-                    books[i].YearOfIssue
+                    books[i].YearOfIssue,
+                    picture
                 });
             }
         }
@@ -309,6 +313,11 @@ namespace Library
             for (int i = 0; i < autors.Count; i++)
             {
                 comboBoxFioAutor.Items.Add(autors[i].FioAutor);
+            }
+
+            for (int i = 0; i < autors.Count; i++)
+            {
+                comboBoxFioAutorEditNewValue.Items.Add(autors[i].FioAutor);
             }
         }
 
@@ -522,7 +531,7 @@ namespace Library
 
         private void tabPageBooks_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(tabControlBooks.TabPages["tabPageEditBook"].Controls.Count.ToString());
         }
 
 
@@ -634,7 +643,6 @@ namespace Library
                 pictureBoxAdd.Load(fileName);
                 textBoxPicture.Text = fileName;
             }
-
         }
 
         private void TextBoxesInstancesChange(object sender, EventArgs e)
@@ -809,6 +817,234 @@ namespace Library
                 DatabaseInserter.InsertIntoLibrarians(new Librarian(fioLibrarian, textBoxContactNumberLibrarian.Text,
                     textBoxMailLibrarian.Text, textBoxPassword.Text));
                 LibrariansChange?.Invoke();
+            }
+        }
+
+        private void dataGridViewBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                ShowBooksEditingControls();
+                textBoxNameBookEditOldValue.Text = dataGridViewBooks[0, e.RowIndex].Value.ToString();
+                textBoxFioAutorEditOldValue.Text = dataGridViewBooks[1, e.RowIndex].Value.ToString();
+                textBoxCategoryEditOldValue.Text = dataGridViewBooks[3, e.RowIndex].Value.ToString();
+                textBoxYearOfIssueEditOldValue.Text = dataGridViewBooks[4, e.RowIndex].Value.ToString();
+                Image image = (Image)dataGridViewBooks[5, e.RowIndex].Value;
+                pictureBoxBookEditOldValue.Image = image;
+                tabControlBooks.SelectedTab = tabControlBooks.TabPages["tabPageEditBook"];
+            }
+        }
+
+        private void buttonPictureEditLoad_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            string fullFileName = openFileDialog.FileName;
+            string fileName = Path.GetFileName(fullFileName);
+
+
+            if (File.Exists(fileName))
+            {
+                string newFileName = fileName;
+
+                while (File.Exists(newFileName))
+                {
+                    newFileName = random.Next(1, 1000000).ToString();
+                }
+                newFileName += Path.GetExtension(fileName);
+
+                string fullNewFileName = Path.GetDirectoryName(fullFileName) + newFileName;
+                File.Move(fullFileName, fullNewFileName);
+                File.Copy(fullNewFileName, newFileName);
+                File.Move(fullNewFileName, fullFileName);
+                pictureBoxEdit.Load(newFileName);
+                textBoxPictureEdit.Text = newFileName;
+            }
+            else
+            {
+                File.Copy(fullFileName, fileName);
+                pictureBoxEdit.Load(fileName);
+                textBoxPictureEdit.Text = fileName;
+            }
+        }
+
+        private void buttonBooksEditing_Click(object sender, EventArgs e)
+        {
+            List<SearchSettings> searchSettings = new List<SearchSettings>();
+
+            if (!string.IsNullOrEmpty(textBoxNameBookNewValue.Text))
+            {
+                if (DatabaseSelectorSomeInformation.IsBookExists(textBoxNameBookNewValue.Text))
+                {
+                    MessageBox.Show("Книга с таким названием уже существует");
+                    return;
+                }
+                searchSettings.Add(new SearchSettings("nameBook", textBoxNameBookNewValue.Text));
+            }
+            if (!string.IsNullOrEmpty(comboBoxFioAutorEditNewValue.Text))
+            {
+                int idAutor = DatabaseSelectorSomeInformation.GetIdAutor(comboBoxFioAutorEditNewValue.Text);
+
+                searchSettings.Add(new SearchSettings("idAutor", idAutor.ToString()));
+            }
+            if (!string.IsNullOrEmpty(textBoxCategoryBookNewValue.Text))
+            {
+                searchSettings.Add(new SearchSettings("category", textBoxCategoryBookNewValue.Text));
+            }
+            if (!string.IsNullOrEmpty(textBoxPictureEdit.Text))
+            {
+                searchSettings.Add(new SearchSettings("picture", textBoxPictureEdit.Text));
+            }
+            if (!string.IsNullOrEmpty(textBoxYearOfIssueNewValue.Text))
+            {
+                searchSettings.Add(new SearchSettings("yearOfIssue", textBoxYearOfIssueNewValue.Text));
+            }
+            if (searchSettings.Count != 0)
+            {
+                DatabaseUpdater.UpdateBooks(searchSettings,textBoxNameBookEditOldValue.Text);
+                BooksChange?.Invoke();
+                HideBooksEditingControls();
+            }
+            else
+            {
+                MessageBox.Show("Измените хотя бы 1 поле");
+            }
+        }
+
+        private void HideBooksEditingControls()
+        {
+            for (int i = 0; i <tabControlBooks.TabPages["tabPageEditBook"].Controls.Count; i++)
+            {
+                Control control = tabControlBooks.TabPages["tabPageEditBook"].Controls[i];
+                if(control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = false;
+                }
+            }
+        }
+
+        private void ShowBooksEditingControls()
+        {
+            for (int i = 0; i < tabControlBooks.TabPages["tabPageEditBook"].Controls.Count; i++)
+            {
+                Control control = tabControlBooks.TabPages["tabPageEditBook"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = true;
+                }
+            }
+        }
+
+        private void HideReadersEditingControls()
+        {
+            for (int i = 0; i < tabControlReaders.TabPages["tabPageEdit"].Controls.Count; i++)
+            {
+                Control control = tabControlReaders.TabPages["tabPageEdit"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = false;
+                }
+            }
+        }
+
+        private void ShowReadersEditingControls()
+        {
+            for (int i = 0; i < tabControlReaders.TabPages["tabPageEdit"].Controls.Count; i++)
+            {
+                Control control = tabControlReaders.TabPages["tabPageEdit"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = true;
+                }
+            }
+        }
+
+        private void pictureBoxEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewReaders_DoubleClick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dataGridViewReaders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                string fio = dataGridViewReaders[0, e.RowIndex].Value.ToString();
+
+                string[] partsOfFio = fio.Split(new char[] { ' ' });
+
+                string surname = partsOfFio[0];
+                string name = partsOfFio[1];
+                string patronymic = partsOfFio[2];
+
+                textBoxSurnameReaderOldValue.Text = surname;
+                textBoxNameReaderOldValue.Text = name;
+                textBoxPatronymicReaderOldValue.Text = patronymic;
+
+                textBoxContactNumberOldValue.Text = dataGridViewReaders[1, e.RowIndex].Value.ToString();
+                textBoxMailReaderOldValue.Text = dataGridViewReaders[2, e.RowIndex].Value.ToString();
+                tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEdit"];
+                ShowReadersEditingControls();
+            }
+        }
+
+        private void buttonReadersEditing_Click(object sender, EventArgs e)
+        {
+            List<SearchSettings> searchSettings = new List<SearchSettings>();
+
+            string surname = textBoxSurnameReaderOldValue.Text;
+            string name = textBoxNameReaderOldValue.Text;
+            string patronymic = textBoxPatronymicReaderOldValue.Text;
+            if (!string.IsNullOrEmpty(textBoxSurnameReaderNewValue.Text))
+            {
+                surname = textBoxSurnameReaderNewValue.Text;
+            }
+            if (!string.IsNullOrEmpty(textBoxNameReaderNewValue.Text))
+            {
+                name = textBoxNameReaderNewValue.Text;
+            }
+            if (!string.IsNullOrEmpty(textBoxPatronymicReaderNewValue.Text))
+            {
+                patronymic = textBoxPatronymicReaderNewValue.Text;
+            }
+            string fio = surname + " " + name + " " + patronymic;
+
+            if (DatabaseSelectorSomeInformation.IsReaderExists(fio))
+            {
+                MessageBox.Show("Читатель с таким ФИО уже существует");
+                return;
+            }
+            else
+            {
+                searchSettings.Add(new SearchSettings("fioReader", fio));
+            }
+
+            if(CheckInformationAndPrintMessage.IsContactNumberCorrect(textBoxContactNumberReaderNewValue.Text))
+            {
+                searchSettings.Add(new SearchSettings("contactNumber", textBoxContactNumberReaderNewValue.Text));
+            }          
+
+            if (!string.IsNullOrEmpty(textBoxMailReaderNewValue.Text))
+            {
+                searchSettings.Add(new SearchSettings("email", textBoxMailReaderNewValue.Text));
+            }
+
+            if(searchSettings.Count != 0)
+            {
+                string oldFioReader = textBoxSurnameReaderOldValue.Text + " " + textBoxNameReaderOldValue.Text + " " +
+                    textBoxPatronymicReaderOldValue.Text;
+                DatabaseUpdater.UpdateReaders(searchSettings, oldFioReader);
+                HideReadersEditingControls();
+                ReadersChange?.Invoke();
+            }
+            else
+            {
+                MessageBox.Show("Измените хотя бы 1 поле");
             }
         }
     }

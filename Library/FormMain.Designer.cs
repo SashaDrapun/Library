@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabPageAutorization = new System.Windows.Forms.TabPage();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxNameLibrarian = new System.Windows.Forms.ComboBox();
+            this.labelAutorizationText = new System.Windows.Forms.Label();
+            this.buttonAutorization = new System.Windows.Forms.Button();
             this.tabPageBookingDelivery = new System.Windows.Forms.TabPage();
             this.tabControlBookDelivery = new System.Windows.Forms.TabControl();
             this.tabPageBookIssuence = new System.Windows.Forms.TabPage();
@@ -94,6 +102,31 @@
             this.textBoxCountInStock = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxNameBookBooks = new System.Windows.Forms.TextBox();
+            this.tabPageEditBook = new System.Windows.Forms.TabPage();
+            this.comboBoxFioAutorEditNewValue = new System.Windows.Forms.ComboBox();
+            this.pictureBoxEdit = new System.Windows.Forms.PictureBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBoxCategoryBookNewValue = new System.Windows.Forms.TextBox();
+            this.textBoxYearOfIssueNewValue = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.textBoxNameBookNewValue = new System.Windows.Forms.TextBox();
+            this.pictureBoxBookEditOldValue = new System.Windows.Forms.PictureBox();
+            this.textBoxFioAutorEditOldValue = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBoxCategoryEditOldValue = new System.Windows.Forms.TextBox();
+            this.buttonBooksEditing = new System.Windows.Forms.Button();
+            this.buttonPictureEditLoad = new System.Windows.Forms.Button();
+            this.textBoxYearOfIssueEditOldValue = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBoxNameBookEditOldValue = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBoxPictureEdit = new System.Windows.Forms.TextBox();
             this.groupBoxBookSearch = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -128,6 +161,44 @@
             this.NameBookInstances = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idInstance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageReaders = new System.Windows.Forms.TabPage();
+            this.tabControlReaders = new System.Windows.Forms.TabControl();
+            this.tabPageAdd = new System.Windows.Forms.TabPage();
+            this.textBoxContactNumberReader = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPatronymicReader = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBoxNameReader = new System.Windows.Forms.TextBox();
+            this.buttonReadersAdd = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBoxMailReader = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBoxSurnameReader = new System.Windows.Forms.TextBox();
+            this.tabPageEdit = new System.Windows.Forms.TabPage();
+            this.textBoxContactNumberOldValue = new System.Windows.Forms.TextBox();
+            this.buttonReadersEditing = new System.Windows.Forms.Button();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.textBoxContactNumberReaderNewValue = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPatronymicReaderNewValue = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.textBoxNameReaderNewValue = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.textBoxMailReaderNewValue = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.textBoxSurnameReaderNewValue = new System.Windows.Forms.TextBox();
+            this.textBoxPatronymicReaderOldValue = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBoxNameReaderOldValue = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.textBoxMailReaderOldValue = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.textBoxSurnameReaderOldValue = new System.Windows.Forms.TextBox();
             this.groupBoxReaders = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxMailReadersSearch = new System.Windows.Forms.TextBox();
@@ -140,6 +211,17 @@
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageAutors = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageAutorAdd = new System.Windows.Forms.TabPage();
+            this.textBoxBiographyAutor = new System.Windows.Forms.RichTextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxSurnameAutor = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxPatronymicAutor = new System.Windows.Forms.TextBox();
+            this.buttonAutorAdd = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBoxNameAutor = new System.Windows.Forms.TextBox();
             this.groupBoxAutors = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.textBoxFioAutorAutorsSearch = new System.Windows.Forms.TextBox();
@@ -147,45 +229,12 @@
             this.fioAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biography = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageLibrarians = new System.Windows.Forms.TabPage();
-            this.groupBoxLibrarians = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBoxMailLibrariansSearch = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBoxFioLibrarianLibrariansSearch = new System.Windows.Forms.TextBox();
-            this.textBoxContactNumberLibrariansSearch = new System.Windows.Forms.TextBox();
-            this.dataGridViewLibrarians = new System.Windows.Forms.DataGridView();
-            this.fioLibrarianLibrarians = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNumberLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageAutorization = new System.Windows.Forms.TabPage();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.tabControlReaders = new System.Windows.Forms.TabControl();
-            this.tabPageAdd = new System.Windows.Forms.TabPage();
-            this.buttonReadersAdd = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBoxMailReader = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.textBoxSurnameReader = new System.Windows.Forms.TextBox();
-            this.textBoxNameReader = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.textBoxPatronymicReader = new System.Windows.Forms.TextBox();
-            this.textBoxContactNumberReader = new System.Windows.Forms.MaskedTextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonAutorAdd = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBoxNameAutor = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBoxPatronymicAutor = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBoxSurnameAutor = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBoxBiographyAutor = new System.Windows.Forms.RichTextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageLibrarian = new System.Windows.Forms.TabPage();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBoxPasswordConfirmation = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBoxPasswordLibrarian = new System.Windows.Forms.TextBox();
             this.textBoxContactNumberLibrarian = new System.Windows.Forms.MaskedTextBox();
             this.textBoxPatronymicLibrarian = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
@@ -197,18 +246,20 @@
             this.textBoxMailLibrarian = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.textBoxSurnameLibrarian = new System.Windows.Forms.TextBox();
-            this.textBoxPasswordLibrarian = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.textBoxPasswordConfirmation = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxNameLibrarian = new System.Windows.Forms.ComboBox();
-            this.labelAutorizationText = new System.Windows.Forms.Label();
-            this.buttonAutorization = new System.Windows.Forms.Button();
+            this.groupBoxLibrarians = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBoxMailLibrariansSearch = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBoxFioLibrarianLibrariansSearch = new System.Windows.Forms.TextBox();
+            this.textBoxContactNumberLibrariansSearch = new System.Windows.Forms.TextBox();
+            this.dataGridViewLibrarians = new System.Windows.Forms.DataGridView();
+            this.fioLibrarianLibrarians = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNumberLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControlMain.SuspendLayout();
+            this.tabPageAutorization.SuspendLayout();
             this.tabPageBookingDelivery.SuspendLayout();
             this.tabControlBookDelivery.SuspendLayout();
             this.tabPageBookIssuence.SuspendLayout();
@@ -220,6 +271,9 @@
             this.tabControlBooks.SuspendLayout();
             this.tabPageAddBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
+            this.tabPageEditBook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).BeginInit();
             this.groupBoxBookSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.tabPageInstances.SuspendLayout();
@@ -228,21 +282,21 @@
             this.tabPageAddInstances.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstances)).BeginInit();
             this.tabPageReaders.SuspendLayout();
+            this.tabControlReaders.SuspendLayout();
+            this.tabPageAdd.SuspendLayout();
+            this.tabPageEdit.SuspendLayout();
             this.groupBoxReaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReaders)).BeginInit();
             this.tabPageAutors.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPageAutorAdd.SuspendLayout();
             this.groupBoxAutors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutors)).BeginInit();
             this.tabPageLibrarians.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPageLibrarian.SuspendLayout();
             this.groupBoxLibrarians.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrarians)).BeginInit();
-            this.tabPageAutorization.SuspendLayout();
-            this.tabControlReaders.SuspendLayout();
-            this.tabPageAdd.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -263,6 +317,101 @@
             this.tabControlMain.TabIndex = 0;
             this.tabControlMain.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlMain_Deselecting);
             this.tabControlMain.Deselected += new System.Windows.Forms.TabControlEventHandler(this.tabControlMain_Deselected);
+            // 
+            // tabPageAutorization
+            // 
+            this.tabPageAutorization.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageAutorization.Controls.Add(this.checkBoxShowPassword);
+            this.tabPageAutorization.Controls.Add(this.textBoxPassword);
+            this.tabPageAutorization.Controls.Add(this.labelPassword);
+            this.tabPageAutorization.Controls.Add(this.label1);
+            this.tabPageAutorization.Controls.Add(this.comboBoxNameLibrarian);
+            this.tabPageAutorization.Controls.Add(this.labelAutorizationText);
+            this.tabPageAutorization.Controls.Add(this.buttonAutorization);
+            this.tabPageAutorization.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAutorization.Name = "tabPageAutorization";
+            this.tabPageAutorization.Size = new System.Drawing.Size(1232, 574);
+            this.tabPageAutorization.TabIndex = 6;
+            this.tabPageAutorization.Text = "Сменить пользователя";
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPassword.ForeColor = System.Drawing.Color.White;
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(420, 346);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(189, 29);
+            this.checkBoxShowPassword.TabIndex = 26;
+            this.checkBoxShowPassword.Tag = "1";
+            this.checkBoxShowPassword.Text = "Показать пароль";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxPassword.Location = new System.Drawing.Point(420, 299);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(368, 30);
+            this.textBoxPassword.TabIndex = 25;
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPassword.ForeColor = System.Drawing.Color.White;
+            this.labelPassword.Location = new System.Drawing.Point(551, 265);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(98, 31);
+            this.labelPassword.TabIndex = 24;
+            this.labelPassword.Text = "Пароль";
+            this.labelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(491, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 31);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "ФИО библиотекаря";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxNameLibrarian
+            // 
+            this.comboBoxNameLibrarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.comboBoxNameLibrarian.FormattingEnabled = true;
+            this.comboBoxNameLibrarian.Location = new System.Drawing.Point(420, 223);
+            this.comboBoxNameLibrarian.Name = "comboBoxNameLibrarian";
+            this.comboBoxNameLibrarian.Size = new System.Drawing.Size(368, 36);
+            this.comboBoxNameLibrarian.TabIndex = 22;
+            // 
+            // labelAutorizationText
+            // 
+            this.labelAutorizationText.Font = new System.Drawing.Font("Times New Roman", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAutorizationText.ForeColor = System.Drawing.Color.White;
+            this.labelAutorizationText.Location = new System.Drawing.Point(-28, 98);
+            this.labelAutorizationText.Name = "labelAutorizationText";
+            this.labelAutorizationText.Size = new System.Drawing.Size(1264, 79);
+            this.labelAutorizationText.TabIndex = 21;
+            this.labelAutorizationText.Text = "Авторизация";
+            this.labelAutorizationText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonAutorization
+            // 
+            this.buttonAutorization.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonAutorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonAutorization.ForeColor = System.Drawing.Color.White;
+            this.buttonAutorization.Location = new System.Drawing.Point(420, 381);
+            this.buttonAutorization.Name = "buttonAutorization";
+            this.buttonAutorization.Size = new System.Drawing.Size(368, 58);
+            this.buttonAutorization.TabIndex = 27;
+            this.buttonAutorization.Text = "Авторизоваться";
+            this.buttonAutorization.UseVisualStyleBackColor = false;
             // 
             // tabPageBookingDelivery
             // 
@@ -688,6 +837,10 @@
             // 
             // dataGridViewBookDelivery
             // 
+            this.dataGridViewBookDelivery.AllowUserToAddRows = false;
+            this.dataGridViewBookDelivery.AllowUserToDeleteRows = false;
+            this.dataGridViewBookDelivery.AllowUserToResizeColumns = false;
+            this.dataGridViewBookDelivery.AllowUserToResizeRows = false;
             this.dataGridViewBookDelivery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewBookDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBookDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -702,6 +855,7 @@
             this.dataGridViewBookDelivery.Name = "dataGridViewBookDelivery";
             this.dataGridViewBookDelivery.ReadOnly = true;
             this.dataGridViewBookDelivery.RowHeadersVisible = false;
+            this.dataGridViewBookDelivery.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBookDelivery.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewBookDelivery.TabIndex = 0;
             this.dataGridViewBookDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookDelivery_CellContentClick);
@@ -780,6 +934,7 @@
             // tabControlBooks
             // 
             this.tabControlBooks.Controls.Add(this.tabPageAddBook);
+            this.tabControlBooks.Controls.Add(this.tabPageEditBook);
             this.tabControlBooks.Location = new System.Drawing.Point(20, 346);
             this.tabControlBooks.Name = "tabControlBooks";
             this.tabControlBooks.SelectedIndex = 0;
@@ -838,7 +993,7 @@
             // 
             // buttonLoadPicture
             // 
-            this.buttonLoadPicture.Location = new System.Drawing.Point(660, 85);
+            this.buttonLoadPicture.Location = new System.Drawing.Point(649, 85);
             this.buttonLoadPicture.Name = "buttonLoadPicture";
             this.buttonLoadPicture.Size = new System.Drawing.Size(122, 23);
             this.buttonLoadPicture.TabIndex = 12;
@@ -927,6 +1082,295 @@
             this.textBoxNameBookBooks.Name = "textBoxNameBookBooks";
             this.textBoxNameBookBooks.Size = new System.Drawing.Size(100, 20);
             this.textBoxNameBookBooks.TabIndex = 0;
+            // 
+            // tabPageEditBook
+            // 
+            this.tabPageEditBook.Controls.Add(this.comboBoxFioAutorEditNewValue);
+            this.tabPageEditBook.Controls.Add(this.pictureBoxEdit);
+            this.tabPageEditBook.Controls.Add(this.label59);
+            this.tabPageEditBook.Controls.Add(this.textBoxCategoryBookNewValue);
+            this.tabPageEditBook.Controls.Add(this.textBoxYearOfIssueNewValue);
+            this.tabPageEditBook.Controls.Add(this.label60);
+            this.tabPageEditBook.Controls.Add(this.label61);
+            this.tabPageEditBook.Controls.Add(this.label62);
+            this.tabPageEditBook.Controls.Add(this.textBoxNameBookNewValue);
+            this.tabPageEditBook.Controls.Add(this.pictureBoxBookEditOldValue);
+            this.tabPageEditBook.Controls.Add(this.textBoxFioAutorEditOldValue);
+            this.tabPageEditBook.Controls.Add(this.label57);
+            this.tabPageEditBook.Controls.Add(this.label56);
+            this.tabPageEditBook.Controls.Add(this.label44);
+            this.tabPageEditBook.Controls.Add(this.textBoxCategoryEditOldValue);
+            this.tabPageEditBook.Controls.Add(this.buttonBooksEditing);
+            this.tabPageEditBook.Controls.Add(this.buttonPictureEditLoad);
+            this.tabPageEditBook.Controls.Add(this.textBoxYearOfIssueEditOldValue);
+            this.tabPageEditBook.Controls.Add(this.label45);
+            this.tabPageEditBook.Controls.Add(this.label46);
+            this.tabPageEditBook.Controls.Add(this.label55);
+            this.tabPageEditBook.Controls.Add(this.textBoxNameBookEditOldValue);
+            this.tabPageEditBook.Controls.Add(this.label43);
+            this.tabPageEditBook.Controls.Add(this.textBoxPictureEdit);
+            this.tabPageEditBook.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditBook.Name = "tabPageEditBook";
+            this.tabPageEditBook.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageEditBook.TabIndex = 1;
+            this.tabPageEditBook.Text = "Редактирование книги";
+            this.tabPageEditBook.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxFioAutorEditNewValue
+            // 
+            this.comboBoxFioAutorEditNewValue.FormattingEnabled = true;
+            this.comboBoxFioAutorEditNewValue.Location = new System.Drawing.Point(118, 157);
+            this.comboBoxFioAutorEditNewValue.Name = "comboBoxFioAutorEditNewValue";
+            this.comboBoxFioAutorEditNewValue.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxFioAutorEditNewValue.TabIndex = 45;
+            this.comboBoxFioAutorEditNewValue.Tag = "Hidden";
+            this.comboBoxFioAutorEditNewValue.Visible = false;
+            // 
+            // pictureBoxEdit
+            // 
+            this.pictureBoxEdit.Location = new System.Drawing.Point(484, 141);
+            this.pictureBoxEdit.Name = "pictureBoxEdit";
+            this.pictureBoxEdit.Size = new System.Drawing.Size(125, 50);
+            this.pictureBoxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEdit.TabIndex = 44;
+            this.pictureBoxEdit.TabStop = false;
+            this.pictureBoxEdit.Tag = "Hidden";
+            this.pictureBoxEdit.Visible = false;
+            this.pictureBoxEdit.Click += new System.EventHandler(this.pictureBoxEdit_Click);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(290, 142);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(60, 13);
+            this.label59.TabIndex = 41;
+            this.label59.Tag = "Hidden";
+            this.label59.Text = "Категория";
+            this.label59.Visible = false;
+            // 
+            // textBoxCategoryBookNewValue
+            // 
+            this.textBoxCategoryBookNewValue.Location = new System.Drawing.Point(272, 158);
+            this.textBoxCategoryBookNewValue.Name = "textBoxCategoryBookNewValue";
+            this.textBoxCategoryBookNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCategoryBookNewValue.TabIndex = 40;
+            this.textBoxCategoryBookNewValue.Tag = "Hidden";
+            this.textBoxCategoryBookNewValue.Visible = false;
+            // 
+            // textBoxYearOfIssueNewValue
+            // 
+            this.textBoxYearOfIssueNewValue.Location = new System.Drawing.Point(378, 157);
+            this.textBoxYearOfIssueNewValue.Name = "textBoxYearOfIssueNewValue";
+            this.textBoxYearOfIssueNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxYearOfIssueNewValue.TabIndex = 39;
+            this.textBoxYearOfIssueNewValue.Tag = "Hidden";
+            this.textBoxYearOfIssueNewValue.Visible = false;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(392, 142);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(70, 13);
+            this.label60.TabIndex = 38;
+            this.label60.Tag = "Hidden";
+            this.label60.Text = "Год издания";
+            this.label60.Visible = false;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(155, 142);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(72, 13);
+            this.label61.TabIndex = 37;
+            this.label61.Tag = "Hidden";
+            this.label61.Text = "ФИО автора";
+            this.label61.Visible = false;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(23, 142);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(89, 13);
+            this.label62.TabIndex = 36;
+            this.label62.Tag = "Hidden";
+            this.label62.Text = "Название книги";
+            this.label62.Visible = false;
+            // 
+            // textBoxNameBookNewValue
+            // 
+            this.textBoxNameBookNewValue.Location = new System.Drawing.Point(15, 158);
+            this.textBoxNameBookNewValue.Name = "textBoxNameBookNewValue";
+            this.textBoxNameBookNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameBookNewValue.TabIndex = 35;
+            this.textBoxNameBookNewValue.Tag = "Hidden";
+            this.textBoxNameBookNewValue.Visible = false;
+            // 
+            // pictureBoxBookEditOldValue
+            // 
+            this.pictureBoxBookEditOldValue.Location = new System.Drawing.Point(484, 58);
+            this.pictureBoxBookEditOldValue.Name = "pictureBoxBookEditOldValue";
+            this.pictureBoxBookEditOldValue.Size = new System.Drawing.Size(125, 50);
+            this.pictureBoxBookEditOldValue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBookEditOldValue.TabIndex = 34;
+            this.pictureBoxBookEditOldValue.TabStop = false;
+            this.pictureBoxBookEditOldValue.Tag = "Hidden";
+            this.pictureBoxBookEditOldValue.Visible = false;
+            // 
+            // textBoxFioAutorEditOldValue
+            // 
+            this.textBoxFioAutorEditOldValue.Location = new System.Drawing.Point(121, 74);
+            this.textBoxFioAutorEditOldValue.Name = "textBoxFioAutorEditOldValue";
+            this.textBoxFioAutorEditOldValue.ReadOnly = true;
+            this.textBoxFioAutorEditOldValue.Size = new System.Drawing.Size(144, 20);
+            this.textBoxFioAutorEditOldValue.TabIndex = 32;
+            this.textBoxFioAutorEditOldValue.Tag = "Hidden";
+            this.textBoxFioAutorEditOldValue.Visible = false;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label57.Location = new System.Drawing.Point(375, 121);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(175, 17);
+            this.label57.TabIndex = 31;
+            this.label57.Tag = "Hidden";
+            this.label57.Text = "Введите новые значения";
+            this.label57.Visible = false;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label56.Location = new System.Drawing.Point(399, 32);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(125, 17);
+            this.label56.TabIndex = 30;
+            this.label56.Tag = "Hidden";
+            this.label56.Text = "Старые значения";
+            this.label56.Visible = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(290, 58);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(60, 13);
+            this.label44.TabIndex = 28;
+            this.label44.Tag = "Hidden";
+            this.label44.Text = "Категория";
+            this.label44.Visible = false;
+            // 
+            // textBoxCategoryEditOldValue
+            // 
+            this.textBoxCategoryEditOldValue.Location = new System.Drawing.Point(272, 74);
+            this.textBoxCategoryEditOldValue.Name = "textBoxCategoryEditOldValue";
+            this.textBoxCategoryEditOldValue.ReadOnly = true;
+            this.textBoxCategoryEditOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCategoryEditOldValue.TabIndex = 27;
+            this.textBoxCategoryEditOldValue.Tag = "Hidden";
+            this.textBoxCategoryEditOldValue.Visible = false;
+            // 
+            // buttonBooksEditing
+            // 
+            this.buttonBooksEditing.Location = new System.Drawing.Point(615, 74);
+            this.buttonBooksEditing.Name = "buttonBooksEditing";
+            this.buttonBooksEditing.Size = new System.Drawing.Size(187, 74);
+            this.buttonBooksEditing.TabIndex = 26;
+            this.buttonBooksEditing.Tag = "Hidden";
+            this.buttonBooksEditing.Text = "Произвести редактирование";
+            this.buttonBooksEditing.UseVisualStyleBackColor = true;
+            this.buttonBooksEditing.Visible = false;
+            this.buttonBooksEditing.Click += new System.EventHandler(this.buttonBooksEditing_Click);
+            // 
+            // buttonPictureEditLoad
+            // 
+            this.buttonPictureEditLoad.Location = new System.Drawing.Point(615, 158);
+            this.buttonPictureEditLoad.Name = "buttonPictureEditLoad";
+            this.buttonPictureEditLoad.Size = new System.Drawing.Size(187, 23);
+            this.buttonPictureEditLoad.TabIndex = 25;
+            this.buttonPictureEditLoad.Tag = "Hidden";
+            this.buttonPictureEditLoad.Text = "Загрузить новую картинку";
+            this.buttonPictureEditLoad.UseVisualStyleBackColor = true;
+            this.buttonPictureEditLoad.Visible = false;
+            this.buttonPictureEditLoad.Click += new System.EventHandler(this.buttonPictureEditLoad_Click);
+            // 
+            // textBoxYearOfIssueEditOldValue
+            // 
+            this.textBoxYearOfIssueEditOldValue.Location = new System.Drawing.Point(378, 73);
+            this.textBoxYearOfIssueEditOldValue.Name = "textBoxYearOfIssueEditOldValue";
+            this.textBoxYearOfIssueEditOldValue.ReadOnly = true;
+            this.textBoxYearOfIssueEditOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxYearOfIssueEditOldValue.TabIndex = 23;
+            this.textBoxYearOfIssueEditOldValue.Tag = "Hidden";
+            this.textBoxYearOfIssueEditOldValue.Visible = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(392, 58);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(70, 13);
+            this.label45.TabIndex = 22;
+            this.label45.Tag = "Hidden";
+            this.label45.Text = "Год издания";
+            this.label45.Visible = false;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(155, 58);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(72, 13);
+            this.label46.TabIndex = 21;
+            this.label46.Tag = "Hidden";
+            this.label46.Text = "ФИО автора";
+            this.label46.Visible = false;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(23, 58);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(89, 13);
+            this.label55.TabIndex = 17;
+            this.label55.Tag = "Hidden";
+            this.label55.Text = "Название книги";
+            this.label55.Visible = false;
+            // 
+            // textBoxNameBookEditOldValue
+            // 
+            this.textBoxNameBookEditOldValue.Location = new System.Drawing.Point(15, 74);
+            this.textBoxNameBookEditOldValue.Name = "textBoxNameBookEditOldValue";
+            this.textBoxNameBookEditOldValue.ReadOnly = true;
+            this.textBoxNameBookEditOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameBookEditOldValue.TabIndex = 16;
+            this.textBoxNameBookEditOldValue.Tag = "Hidden";
+            this.textBoxNameBookEditOldValue.Visible = false;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label43.Location = new System.Drawing.Point(197, 9);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(616, 17);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "Чтобы начать редактирование кликните дважды по строке, которую хотите редактирова" +
+    "ть";
+            // 
+            // textBoxPictureEdit
+            // 
+            this.textBoxPictureEdit.Location = new System.Drawing.Point(494, 157);
+            this.textBoxPictureEdit.Name = "textBoxPictureEdit";
+            this.textBoxPictureEdit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPictureEdit.TabIndex = 46;
+            this.textBoxPictureEdit.Tag = "Hidden";
+            this.textBoxPictureEdit.Visible = false;
             // 
             // groupBoxBookSearch
             // 
@@ -1032,6 +1476,10 @@
             // 
             // dataGridViewBooks
             // 
+            this.dataGridViewBooks.AllowUserToAddRows = false;
+            this.dataGridViewBooks.AllowUserToDeleteRows = false;
+            this.dataGridViewBooks.AllowUserToResizeColumns = false;
+            this.dataGridViewBooks.AllowUserToResizeRows = false;
             this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameBookBooks,
@@ -1044,8 +1492,11 @@
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.ReadOnly = true;
             this.dataGridViewBooks.RowHeadersVisible = false;
+            this.dataGridViewBooks.RowTemplate.Height = 120;
+            this.dataGridViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBooks.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewBooks.TabIndex = 1;
+            this.dataGridViewBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooks_CellDoubleClick);
             // 
             // nameBookBooks
             // 
@@ -1053,7 +1504,6 @@
             this.nameBookBooks.HeaderText = "Наименование книги";
             this.nameBookBooks.Name = "nameBookBooks";
             this.nameBookBooks.ReadOnly = true;
-            this.nameBookBooks.Width = 150;
             // 
             // NameAutorBooks
             // 
@@ -1075,6 +1525,7 @@
             this.Сategory.HeaderText = "Категория";
             this.Сategory.Name = "Сategory";
             this.Сategory.ReadOnly = true;
+            this.Сategory.Width = 80;
             // 
             // yearOfIssue
             // 
@@ -1082,6 +1533,7 @@
             this.yearOfIssue.HeaderText = "Год издания";
             this.yearOfIssue.Name = "yearOfIssue";
             this.yearOfIssue.ReadOnly = true;
+            this.yearOfIssue.Width = 60;
             // 
             // PhotoBook
             // 
@@ -1090,6 +1542,7 @@
             this.PhotoBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.PhotoBook.Name = "PhotoBook";
             this.PhotoBook.ReadOnly = true;
+            this.PhotoBook.Width = 390;
             // 
             // tabPageInstances
             // 
@@ -1240,6 +1693,10 @@
             // 
             // dataGridViewInstances
             // 
+            this.dataGridViewInstances.AllowUserToAddRows = false;
+            this.dataGridViewInstances.AllowUserToDeleteRows = false;
+            this.dataGridViewInstances.AllowUserToResizeColumns = false;
+            this.dataGridViewInstances.AllowUserToResizeRows = false;
             this.dataGridViewInstances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInstances.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameBookInstances,
@@ -1248,6 +1705,7 @@
             this.dataGridViewInstances.Name = "dataGridViewInstances";
             this.dataGridViewInstances.ReadOnly = true;
             this.dataGridViewInstances.RowHeadersVisible = false;
+            this.dataGridViewInstances.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInstances.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewInstances.TabIndex = 6;
             // 
@@ -1278,6 +1736,397 @@
             this.tabPageReaders.TabIndex = 2;
             this.tabPageReaders.Text = "Читатели";
             this.tabPageReaders.UseVisualStyleBackColor = true;
+            // 
+            // tabControlReaders
+            // 
+            this.tabControlReaders.Controls.Add(this.tabPageAdd);
+            this.tabControlReaders.Controls.Add(this.tabPageEdit);
+            this.tabControlReaders.Location = new System.Drawing.Point(20, 346);
+            this.tabControlReaders.Name = "tabControlReaders";
+            this.tabControlReaders.SelectedIndex = 0;
+            this.tabControlReaders.Size = new System.Drawing.Size(1206, 222);
+            this.tabControlReaders.TabIndex = 10;
+            // 
+            // tabPageAdd
+            // 
+            this.tabPageAdd.Controls.Add(this.textBoxContactNumberReader);
+            this.tabPageAdd.Controls.Add(this.textBoxPatronymicReader);
+            this.tabPageAdd.Controls.Add(this.label40);
+            this.tabPageAdd.Controls.Add(this.label39);
+            this.tabPageAdd.Controls.Add(this.textBoxNameReader);
+            this.tabPageAdd.Controls.Add(this.buttonReadersAdd);
+            this.tabPageAdd.Controls.Add(this.label36);
+            this.tabPageAdd.Controls.Add(this.label37);
+            this.tabPageAdd.Controls.Add(this.textBoxMailReader);
+            this.tabPageAdd.Controls.Add(this.label38);
+            this.tabPageAdd.Controls.Add(this.textBoxSurnameReader);
+            this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAdd.Name = "tabPageAdd";
+            this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdd.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAdd.TabIndex = 0;
+            this.tabPageAdd.Text = "Добавление читателя";
+            this.tabPageAdd.UseVisualStyleBackColor = true;
+            // 
+            // textBoxContactNumberReader
+            // 
+            this.textBoxContactNumberReader.Location = new System.Drawing.Point(454, 90);
+            this.textBoxContactNumberReader.Mask = "00-000-00-00";
+            this.textBoxContactNumberReader.Name = "textBoxContactNumberReader";
+            this.textBoxContactNumberReader.Size = new System.Drawing.Size(111, 20);
+            this.textBoxContactNumberReader.TabIndex = 21;
+            // 
+            // textBoxPatronymicReader
+            // 
+            this.textBoxPatronymicReader.Location = new System.Drawing.Point(324, 89);
+            this.textBoxPatronymicReader.Name = "textBoxPatronymicReader";
+            this.textBoxPatronymicReader.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPatronymicReader.TabIndex = 19;
+            this.textBoxPatronymicReader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(321, 73);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(102, 13);
+            this.label40.TabIndex = 18;
+            this.label40.Text = "Отчество читателя";
+            this.label40.Click += new System.EventHandler(this.label40_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(216, 73);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(77, 13);
+            this.label39.TabIndex = 17;
+            this.label39.Text = "Имя читателя";
+            // 
+            // textBoxNameReader
+            // 
+            this.textBoxNameReader.Location = new System.Drawing.Point(204, 89);
+            this.textBoxNameReader.Name = "textBoxNameReader";
+            this.textBoxNameReader.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameReader.TabIndex = 16;
+            // 
+            // buttonReadersAdd
+            // 
+            this.buttonReadersAdd.Location = new System.Drawing.Point(740, 69);
+            this.buttonReadersAdd.Name = "buttonReadersAdd";
+            this.buttonReadersAdd.Size = new System.Drawing.Size(205, 54);
+            this.buttonReadersAdd.TabIndex = 13;
+            this.buttonReadersAdd.Text = "Произвести добавление";
+            this.buttonReadersAdd.UseVisualStyleBackColor = true;
+            this.buttonReadersAdd.Click += new System.EventHandler(this.buttonReadersAdd_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(451, 72);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(114, 13);
+            this.label36.TabIndex = 7;
+            this.label36.Text = "Контактный телефон";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(616, 69);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(37, 13);
+            this.label37.TabIndex = 5;
+            this.label37.Text = "Почта";
+            // 
+            // textBoxMailReader
+            // 
+            this.textBoxMailReader.Location = new System.Drawing.Point(586, 90);
+            this.textBoxMailReader.Name = "textBoxMailReader";
+            this.textBoxMailReader.Size = new System.Drawing.Size(116, 20);
+            this.textBoxMailReader.TabIndex = 4;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(76, 73);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(104, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Фамилия читателя";
+            // 
+            // textBoxSurnameReader
+            // 
+            this.textBoxSurnameReader.Location = new System.Drawing.Point(79, 89);
+            this.textBoxSurnameReader.Name = "textBoxSurnameReader";
+            this.textBoxSurnameReader.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSurnameReader.TabIndex = 0;
+            // 
+            // tabPageEdit
+            // 
+            this.tabPageEdit.Controls.Add(this.textBoxContactNumberOldValue);
+            this.tabPageEdit.Controls.Add(this.buttonReadersEditing);
+            this.tabPageEdit.Controls.Add(this.label71);
+            this.tabPageEdit.Controls.Add(this.label72);
+            this.tabPageEdit.Controls.Add(this.label73);
+            this.tabPageEdit.Controls.Add(this.textBoxContactNumberReaderNewValue);
+            this.tabPageEdit.Controls.Add(this.textBoxPatronymicReaderNewValue);
+            this.tabPageEdit.Controls.Add(this.label66);
+            this.tabPageEdit.Controls.Add(this.label67);
+            this.tabPageEdit.Controls.Add(this.textBoxNameReaderNewValue);
+            this.tabPageEdit.Controls.Add(this.label68);
+            this.tabPageEdit.Controls.Add(this.label69);
+            this.tabPageEdit.Controls.Add(this.textBoxMailReaderNewValue);
+            this.tabPageEdit.Controls.Add(this.label70);
+            this.tabPageEdit.Controls.Add(this.textBoxSurnameReaderNewValue);
+            this.tabPageEdit.Controls.Add(this.textBoxPatronymicReaderOldValue);
+            this.tabPageEdit.Controls.Add(this.label54);
+            this.tabPageEdit.Controls.Add(this.label58);
+            this.tabPageEdit.Controls.Add(this.textBoxNameReaderOldValue);
+            this.tabPageEdit.Controls.Add(this.label63);
+            this.tabPageEdit.Controls.Add(this.label64);
+            this.tabPageEdit.Controls.Add(this.textBoxMailReaderOldValue);
+            this.tabPageEdit.Controls.Add(this.label65);
+            this.tabPageEdit.Controls.Add(this.textBoxSurnameReaderOldValue);
+            this.tabPageEdit.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEdit.Name = "tabPageEdit";
+            this.tabPageEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEdit.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageEdit.TabIndex = 1;
+            this.tabPageEdit.Text = "Редактирование читателя";
+            this.tabPageEdit.UseVisualStyleBackColor = true;
+            // 
+            // textBoxContactNumberOldValue
+            // 
+            this.textBoxContactNumberOldValue.Location = new System.Drawing.Point(448, 61);
+            this.textBoxContactNumberOldValue.Name = "textBoxContactNumberOldValue";
+            this.textBoxContactNumberOldValue.ReadOnly = true;
+            this.textBoxContactNumberOldValue.Size = new System.Drawing.Size(138, 20);
+            this.textBoxContactNumberOldValue.TabIndex = 46;
+            this.textBoxContactNumberOldValue.Tag = "Hidden";
+            // 
+            // buttonReadersEditing
+            // 
+            this.buttonReadersEditing.Location = new System.Drawing.Point(728, 76);
+            this.buttonReadersEditing.Name = "buttonReadersEditing";
+            this.buttonReadersEditing.Size = new System.Drawing.Size(231, 74);
+            this.buttonReadersEditing.TabIndex = 45;
+            this.buttonReadersEditing.Tag = "Hidden";
+            this.buttonReadersEditing.Text = "Произвести редактирование";
+            this.buttonReadersEditing.UseVisualStyleBackColor = true;
+            this.buttonReadersEditing.Visible = false;
+            this.buttonReadersEditing.Click += new System.EventHandler(this.buttonReadersEditing_Click);
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label71.Location = new System.Drawing.Point(428, 96);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(175, 17);
+            this.label71.TabIndex = 44;
+            this.label71.Tag = "Hidden";
+            this.label71.Text = "Введите новые значения";
+            this.label71.Visible = false;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label72.Location = new System.Drawing.Point(445, 22);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(125, 17);
+            this.label72.TabIndex = 43;
+            this.label72.Tag = "Hidden";
+            this.label72.Text = "Старые значения";
+            this.label72.Visible = false;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label73.Location = new System.Drawing.Point(251, 3);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(616, 17);
+            this.label73.TabIndex = 42;
+            this.label73.Text = "Чтобы начать редактирование кликните дважды по строке, которую хотите редактирова" +
+    "ть";
+            // 
+            // textBoxContactNumberReaderNewValue
+            // 
+            this.textBoxContactNumberReaderNewValue.Location = new System.Drawing.Point(460, 141);
+            this.textBoxContactNumberReaderNewValue.Mask = "00-000-00-00";
+            this.textBoxContactNumberReaderNewValue.Name = "textBoxContactNumberReaderNewValue";
+            this.textBoxContactNumberReaderNewValue.Size = new System.Drawing.Size(111, 20);
+            this.textBoxContactNumberReaderNewValue.TabIndex = 41;
+            this.textBoxContactNumberReaderNewValue.Tag = "Hidden";
+            // 
+            // textBoxPatronymicReaderNewValue
+            // 
+            this.textBoxPatronymicReaderNewValue.Location = new System.Drawing.Point(330, 140);
+            this.textBoxPatronymicReaderNewValue.Name = "textBoxPatronymicReaderNewValue";
+            this.textBoxPatronymicReaderNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPatronymicReaderNewValue.TabIndex = 40;
+            this.textBoxPatronymicReaderNewValue.Tag = "Hidden";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(327, 124);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(102, 13);
+            this.label66.TabIndex = 39;
+            this.label66.Tag = "Hidden";
+            this.label66.Text = "Отчество читателя";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(222, 124);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(77, 13);
+            this.label67.TabIndex = 38;
+            this.label67.Tag = "Hidden";
+            this.label67.Text = "Имя читателя";
+            // 
+            // textBoxNameReaderNewValue
+            // 
+            this.textBoxNameReaderNewValue.Location = new System.Drawing.Point(210, 140);
+            this.textBoxNameReaderNewValue.Name = "textBoxNameReaderNewValue";
+            this.textBoxNameReaderNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameReaderNewValue.TabIndex = 37;
+            this.textBoxNameReaderNewValue.Tag = "Hidden";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(457, 123);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(114, 13);
+            this.label68.TabIndex = 36;
+            this.label68.Tag = "Hidden";
+            this.label68.Text = "Контактный телефон";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(622, 120);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(37, 13);
+            this.label69.TabIndex = 35;
+            this.label69.Tag = "Hidden";
+            this.label69.Text = "Почта";
+            // 
+            // textBoxMailReaderNewValue
+            // 
+            this.textBoxMailReaderNewValue.Location = new System.Drawing.Point(592, 141);
+            this.textBoxMailReaderNewValue.Name = "textBoxMailReaderNewValue";
+            this.textBoxMailReaderNewValue.Size = new System.Drawing.Size(116, 20);
+            this.textBoxMailReaderNewValue.TabIndex = 34;
+            this.textBoxMailReaderNewValue.Tag = "Hidden";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(82, 124);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(104, 13);
+            this.label70.TabIndex = 33;
+            this.label70.Tag = "Hidden";
+            this.label70.Text = "Фамилия читателя";
+            // 
+            // textBoxSurnameReaderNewValue
+            // 
+            this.textBoxSurnameReaderNewValue.Location = new System.Drawing.Point(85, 140);
+            this.textBoxSurnameReaderNewValue.Name = "textBoxSurnameReaderNewValue";
+            this.textBoxSurnameReaderNewValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSurnameReaderNewValue.TabIndex = 32;
+            this.textBoxSurnameReaderNewValue.Tag = "Hidden";
+            // 
+            // textBoxPatronymicReaderOldValue
+            // 
+            this.textBoxPatronymicReaderOldValue.Location = new System.Drawing.Point(330, 60);
+            this.textBoxPatronymicReaderOldValue.Name = "textBoxPatronymicReaderOldValue";
+            this.textBoxPatronymicReaderOldValue.ReadOnly = true;
+            this.textBoxPatronymicReaderOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPatronymicReaderOldValue.TabIndex = 30;
+            this.textBoxPatronymicReaderOldValue.Tag = "Hidden";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(327, 44);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(102, 13);
+            this.label54.TabIndex = 29;
+            this.label54.Tag = "Hidden";
+            this.label54.Text = "Отчество читателя";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(222, 44);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(77, 13);
+            this.label58.TabIndex = 28;
+            this.label58.Tag = "Hidden";
+            this.label58.Text = "Имя читателя";
+            // 
+            // textBoxNameReaderOldValue
+            // 
+            this.textBoxNameReaderOldValue.Location = new System.Drawing.Point(210, 60);
+            this.textBoxNameReaderOldValue.Name = "textBoxNameReaderOldValue";
+            this.textBoxNameReaderOldValue.ReadOnly = true;
+            this.textBoxNameReaderOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameReaderOldValue.TabIndex = 27;
+            this.textBoxNameReaderOldValue.Tag = "Hidden";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(457, 43);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(114, 13);
+            this.label63.TabIndex = 26;
+            this.label63.Tag = "Hidden";
+            this.label63.Text = "Контактный телефон";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(622, 40);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(37, 13);
+            this.label64.TabIndex = 25;
+            this.label64.Tag = "Hidden";
+            this.label64.Text = "Почта";
+            // 
+            // textBoxMailReaderOldValue
+            // 
+            this.textBoxMailReaderOldValue.Location = new System.Drawing.Point(592, 61);
+            this.textBoxMailReaderOldValue.Name = "textBoxMailReaderOldValue";
+            this.textBoxMailReaderOldValue.ReadOnly = true;
+            this.textBoxMailReaderOldValue.Size = new System.Drawing.Size(116, 20);
+            this.textBoxMailReaderOldValue.TabIndex = 24;
+            this.textBoxMailReaderOldValue.Tag = "Hidden";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(82, 44);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(104, 13);
+            this.label65.TabIndex = 23;
+            this.label65.Tag = "Hidden";
+            this.label65.Text = "Фамилия читателя";
+            // 
+            // textBoxSurnameReaderOldValue
+            // 
+            this.textBoxSurnameReaderOldValue.Location = new System.Drawing.Point(85, 60);
+            this.textBoxSurnameReaderOldValue.Name = "textBoxSurnameReaderOldValue";
+            this.textBoxSurnameReaderOldValue.ReadOnly = true;
+            this.textBoxSurnameReaderOldValue.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSurnameReaderOldValue.TabIndex = 22;
+            this.textBoxSurnameReaderOldValue.Tag = "Hidden";
             // 
             // groupBoxReaders
             // 
@@ -1357,6 +2206,10 @@
             // 
             // dataGridViewReaders
             // 
+            this.dataGridViewReaders.AllowUserToAddRows = false;
+            this.dataGridViewReaders.AllowUserToDeleteRows = false;
+            this.dataGridViewReaders.AllowUserToResizeColumns = false;
+            this.dataGridViewReaders.AllowUserToResizeRows = false;
             this.dataGridViewReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReaders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fioReaderReaders,
@@ -1366,8 +2219,11 @@
             this.dataGridViewReaders.Name = "dataGridViewReaders";
             this.dataGridViewReaders.ReadOnly = true;
             this.dataGridViewReaders.RowHeadersVisible = false;
+            this.dataGridViewReaders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewReaders.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewReaders.TabIndex = 2;
+            this.dataGridViewReaders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReaders_CellDoubleClick);
+            this.dataGridViewReaders.DoubleClick += new System.EventHandler(this.dataGridViewReaders_DoubleClick);
             // 
             // fioReaderReaders
             // 
@@ -1405,6 +2261,109 @@
             this.tabPageAutors.Text = "Авторы";
             this.tabPageAutors.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPageAutorAdd);
+            this.tabControl1.Location = new System.Drawing.Point(16, 352);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1206, 222);
+            this.tabControl1.TabIndex = 11;
+            // 
+            // tabPageAutorAdd
+            // 
+            this.tabPageAutorAdd.Controls.Add(this.textBoxBiographyAutor);
+            this.tabPageAutorAdd.Controls.Add(this.label41);
+            this.tabPageAutorAdd.Controls.Add(this.label32);
+            this.tabPageAutorAdd.Controls.Add(this.textBoxSurnameAutor);
+            this.tabPageAutorAdd.Controls.Add(this.label31);
+            this.tabPageAutorAdd.Controls.Add(this.textBoxPatronymicAutor);
+            this.tabPageAutorAdd.Controls.Add(this.buttonAutorAdd);
+            this.tabPageAutorAdd.Controls.Add(this.label42);
+            this.tabPageAutorAdd.Controls.Add(this.textBoxNameAutor);
+            this.tabPageAutorAdd.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAutorAdd.Name = "tabPageAutorAdd";
+            this.tabPageAutorAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAutorAdd.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAutorAdd.TabIndex = 0;
+            this.tabPageAutorAdd.Text = "Добавление автора";
+            this.tabPageAutorAdd.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBiographyAutor
+            // 
+            this.textBoxBiographyAutor.Location = new System.Drawing.Point(396, 35);
+            this.textBoxBiographyAutor.Name = "textBoxBiographyAutor";
+            this.textBoxBiographyAutor.Size = new System.Drawing.Size(314, 144);
+            this.textBoxBiographyAutor.TabIndex = 29;
+            this.textBoxBiographyAutor.Text = "";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(498, 19);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(101, 13);
+            this.label41.TabIndex = 27;
+            this.label41.Text = "Биография автора";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(164, 69);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(67, 13);
+            this.label32.TabIndex = 26;
+            this.label32.Text = "Имя автора";
+            // 
+            // textBoxSurnameAutor
+            // 
+            this.textBoxSurnameAutor.Location = new System.Drawing.Point(20, 87);
+            this.textBoxSurnameAutor.Name = "textBoxSurnameAutor";
+            this.textBoxSurnameAutor.Size = new System.Drawing.Size(116, 20);
+            this.textBoxSurnameAutor.TabIndex = 25;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(276, 69);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(92, 13);
+            this.label31.TabIndex = 24;
+            this.label31.Text = "Отчество автора";
+            // 
+            // textBoxPatronymicAutor
+            // 
+            this.textBoxPatronymicAutor.Location = new System.Drawing.Point(264, 87);
+            this.textBoxPatronymicAutor.Name = "textBoxPatronymicAutor";
+            this.textBoxPatronymicAutor.Size = new System.Drawing.Size(116, 20);
+            this.textBoxPatronymicAutor.TabIndex = 23;
+            // 
+            // buttonAutorAdd
+            // 
+            this.buttonAutorAdd.Location = new System.Drawing.Point(740, 69);
+            this.buttonAutorAdd.Name = "buttonAutorAdd";
+            this.buttonAutorAdd.Size = new System.Drawing.Size(205, 54);
+            this.buttonAutorAdd.TabIndex = 13;
+            this.buttonAutorAdd.Text = "Произвести добавление";
+            this.buttonAutorAdd.UseVisualStyleBackColor = true;
+            this.buttonAutorAdd.Click += new System.EventHandler(this.buttonAutorAdd_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(29, 69);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(94, 13);
+            this.label42.TabIndex = 5;
+            this.label42.Text = "Фамилия автора";
+            // 
+            // textBoxNameAutor
+            // 
+            this.textBoxNameAutor.Location = new System.Drawing.Point(142, 87);
+            this.textBoxNameAutor.Name = "textBoxNameAutor";
+            this.textBoxNameAutor.Size = new System.Drawing.Size(116, 20);
+            this.textBoxNameAutor.TabIndex = 4;
+            // 
             // groupBoxAutors
             // 
             this.groupBoxAutors.Controls.Add(this.label30);
@@ -1439,6 +2398,10 @@
             // 
             // dataGridViewAutors
             // 
+            this.dataGridViewAutors.AllowUserToAddRows = false;
+            this.dataGridViewAutors.AllowUserToDeleteRows = false;
+            this.dataGridViewAutors.AllowUserToResizeColumns = false;
+            this.dataGridViewAutors.AllowUserToResizeRows = false;
             this.dataGridViewAutors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAutors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fioAutor,
@@ -1447,6 +2410,7 @@
             this.dataGridViewAutors.Name = "dataGridViewAutors";
             this.dataGridViewAutors.ReadOnly = true;
             this.dataGridViewAutors.RowHeadersVisible = false;
+            this.dataGridViewAutors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAutors.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewAutors.TabIndex = 2;
             // 
@@ -1478,400 +2442,73 @@
             this.tabPageLibrarians.Text = "Библиотекари";
             this.tabPageLibrarians.UseVisualStyleBackColor = true;
             // 
-            // groupBoxLibrarians
-            // 
-            this.groupBoxLibrarians.Controls.Add(this.label29);
-            this.groupBoxLibrarians.Controls.Add(this.textBoxMailLibrariansSearch);
-            this.groupBoxLibrarians.Controls.Add(this.label34);
-            this.groupBoxLibrarians.Controls.Add(this.label35);
-            this.groupBoxLibrarians.Controls.Add(this.textBoxFioLibrarianLibrariansSearch);
-            this.groupBoxLibrarians.Controls.Add(this.textBoxContactNumberLibrariansSearch);
-            this.groupBoxLibrarians.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.groupBoxLibrarians.Location = new System.Drawing.Point(858, 30);
-            this.groupBoxLibrarians.Name = "groupBoxLibrarians";
-            this.groupBoxLibrarians.Size = new System.Drawing.Size(364, 310);
-            this.groupBoxLibrarians.TabIndex = 10;
-            this.groupBoxLibrarians.TabStop = false;
-            this.groupBoxLibrarians.Text = "Поиск по";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label29.Location = new System.Drawing.Point(137, 135);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(74, 26);
-            this.label29.TabIndex = 17;
-            this.label29.Text = "Почте";
-            // 
-            // textBoxMailLibrariansSearch
-            // 
-            this.textBoxMailLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxMailLibrariansSearch.Location = new System.Drawing.Point(99, 164);
-            this.textBoxMailLibrariansSearch.Name = "textBoxMailLibrariansSearch";
-            this.textBoxMailLibrariansSearch.Size = new System.Drawing.Size(154, 23);
-            this.textBoxMailLibrariansSearch.TabIndex = 16;
-            this.textBoxMailLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
-            this.textBoxMailLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label34.Location = new System.Drawing.Point(55, 80);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(252, 26);
-            this.label34.TabIndex = 15;
-            this.label34.Text = "Контактному телефону";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label35.Location = new System.Drawing.Point(69, 25);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(214, 26);
-            this.label35.TabIndex = 14;
-            this.label35.Text = "ФИО библиотекаря";
-            // 
-            // textBoxFioLibrarianLibrariansSearch
-            // 
-            this.textBoxFioLibrarianLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxFioLibrarianLibrariansSearch.Location = new System.Drawing.Point(99, 54);
-            this.textBoxFioLibrarianLibrariansSearch.Name = "textBoxFioLibrarianLibrariansSearch";
-            this.textBoxFioLibrarianLibrariansSearch.Size = new System.Drawing.Size(154, 23);
-            this.textBoxFioLibrarianLibrariansSearch.TabIndex = 13;
-            this.textBoxFioLibrarianLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
-            this.textBoxFioLibrarianLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
-            // 
-            // textBoxContactNumberLibrariansSearch
-            // 
-            this.textBoxContactNumberLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxContactNumberLibrariansSearch.Location = new System.Drawing.Point(99, 109);
-            this.textBoxContactNumberLibrariansSearch.Name = "textBoxContactNumberLibrariansSearch";
-            this.textBoxContactNumberLibrariansSearch.Size = new System.Drawing.Size(154, 23);
-            this.textBoxContactNumberLibrariansSearch.TabIndex = 12;
-            this.textBoxContactNumberLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
-            this.textBoxContactNumberLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
-            // 
-            // dataGridViewLibrarians
-            // 
-            this.dataGridViewLibrarians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLibrarians.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fioLibrarianLibrarians,
-            this.contactNumberLibrarian,
-            this.EmailLibrarian});
-            this.dataGridViewLibrarians.Location = new System.Drawing.Point(20, 30);
-            this.dataGridViewLibrarians.Name = "dataGridViewLibrarians";
-            this.dataGridViewLibrarians.ReadOnly = true;
-            this.dataGridViewLibrarians.RowHeadersVisible = false;
-            this.dataGridViewLibrarians.Size = new System.Drawing.Size(832, 310);
-            this.dataGridViewLibrarians.TabIndex = 2;
-            // 
-            // fioLibrarianLibrarians
-            // 
-            this.fioLibrarianLibrarians.Frozen = true;
-            this.fioLibrarianLibrarians.HeaderText = "ФИО библиотекаря";
-            this.fioLibrarianLibrarians.Name = "fioLibrarianLibrarians";
-            this.fioLibrarianLibrarians.ReadOnly = true;
-            this.fioLibrarianLibrarians.Width = 280;
-            // 
-            // contactNumberLibrarian
-            // 
-            this.contactNumberLibrarian.Frozen = true;
-            this.contactNumberLibrarian.HeaderText = "Контактный телефон";
-            this.contactNumberLibrarian.Name = "contactNumberLibrarian";
-            this.contactNumberLibrarian.ReadOnly = true;
-            this.contactNumberLibrarian.Width = 280;
-            // 
-            // EmailLibrarian
-            // 
-            this.EmailLibrarian.Frozen = true;
-            this.EmailLibrarian.HeaderText = "Почта";
-            this.EmailLibrarian.Name = "EmailLibrarian";
-            this.EmailLibrarian.ReadOnly = true;
-            this.EmailLibrarian.Width = 280;
-            // 
-            // tabPageAutorization
-            // 
-            this.tabPageAutorization.BackColor = System.Drawing.Color.DimGray;
-            this.tabPageAutorization.Controls.Add(this.checkBoxShowPassword);
-            this.tabPageAutorization.Controls.Add(this.textBoxPassword);
-            this.tabPageAutorization.Controls.Add(this.labelPassword);
-            this.tabPageAutorization.Controls.Add(this.label1);
-            this.tabPageAutorization.Controls.Add(this.comboBoxNameLibrarian);
-            this.tabPageAutorization.Controls.Add(this.labelAutorizationText);
-            this.tabPageAutorization.Controls.Add(this.buttonAutorization);
-            this.tabPageAutorization.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAutorization.Name = "tabPageAutorization";
-            this.tabPageAutorization.Size = new System.Drawing.Size(1232, 574);
-            this.tabPageAutorization.TabIndex = 6;
-            this.tabPageAutorization.Text = "Сменить пользователя";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            this.openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
-            // 
-            // tabControlReaders
-            // 
-            this.tabControlReaders.Controls.Add(this.tabPageAdd);
-            this.tabControlReaders.Location = new System.Drawing.Point(20, 346);
-            this.tabControlReaders.Name = "tabControlReaders";
-            this.tabControlReaders.SelectedIndex = 0;
-            this.tabControlReaders.Size = new System.Drawing.Size(1206, 222);
-            this.tabControlReaders.TabIndex = 10;
-            // 
-            // tabPageAdd
-            // 
-            this.tabPageAdd.Controls.Add(this.textBoxContactNumberReader);
-            this.tabPageAdd.Controls.Add(this.textBoxPatronymicReader);
-            this.tabPageAdd.Controls.Add(this.label40);
-            this.tabPageAdd.Controls.Add(this.label39);
-            this.tabPageAdd.Controls.Add(this.textBoxNameReader);
-            this.tabPageAdd.Controls.Add(this.buttonReadersAdd);
-            this.tabPageAdd.Controls.Add(this.label36);
-            this.tabPageAdd.Controls.Add(this.label37);
-            this.tabPageAdd.Controls.Add(this.textBoxMailReader);
-            this.tabPageAdd.Controls.Add(this.label38);
-            this.tabPageAdd.Controls.Add(this.textBoxSurnameReader);
-            this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAdd.Name = "tabPageAdd";
-            this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdd.Size = new System.Drawing.Size(1198, 196);
-            this.tabPageAdd.TabIndex = 0;
-            this.tabPageAdd.Text = "Добавление читателя";
-            this.tabPageAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonReadersAdd
-            // 
-            this.buttonReadersAdd.Location = new System.Drawing.Point(740, 69);
-            this.buttonReadersAdd.Name = "buttonReadersAdd";
-            this.buttonReadersAdd.Size = new System.Drawing.Size(205, 54);
-            this.buttonReadersAdd.TabIndex = 13;
-            this.buttonReadersAdd.Text = "Произвести добавление";
-            this.buttonReadersAdd.UseVisualStyleBackColor = true;
-            this.buttonReadersAdd.Click += new System.EventHandler(this.buttonReadersAdd_Click);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(451, 72);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(114, 13);
-            this.label36.TabIndex = 7;
-            this.label36.Text = "Контактный телефон";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(616, 69);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(37, 13);
-            this.label37.TabIndex = 5;
-            this.label37.Text = "Почта";
-            // 
-            // textBoxMailReader
-            // 
-            this.textBoxMailReader.Location = new System.Drawing.Point(586, 90);
-            this.textBoxMailReader.Name = "textBoxMailReader";
-            this.textBoxMailReader.Size = new System.Drawing.Size(116, 20);
-            this.textBoxMailReader.TabIndex = 4;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(76, 73);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(104, 13);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "Фамилия читателя";
-            // 
-            // textBoxSurnameReader
-            // 
-            this.textBoxSurnameReader.Location = new System.Drawing.Point(79, 89);
-            this.textBoxSurnameReader.Name = "textBoxSurnameReader";
-            this.textBoxSurnameReader.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSurnameReader.TabIndex = 0;
-            // 
-            // textBoxNameReader
-            // 
-            this.textBoxNameReader.Location = new System.Drawing.Point(204, 89);
-            this.textBoxNameReader.Name = "textBoxNameReader";
-            this.textBoxNameReader.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNameReader.TabIndex = 16;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(216, 73);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(77, 13);
-            this.label39.TabIndex = 17;
-            this.label39.Text = "Имя читателя";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(321, 73);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(102, 13);
-            this.label40.TabIndex = 18;
-            this.label40.Text = "Отчество читателя";
-            this.label40.Click += new System.EventHandler(this.label40_Click);
-            // 
-            // textBoxPatronymicReader
-            // 
-            this.textBoxPatronymicReader.Location = new System.Drawing.Point(324, 89);
-            this.textBoxPatronymicReader.Name = "textBoxPatronymicReader";
-            this.textBoxPatronymicReader.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPatronymicReader.TabIndex = 19;
-            this.textBoxPatronymicReader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // textBoxContactNumberReader
-            // 
-            this.textBoxContactNumberReader.Location = new System.Drawing.Point(454, 90);
-            this.textBoxContactNumberReader.Mask = "00-000-00-00";
-            this.textBoxContactNumberReader.Name = "textBoxContactNumberReader";
-            this.textBoxContactNumberReader.Size = new System.Drawing.Size(111, 20);
-            this.textBoxContactNumberReader.TabIndex = 21;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(16, 352);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1206, 222);
-            this.tabControl1.TabIndex = 11;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.textBoxBiographyAutor);
-            this.tabPage1.Controls.Add(this.label41);
-            this.tabPage1.Controls.Add(this.label32);
-            this.tabPage1.Controls.Add(this.textBoxSurnameAutor);
-            this.tabPage1.Controls.Add(this.label31);
-            this.tabPage1.Controls.Add(this.textBoxPatronymicAutor);
-            this.tabPage1.Controls.Add(this.buttonAutorAdd);
-            this.tabPage1.Controls.Add(this.label42);
-            this.tabPage1.Controls.Add(this.textBoxNameAutor);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1198, 196);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Добавление читателя";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // buttonAutorAdd
-            // 
-            this.buttonAutorAdd.Location = new System.Drawing.Point(740, 69);
-            this.buttonAutorAdd.Name = "buttonAutorAdd";
-            this.buttonAutorAdd.Size = new System.Drawing.Size(205, 54);
-            this.buttonAutorAdd.TabIndex = 13;
-            this.buttonAutorAdd.Text = "Произвести добавление";
-            this.buttonAutorAdd.UseVisualStyleBackColor = true;
-            this.buttonAutorAdd.Click += new System.EventHandler(this.buttonAutorAdd_Click);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(29, 69);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(94, 13);
-            this.label42.TabIndex = 5;
-            this.label42.Text = "Фамилия автора";
-            // 
-            // textBoxNameAutor
-            // 
-            this.textBoxNameAutor.Location = new System.Drawing.Point(142, 87);
-            this.textBoxNameAutor.Name = "textBoxNameAutor";
-            this.textBoxNameAutor.Size = new System.Drawing.Size(116, 20);
-            this.textBoxNameAutor.TabIndex = 4;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(276, 69);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(92, 13);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "Отчество автора";
-            // 
-            // textBoxPatronymicAutor
-            // 
-            this.textBoxPatronymicAutor.Location = new System.Drawing.Point(264, 87);
-            this.textBoxPatronymicAutor.Name = "textBoxPatronymicAutor";
-            this.textBoxPatronymicAutor.Size = new System.Drawing.Size(116, 20);
-            this.textBoxPatronymicAutor.TabIndex = 23;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(164, 69);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(67, 13);
-            this.label32.TabIndex = 26;
-            this.label32.Text = "Имя автора";
-            // 
-            // textBoxSurnameAutor
-            // 
-            this.textBoxSurnameAutor.Location = new System.Drawing.Point(20, 87);
-            this.textBoxSurnameAutor.Name = "textBoxSurnameAutor";
-            this.textBoxSurnameAutor.Size = new System.Drawing.Size(116, 20);
-            this.textBoxSurnameAutor.TabIndex = 25;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(498, 19);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(101, 13);
-            this.label41.TabIndex = 27;
-            this.label41.Text = "Биография автора";
-            // 
-            // textBoxBiographyAutor
-            // 
-            this.textBoxBiographyAutor.Location = new System.Drawing.Point(396, 35);
-            this.textBoxBiographyAutor.Name = "textBoxBiographyAutor";
-            this.textBoxBiographyAutor.Size = new System.Drawing.Size(314, 144);
-            this.textBoxBiographyAutor.TabIndex = 29;
-            this.textBoxBiographyAutor.Text = "";
-            // 
             // tabControl2
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPageLibrarian);
             this.tabControl2.Location = new System.Drawing.Point(20, 346);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(1206, 222);
             this.tabControl2.TabIndex = 12;
             // 
-            // tabPage3
+            // tabPageLibrarian
             // 
-            this.tabPage3.Controls.Add(this.label53);
-            this.tabPage3.Controls.Add(this.textBoxPasswordConfirmation);
-            this.tabPage3.Controls.Add(this.label52);
-            this.tabPage3.Controls.Add(this.textBoxPasswordLibrarian);
-            this.tabPage3.Controls.Add(this.textBoxContactNumberLibrarian);
-            this.tabPage3.Controls.Add(this.textBoxPatronymicLibrarian);
-            this.tabPage3.Controls.Add(this.label47);
-            this.tabPage3.Controls.Add(this.label48);
-            this.tabPage3.Controls.Add(this.textBoxNameLibrarian);
-            this.tabPage3.Controls.Add(this.buttonLibrariansAdd);
-            this.tabPage3.Controls.Add(this.label49);
-            this.tabPage3.Controls.Add(this.label50);
-            this.tabPage3.Controls.Add(this.textBoxMailLibrarian);
-            this.tabPage3.Controls.Add(this.label51);
-            this.tabPage3.Controls.Add(this.textBoxSurnameLibrarian);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1198, 196);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Добавление читателя";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageLibrarian.Controls.Add(this.label53);
+            this.tabPageLibrarian.Controls.Add(this.textBoxPasswordConfirmation);
+            this.tabPageLibrarian.Controls.Add(this.label52);
+            this.tabPageLibrarian.Controls.Add(this.textBoxPasswordLibrarian);
+            this.tabPageLibrarian.Controls.Add(this.textBoxContactNumberLibrarian);
+            this.tabPageLibrarian.Controls.Add(this.textBoxPatronymicLibrarian);
+            this.tabPageLibrarian.Controls.Add(this.label47);
+            this.tabPageLibrarian.Controls.Add(this.label48);
+            this.tabPageLibrarian.Controls.Add(this.textBoxNameLibrarian);
+            this.tabPageLibrarian.Controls.Add(this.buttonLibrariansAdd);
+            this.tabPageLibrarian.Controls.Add(this.label49);
+            this.tabPageLibrarian.Controls.Add(this.label50);
+            this.tabPageLibrarian.Controls.Add(this.textBoxMailLibrarian);
+            this.tabPageLibrarian.Controls.Add(this.label51);
+            this.tabPageLibrarian.Controls.Add(this.textBoxSurnameLibrarian);
+            this.tabPageLibrarian.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLibrarian.Name = "tabPageLibrarian";
+            this.tabPageLibrarian.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLibrarian.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageLibrarian.TabIndex = 0;
+            this.tabPageLibrarian.Text = "Добавление библиотекаря";
+            this.tabPageLibrarian.UseVisualStyleBackColor = true;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(846, 78);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(121, 13);
+            this.label53.TabIndex = 36;
+            this.label53.Text = "Подтвержение пароля";
+            this.label53.Click += new System.EventHandler(this.label53_Click);
+            // 
+            // textBoxPasswordConfirmation
+            // 
+            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(849, 94);
+            this.textBoxPasswordConfirmation.Name = "textBoxPasswordConfirmation";
+            this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(116, 20);
+            this.textBoxPasswordConfirmation.TabIndex = 35;
+            this.textBoxPasswordConfirmation.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(743, 76);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(45, 13);
+            this.label52.TabIndex = 34;
+            this.label52.Text = "Пароль";
+            // 
+            // textBoxPasswordLibrarian
+            // 
+            this.textBoxPasswordLibrarian.Location = new System.Drawing.Point(712, 94);
+            this.textBoxPasswordLibrarian.Name = "textBoxPasswordLibrarian";
+            this.textBoxPasswordLibrarian.Size = new System.Drawing.Size(116, 20);
+            this.textBoxPasswordLibrarian.TabIndex = 33;
             // 
             // textBoxContactNumberLibrarian
             // 
@@ -1964,118 +2601,129 @@
             this.textBoxSurnameLibrarian.Size = new System.Drawing.Size(100, 20);
             this.textBoxSurnameLibrarian.TabIndex = 22;
             // 
-            // textBoxPasswordLibrarian
+            // groupBoxLibrarians
             // 
-            this.textBoxPasswordLibrarian.Location = new System.Drawing.Point(712, 94);
-            this.textBoxPasswordLibrarian.Name = "textBoxPasswordLibrarian";
-            this.textBoxPasswordLibrarian.Size = new System.Drawing.Size(116, 20);
-            this.textBoxPasswordLibrarian.TabIndex = 33;
+            this.groupBoxLibrarians.Controls.Add(this.label29);
+            this.groupBoxLibrarians.Controls.Add(this.textBoxMailLibrariansSearch);
+            this.groupBoxLibrarians.Controls.Add(this.label34);
+            this.groupBoxLibrarians.Controls.Add(this.label35);
+            this.groupBoxLibrarians.Controls.Add(this.textBoxFioLibrarianLibrariansSearch);
+            this.groupBoxLibrarians.Controls.Add(this.textBoxContactNumberLibrariansSearch);
+            this.groupBoxLibrarians.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxLibrarians.Location = new System.Drawing.Point(858, 30);
+            this.groupBoxLibrarians.Name = "groupBoxLibrarians";
+            this.groupBoxLibrarians.Size = new System.Drawing.Size(364, 310);
+            this.groupBoxLibrarians.TabIndex = 10;
+            this.groupBoxLibrarians.TabStop = false;
+            this.groupBoxLibrarians.Text = "Поиск по";
             // 
-            // label52
+            // label29
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(743, 76);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(45, 13);
-            this.label52.TabIndex = 34;
-            this.label52.Text = "Пароль";
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label29.Location = new System.Drawing.Point(137, 135);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(74, 26);
+            this.label29.TabIndex = 17;
+            this.label29.Text = "Почте";
             // 
-            // textBoxPasswordConfirmation
+            // textBoxMailLibrariansSearch
             // 
-            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(849, 94);
-            this.textBoxPasswordConfirmation.Name = "textBoxPasswordConfirmation";
-            this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(116, 20);
-            this.textBoxPasswordConfirmation.TabIndex = 35;
-            this.textBoxPasswordConfirmation.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxMailLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxMailLibrariansSearch.Location = new System.Drawing.Point(99, 164);
+            this.textBoxMailLibrariansSearch.Name = "textBoxMailLibrariansSearch";
+            this.textBoxMailLibrariansSearch.Size = new System.Drawing.Size(154, 23);
+            this.textBoxMailLibrariansSearch.TabIndex = 16;
+            this.textBoxMailLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
+            this.textBoxMailLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
             // 
-            // label53
+            // label34
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(846, 78);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(121, 13);
-            this.label53.TabIndex = 36;
-            this.label53.Text = "Подтвержение пароля";
-            this.label53.Click += new System.EventHandler(this.label53_Click);
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label34.Location = new System.Drawing.Point(55, 80);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(252, 26);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "Контактному телефону";
             // 
-            // checkBoxShowPassword
+            // label35
             // 
-            this.checkBoxShowPassword.AutoSize = true;
-            this.checkBoxShowPassword.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxShowPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(420, 346);
-            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(189, 29);
-            this.checkBoxShowPassword.TabIndex = 26;
-            this.checkBoxShowPassword.Tag = "1";
-            this.checkBoxShowPassword.Text = "Показать пароль";
-            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label35.Location = new System.Drawing.Point(69, 25);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(214, 26);
+            this.label35.TabIndex = 14;
+            this.label35.Text = "ФИО библиотекаря";
             // 
-            // textBoxPassword
+            // textBoxFioLibrarianLibrariansSearch
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxPassword.Location = new System.Drawing.Point(420, 299);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(368, 30);
-            this.textBoxPassword.TabIndex = 25;
+            this.textBoxFioLibrarianLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxFioLibrarianLibrariansSearch.Location = new System.Drawing.Point(99, 54);
+            this.textBoxFioLibrarianLibrariansSearch.Name = "textBoxFioLibrarianLibrariansSearch";
+            this.textBoxFioLibrarianLibrariansSearch.Size = new System.Drawing.Size(154, 23);
+            this.textBoxFioLibrarianLibrariansSearch.TabIndex = 13;
+            this.textBoxFioLibrarianLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
+            this.textBoxFioLibrarianLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
             // 
-            // labelPassword
+            // textBoxContactNumberLibrariansSearch
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(551, 265);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(98, 31);
-            this.labelPassword.TabIndex = 24;
-            this.labelPassword.Text = "Пароль";
-            this.labelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxContactNumberLibrariansSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxContactNumberLibrariansSearch.Location = new System.Drawing.Point(99, 109);
+            this.textBoxContactNumberLibrariansSearch.Name = "textBoxContactNumberLibrariansSearch";
+            this.textBoxContactNumberLibrariansSearch.Size = new System.Drawing.Size(154, 23);
+            this.textBoxContactNumberLibrariansSearch.TabIndex = 12;
+            this.textBoxContactNumberLibrariansSearch.Tag = "groupBoxSearchBookDelivery";
+            this.textBoxContactNumberLibrariansSearch.TextChanged += new System.EventHandler(this.TextBoxesLibrariansChange);
             // 
-            // label1
+            // dataGridViewLibrarians
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(491, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 31);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "ФИО библиотекаря";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dataGridViewLibrarians.AllowUserToAddRows = false;
+            this.dataGridViewLibrarians.AllowUserToDeleteRows = false;
+            this.dataGridViewLibrarians.AllowUserToResizeColumns = false;
+            this.dataGridViewLibrarians.AllowUserToResizeRows = false;
+            this.dataGridViewLibrarians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLibrarians.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fioLibrarianLibrarians,
+            this.contactNumberLibrarian,
+            this.EmailLibrarian});
+            this.dataGridViewLibrarians.Location = new System.Drawing.Point(20, 30);
+            this.dataGridViewLibrarians.Name = "dataGridViewLibrarians";
+            this.dataGridViewLibrarians.ReadOnly = true;
+            this.dataGridViewLibrarians.RowHeadersVisible = false;
+            this.dataGridViewLibrarians.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLibrarians.Size = new System.Drawing.Size(832, 310);
+            this.dataGridViewLibrarians.TabIndex = 2;
             // 
-            // comboBoxNameLibrarian
+            // fioLibrarianLibrarians
             // 
-            this.comboBoxNameLibrarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.comboBoxNameLibrarian.FormattingEnabled = true;
-            this.comboBoxNameLibrarian.Location = new System.Drawing.Point(420, 223);
-            this.comboBoxNameLibrarian.Name = "comboBoxNameLibrarian";
-            this.comboBoxNameLibrarian.Size = new System.Drawing.Size(368, 36);
-            this.comboBoxNameLibrarian.TabIndex = 22;
+            this.fioLibrarianLibrarians.Frozen = true;
+            this.fioLibrarianLibrarians.HeaderText = "ФИО библиотекаря";
+            this.fioLibrarianLibrarians.Name = "fioLibrarianLibrarians";
+            this.fioLibrarianLibrarians.ReadOnly = true;
+            this.fioLibrarianLibrarians.Width = 280;
             // 
-            // labelAutorizationText
+            // contactNumberLibrarian
             // 
-            this.labelAutorizationText.Font = new System.Drawing.Font("Times New Roman", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAutorizationText.ForeColor = System.Drawing.Color.White;
-            this.labelAutorizationText.Location = new System.Drawing.Point(-28, 98);
-            this.labelAutorizationText.Name = "labelAutorizationText";
-            this.labelAutorizationText.Size = new System.Drawing.Size(1264, 79);
-            this.labelAutorizationText.TabIndex = 21;
-            this.labelAutorizationText.Text = "Авторизация";
-            this.labelAutorizationText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contactNumberLibrarian.Frozen = true;
+            this.contactNumberLibrarian.HeaderText = "Контактный телефон";
+            this.contactNumberLibrarian.Name = "contactNumberLibrarian";
+            this.contactNumberLibrarian.ReadOnly = true;
+            this.contactNumberLibrarian.Width = 280;
             // 
-            // buttonAutorization
+            // EmailLibrarian
             // 
-            this.buttonAutorization.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonAutorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonAutorization.ForeColor = System.Drawing.Color.White;
-            this.buttonAutorization.Location = new System.Drawing.Point(420, 381);
-            this.buttonAutorization.Name = "buttonAutorization";
-            this.buttonAutorization.Size = new System.Drawing.Size(368, 58);
-            this.buttonAutorization.TabIndex = 27;
-            this.buttonAutorization.Text = "Авторизоваться";
-            this.buttonAutorization.UseVisualStyleBackColor = false;
+            this.EmailLibrarian.Frozen = true;
+            this.EmailLibrarian.HeaderText = "Почта";
+            this.EmailLibrarian.Name = "EmailLibrarian";
+            this.EmailLibrarian.ReadOnly = true;
+            this.EmailLibrarian.Width = 280;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            this.openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             // 
             // FormMain
             // 
@@ -2093,6 +2741,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageAutorization.ResumeLayout(false);
+            this.tabPageAutorization.PerformLayout();
             this.tabPageBookingDelivery.ResumeLayout(false);
             this.tabControlBookDelivery.ResumeLayout(false);
             this.tabPageBookIssuence.ResumeLayout(false);
@@ -2108,6 +2758,10 @@
             this.tabPageAddBook.ResumeLayout(false);
             this.tabPageAddBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).EndInit();
+            this.tabPageEditBook.ResumeLayout(false);
+            this.tabPageEditBook.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).EndInit();
             this.groupBoxBookSearch.ResumeLayout(false);
             this.groupBoxBookSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
@@ -2119,28 +2773,28 @@
             this.tabPageAddInstances.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInstances)).EndInit();
             this.tabPageReaders.ResumeLayout(false);
+            this.tabControlReaders.ResumeLayout(false);
+            this.tabPageAdd.ResumeLayout(false);
+            this.tabPageAdd.PerformLayout();
+            this.tabPageEdit.ResumeLayout(false);
+            this.tabPageEdit.PerformLayout();
             this.groupBoxReaders.ResumeLayout(false);
             this.groupBoxReaders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReaders)).EndInit();
             this.tabPageAutors.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPageAutorAdd.ResumeLayout(false);
+            this.tabPageAutorAdd.PerformLayout();
             this.groupBoxAutors.ResumeLayout(false);
             this.groupBoxAutors.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAutors)).EndInit();
             this.tabPageLibrarians.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPageLibrarian.ResumeLayout(false);
+            this.tabPageLibrarian.PerformLayout();
             this.groupBoxLibrarians.ResumeLayout(false);
             this.groupBoxLibrarians.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrarians)).EndInit();
-            this.tabPageAutorization.ResumeLayout(false);
-            this.tabPageAutorization.PerformLayout();
-            this.tabControlReaders.ResumeLayout(false);
-            this.tabPageAdd.ResumeLayout(false);
-            this.tabPageAdd.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2234,12 +2888,6 @@
         private System.Windows.Forms.TextBox textBoxYearOfIssueAdd;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameBookBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameAutorBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountInStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Сategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearOfIssue;
-        private System.Windows.Forms.DataGridViewImageColumn PhotoBook;
         private System.Windows.Forms.TabControl tabControlInstances;
         private System.Windows.Forms.TabPage tabPageAddInstances;
         private System.Windows.Forms.Label label15;
@@ -2293,7 +2941,7 @@
         private System.Windows.Forms.TextBox textBoxSurnameReader;
         private System.Windows.Forms.MaskedTextBox textBoxContactNumberReader;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPageAutorAdd;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBoxSurnameAutor;
@@ -2304,7 +2952,7 @@
         private System.Windows.Forms.TextBox textBoxNameAutor;
         private System.Windows.Forms.RichTextBox textBoxBiographyAutor;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPageLibrarian;
         private System.Windows.Forms.MaskedTextBox textBoxContactNumberLibrarian;
         private System.Windows.Forms.TextBox textBoxPatronymicLibrarian;
         private System.Windows.Forms.Label label47;
@@ -2327,6 +2975,62 @@
         private System.Windows.Forms.ComboBox comboBoxNameLibrarian;
         private System.Windows.Forms.Label labelAutorizationText;
         private System.Windows.Forms.Button buttonAutorization;
+        private System.Windows.Forms.TabPage tabPageEditBook;
+        private System.Windows.Forms.TextBox textBoxFioAutorEditOldValue;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox textBoxCategoryEditOldValue;
+        private System.Windows.Forms.Button buttonBooksEditing;
+        private System.Windows.Forms.Button buttonPictureEditLoad;
+        private System.Windows.Forms.TextBox textBoxYearOfIssueEditOldValue;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBoxNameBookEditOldValue;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.PictureBox pictureBoxBookEditOldValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameBookBooks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameAutorBooks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountInStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Сategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearOfIssue;
+        private System.Windows.Forms.DataGridViewImageColumn PhotoBook;
+        private System.Windows.Forms.ComboBox comboBoxFioAutorEditNewValue;
+        private System.Windows.Forms.PictureBox pictureBoxEdit;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBoxCategoryBookNewValue;
+        private System.Windows.Forms.TextBox textBoxYearOfIssueNewValue;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox textBoxNameBookNewValue;
+        private System.Windows.Forms.TextBox textBoxPictureEdit;
+        private System.Windows.Forms.TabPage tabPageEdit;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.MaskedTextBox textBoxContactNumberReaderNewValue;
+        private System.Windows.Forms.TextBox textBoxPatronymicReaderNewValue;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox textBoxNameReaderNewValue;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox textBoxMailReaderNewValue;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox textBoxSurnameReaderNewValue;
+        private System.Windows.Forms.TextBox textBoxPatronymicReaderOldValue;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBoxNameReaderOldValue;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox textBoxSurnameReaderOldValue;
+        private System.Windows.Forms.Button buttonReadersEditing;
+        private System.Windows.Forms.TextBox textBoxContactNumberOldValue;
+        private System.Windows.Forms.TextBox textBoxMailReaderOldValue;
     }
 }
 
