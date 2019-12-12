@@ -9,7 +9,7 @@ namespace Library
 {
     public class DatabaseSelectorAllInformation : DatabaseHandler
     {
-        public static List<BookDelivery> GetAllBookDelivery(List<SearchSettings> searchSettings)
+        public static List<BookDelivery> GetAllBookDelivery(List<QuerySettings> searchSettings)
         {
             string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance" +
             " from BookDelivery inner join Books inner join Readers" +
@@ -114,7 +114,7 @@ namespace Library
             return result;
         }
 
-        public static List<Librarian> GetAllLibrarians(List<SearchSettings> searchSettings)
+        public static List<Librarian> GetAllLibrarians(List<QuerySettings> searchSettings)
         {
             string query = "select fioLibrarian,contactNumber,email,passwordLibrarian from Librarians";
 
@@ -175,7 +175,7 @@ namespace Library
             return result;
         }
 
-        public static List<Reader> GetAllReaders(List<SearchSettings> searchSettings)
+        public static List<Reader> GetAllReaders(List<QuerySettings> searchSettings)
         {
             string query = "select fioReader,contactNumber,email from Readers";
 
@@ -236,7 +236,7 @@ namespace Library
             return result;
         }
 
-        public static List<Autor> GetAllAutors(List<SearchSettings> searchSettings)
+        public static List<Autor> GetAllAutors(List<QuerySettings> searchSettings)
         {
             string query = "select fioAutor,biography from Autors";
 
@@ -300,7 +300,7 @@ namespace Library
             return result;
         }
 
-        public static List<Book> GetAllBooks(List<SearchSettings> searchSettings)
+        public static List<Book> GetAllBooks(List<QuerySettings> searchSettings)
         {
             string query = "select nameBook,fioAutor,countInStock,category,picture,yearOfIssue"+
             " from Books inner join Autors"+
@@ -342,7 +342,7 @@ namespace Library
             return result;
         }
 
-        public static List<Instance> GetAllInstances(List<SearchSettings> searchSettings)
+        public static List<Instance> GetAllInstances(List<QuerySettings> searchSettings)
         {
             string query = "select idInstance,nameBook "+
             " from Instances inner join Books"+

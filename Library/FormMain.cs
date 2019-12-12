@@ -32,6 +32,7 @@ namespace Library
             BooksChange += LoadBookMainContent;
             BooksChange += LoadInstancesSideContent;
             BooksChange += LoadBookDeliverySideContent;
+            BooksChange += LoadInstancesMainContent;
             BooksChange?.Invoke();
 
             InstancesChange += LoadInstancesMainContent;
@@ -48,11 +49,9 @@ namespace Library
 
             LibrariansChange += LoadLibrariansMainContent;
             LibrariansChange?.Invoke();
-
         }
 
-
-
+        private Book AddedBook = null;
 
         #region Authorization
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -151,25 +150,25 @@ namespace Library
         }
         #endregion
 
-        private List<SearchSettings> GetSeacrhSettingsBookDelivery()
+        private List<QuerySettings> GetSeacrhSettingsBookDelivery()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if(!string.IsNullOrEmpty(textBoxFioReaderBookDelivery.Text))
             {
-                searchSettings.Add(new SearchSettings("fioReader", textBoxFioReaderBookDelivery.Text));
+                searchSettings.Add(new QuerySettings("fioReader", textBoxFioReaderBookDelivery.Text));
             }
             if(!string.IsNullOrEmpty(textBoxNameBookBookDelivery.Text))
             {
-                searchSettings.Add(new SearchSettings("nameBook", textBoxNameBookBookDelivery.Text));
+                searchSettings.Add(new QuerySettings("nameBook", textBoxNameBookBookDelivery.Text));
             }
             if(!string.IsNullOrEmpty(textBoxFioLibrarianBookDelivery.Text))
             {
-                searchSettings.Add(new SearchSettings("fioLibrarian", textBoxFioLibrarianBookDelivery.Text));
+                searchSettings.Add(new QuerySettings("fioLibrarian", textBoxFioLibrarianBookDelivery.Text));
             }
             if (!string.IsNullOrEmpty(textBoxIdInstanceBookDelivery.Text))
             {
-                searchSettings.Add(new SearchSettings("BookDelivery.idInstance", textBoxIdInstanceBookDelivery.Text));
+                searchSettings.Add(new QuerySettings("BookDelivery.idInstance", textBoxIdInstanceBookDelivery.Text));
             }
             return searchSettings;
         }
@@ -321,25 +320,25 @@ namespace Library
             }
         }
 
-        private List<SearchSettings> GetSearchSettingsBooks()
+        private List<QuerySettings> GetSearchSettingsBooks()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if (!string.IsNullOrEmpty(textBoxNameBook.Text))
             {
-                searchSettings.Add(new SearchSettings("nameBook", textBoxNameBook.Text));
+                searchSettings.Add(new QuerySettings("nameBook", textBoxNameBook.Text));
             }
             if (!string.IsNullOrEmpty(textBoxAuthor.Text))
             {
-                searchSettings.Add(new SearchSettings("fioAutor", textBoxAuthor.Text));
+                searchSettings.Add(new QuerySettings("fioAutor", textBoxAuthor.Text));
             }
             if (!string.IsNullOrEmpty(textBoxCategory.Text))
             {
-                searchSettings.Add(new SearchSettings("category", textBoxCategory.Text));
+                searchSettings.Add(new QuerySettings("category", textBoxCategory.Text));
             }
             if (!string.IsNullOrEmpty(textBoxYearOfIssue.Text))
             {
-                searchSettings.Add(new SearchSettings("yearOfIssue", textBoxYearOfIssue.Text));
+                searchSettings.Add(new QuerySettings("yearOfIssue", textBoxYearOfIssue.Text));
             }
             return searchSettings;
         }
@@ -368,17 +367,17 @@ namespace Library
             }
         }
 
-        private List<SearchSettings> GetSearchSettingsInstances()
+        private List<QuerySettings> GetSearchSettingsInstances()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if (!string.IsNullOrEmpty(textBoxNameBookInstancesSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("nameBook", textBoxNameBookInstancesSearch.Text));
+                searchSettings.Add(new QuerySettings("nameBook", textBoxNameBookInstancesSearch.Text));
             }
             if (!string.IsNullOrEmpty(textBoxIdInstanceInstancesSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("idInstance", textBoxIdInstanceInstancesSearch.Text));
+                searchSettings.Add(new QuerySettings("idInstance", textBoxIdInstanceInstancesSearch.Text));
             }
             return searchSettings;
         }
@@ -418,21 +417,21 @@ namespace Library
                 });
             }
         }
-        private List<SearchSettings> GetSearchSettingsReaders()
+        private List<QuerySettings> GetSearchSettingsReaders()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if (!string.IsNullOrEmpty(textBoxFioReaderReadersSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("fioReader", textBoxFioReaderReadersSearch.Text));
+                searchSettings.Add(new QuerySettings("fioReader", textBoxFioReaderReadersSearch.Text));
             }
             if (!string.IsNullOrEmpty(textBoxContactNumberReadersSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("contactNumber", textBoxContactNumberReadersSearch.Text));
+                searchSettings.Add(new QuerySettings("contactNumber", textBoxContactNumberReadersSearch.Text));
             }
             if (!string.IsNullOrEmpty(textBoxMailReadersSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("email", textBoxMailReadersSearch.Text));
+                searchSettings.Add(new QuerySettings("email", textBoxMailReadersSearch.Text));
             }
 
             return searchSettings;
@@ -462,21 +461,21 @@ namespace Library
                 });
             }
         }
-        private List<SearchSettings> GetSearchSettingsLibrarians()
+        private List<QuerySettings> GetSearchSettingsLibrarians()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if (!string.IsNullOrEmpty(textBoxFioLibrarianLibrariansSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("fioLibrarian", textBoxFioLibrarianLibrariansSearch.Text));
+                searchSettings.Add(new QuerySettings("fioLibrarian", textBoxFioLibrarianLibrariansSearch.Text));
             }
             if (!string.IsNullOrEmpty(textBoxContactNumberLibrariansSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("contactNumber", textBoxContactNumberLibrariansSearch.Text));
+                searchSettings.Add(new QuerySettings("contactNumber", textBoxContactNumberLibrariansSearch.Text));
             }
             if (!string.IsNullOrEmpty(textBoxMailLibrariansSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("email", textBoxMailLibrariansSearch.Text));
+                searchSettings.Add(new QuerySettings("email", textBoxMailLibrariansSearch.Text));
             }
 
             return searchSettings;
@@ -505,13 +504,13 @@ namespace Library
                 });
             }
         }
-        private List<SearchSettings> GetSearchSettingsAutors()
+        private List<QuerySettings> GetSearchSettingsAutors()
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             if (!string.IsNullOrEmpty(textBoxFioAutorAutorsSearch.Text))
             {
-                searchSettings.Add(new SearchSettings("fioAutor", textBoxFioAutorAutorsSearch.Text));
+                searchSettings.Add(new QuerySettings("fioAutor", textBoxFioAutorAutorsSearch.Text));
             }
 
             return searchSettings;
@@ -546,6 +545,7 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageReaders"];
+            tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEditReader"];
         }
 
        
@@ -655,35 +655,41 @@ namespace Library
         private void buttonBooksAdd_Click(object sender, EventArgs e)
         {
             if (CheckInformationAndPrintMessage.IsBookCorrect(textBoxNameBookBooks.Text, comboBoxFioAutor.Text,
-                textBoxCountInStock.Text, textBoxCategoryBook.Text, textBoxPicture.Text, textBoxYearOfIssueAdd.Text))
-                {
-                Book newBook = new Book(textBoxNameBookBooks.Text, comboBoxFioAutor.Text,
-                Convert.ToInt32(textBoxCountInStock.Text), textBoxCategoryBook.Text, textBoxPicture.Text,
-                Convert.ToInt32(textBoxYearOfIssueAdd.Text));
-                DatabaseInserter.InsertIntoBooks(newBook);
-                AddedBook = newBook;
-
-                BooksChange?.Invoke();
-
-                labelNumberOfCopiesLeftToAdd.Text = "Осталось добавить " + newBook.CountInStock + " экземпляров книги " +
-                    newBook.NameBook;
-                labelNumberOfCopiesLeftToAdd.Visible = true;
-                comboBoxNameBookInstances.Enabled = false;
-                comboBoxNameBookInstances.Items.Clear();
-                comboBoxNameBookInstances.Text = AddedBook.NameBook;
-                MessageBox.Show("Добавление книги " + newBook.NameBook + " произошло успешно, теперь необходимо добавить " +
-                    newBook.CountInStock + " экземпляров этой книги");
-                tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageInstances"];
-                tabControlInstances.SelectedTab = tabControlInstances.TabPages["tabPageAddInstances"];
+                    textBoxCategoryBook.Text, textBoxPicture.Text))
+            {
+                SuccessfulAdditionToBooks();
             }
+        }
+
+        private void SuccessfulAdditionToBooks()
+        {
+            AddedBook = new Book(textBoxNameBookBooks.Text, comboBoxFioAutor.Text,
+               Convert.ToInt32(textBoxCountInStock.Value), textBoxCategoryBook.Text, textBoxPicture.Text,
+               Convert.ToInt32(textBoxYearOfIssueAdd.Value));
+
+            DatabaseInserter.InsertIntoBooks(AddedBook);
+           
+            BooksChange?.Invoke();
+
+            labelNumberOfCopiesLeftToAdd.Text = "Осталось добавить " + AddedBook.CountInStock + " экземпляров книги " +
+                AddedBook.NameBook;
+            labelNumberOfCopiesLeftToAdd.Visible = true;
+            comboBoxNameBookInstances.Enabled = false;
+            comboBoxNameBookInstances.Items.Clear();
+
+            comboBoxNameBookInstances.Text = AddedBook.NameBook;
+
+            PrintMessage.InformationMessage("Добавление книги " + AddedBook.NameBook + " произошло успешно, теперь необходимо добавить " +
+                AddedBook.CountInStock + " экземпляров этой книги","Успешное добавление");
+  
+            tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageInstances"];
+            tabControlInstances.SelectedTab = tabControlInstances.TabPages["tabPageAddInstances"];
         }
 
         private void tabPageInstances_Leave(object sender, EventArgs e)
         {
             
         }
-
-        private Book AddedBook = null;
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -706,8 +712,7 @@ namespace Library
                 else
                 {
                     e.Cancel = true;
-                }
-                   
+                }  
             }
         }
 
@@ -772,11 +777,9 @@ namespace Library
 
         private void buttonReadersAdd_Click(object sender, EventArgs e)
         {
-            if(CheckInformationAndPrintMessage.IsReaderCorrect(textBoxSurnameReader.Text,
-                textBoxNameReader.Text,textBoxPatronymicReader.Text,textBoxContactNumberReader.Text,
-                textBoxMailReader.Text))
+            string fioReader = textBoxSurnameReader.Text + " " + textBoxNameReader.Text + " " + textBoxPatronymicReader.Text;
+            if (CheckInformationAndPrintMessage.IsReaderCorrect(fioReader, textBoxContactNumberReader.Text,textBoxMailReader.Text))
             {
-                string fioReader = textBoxSurnameReader.Text + " " + textBoxNameReader.Text + " " + textBoxPatronymicReader.Text;
                 Reader reader = new Reader(fioReader, textBoxContactNumberReader.Text, textBoxMailReader.Text);
                 DatabaseInserter.InsertIntoReaders(reader);
                 ReadersChange?.Invoke();
@@ -808,12 +811,11 @@ namespace Library
 
         private void buttonLibrariansAdd_Click(object sender, EventArgs e)
         {
-            if(CheckInformationAndPrintMessage.IsLibrarianCorrect(textBoxSurnameLibrarian.Text,
-                textBoxNameLibrarian.Text,textBoxPatronymicLibrarian.Text,textBoxContactNumberLibrarian.Text,
+            string fioLibrarian = textBoxSurnameLibrarian.Text + " " + textBoxNameLibrarian.Text +
+                    " " + textBoxPatronymicLibrarian.Text;
+            if (CheckInformationAndPrintMessage.IsLibrarianCorrect(fioLibrarian, textBoxContactNumberLibrarian.Text,
                 textBoxMailLibrarian.Text, textBoxPasswordLibrarian.Text, textBoxPasswordConfirmation.Text))
             {
-                string fioLibrarian = textBoxSurnameLibrarian.Text + " " + textBoxNameLibrarian.Text +
-                    " " + textBoxPatronymicLibrarian.Text;
                 DatabaseInserter.InsertIntoLibrarians(new Librarian(fioLibrarian, textBoxContactNumberLibrarian.Text,
                     textBoxMailLibrarian.Text, textBoxPassword.Text));
                 LibrariansChange?.Invoke();
@@ -871,44 +873,22 @@ namespace Library
 
         private void buttonBooksEditing_Click(object sender, EventArgs e)
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
-
-            if (!string.IsNullOrEmpty(textBoxNameBookNewValue.Text))
+            List<QuerySettings> querySettings = CheckInformationAndPrintMessage.GetBooksQuerySettingsOrPrintErrorMessage(
+                textBoxNameBookNewValue.Text, comboBoxFioAutorEditNewValue.Text, textBoxCategoryBookNewValue.Text,
+                textBoxPictureEdit.Text, checkBoxIsNeedToEditPicture.Checked,
+                Convert.ToInt32(textBoxYearOfIssueNewValue.Value), checkBoxIsNeedToEditYearOfIssue.Checked);
+            if (querySettings != null )
             {
-                if (DatabaseSelectorSomeInformation.IsBookExists(textBoxNameBookNewValue.Text))
+               if(querySettings.Count != 0)
                 {
-                    MessageBox.Show("Книга с таким названием уже существует");
-                    return;
+                    DatabaseUpdater.UpdateBooks(querySettings, textBoxNameBookEditOldValue.Text);
+                    BooksChange?.Invoke();
+                    HideBooksEditingControls();
                 }
-                searchSettings.Add(new SearchSettings("nameBook", textBoxNameBookNewValue.Text));
-            }
-            if (!string.IsNullOrEmpty(comboBoxFioAutorEditNewValue.Text))
-            {
-                int idAutor = DatabaseSelectorSomeInformation.GetIdAutor(comboBoxFioAutorEditNewValue.Text);
-
-                searchSettings.Add(new SearchSettings("idAutor", idAutor.ToString()));
-            }
-            if (!string.IsNullOrEmpty(textBoxCategoryBookNewValue.Text))
-            {
-                searchSettings.Add(new SearchSettings("category", textBoxCategoryBookNewValue.Text));
-            }
-            if (!string.IsNullOrEmpty(textBoxPictureEdit.Text))
-            {
-                searchSettings.Add(new SearchSettings("picture", textBoxPictureEdit.Text));
-            }
-            if (!string.IsNullOrEmpty(textBoxYearOfIssueNewValue.Text))
-            {
-                searchSettings.Add(new SearchSettings("yearOfIssue", textBoxYearOfIssueNewValue.Text));
-            }
-            if (searchSettings.Count != 0)
-            {
-                DatabaseUpdater.UpdateBooks(searchSettings,textBoxNameBookEditOldValue.Text);
-                BooksChange?.Invoke();
-                HideBooksEditingControls();
-            }
-            else
-            {
-                MessageBox.Show("Измените хотя бы 1 поле");
+                else
+                {
+                    MessageBox.Show("Измените хотя бы 1 поле");
+                }
             }
         }
 
@@ -922,6 +902,7 @@ namespace Library
                     control.Visible = false;
                 }
             }
+            labelHelpBooksEditing.Visible = true;
         }
 
         private void ShowBooksEditingControls()
@@ -934,30 +915,85 @@ namespace Library
                     control.Visible = true;
                 }
             }
+            labelHelpBooksEditing.Visible = false;
         }
 
-        private void HideReadersEditingControls()
+        private void HideLibrariansEditingControls()
         {
-            for (int i = 0; i < tabControlReaders.TabPages["tabPageEdit"].Controls.Count; i++)
+            for (int i = 0; i < tabControlLibrarians.TabPages["tabPageEditLibrarian"].Controls.Count; i++)
             {
-                Control control = tabControlReaders.TabPages["tabPageEdit"].Controls[i];
+                Control control = tabControlLibrarians.TabPages["tabPageEditLibrarian"].Controls[i];
                 if (control.Tag != null && control.Tag.ToString() == "Hidden")
                 {
                     control.Visible = false;
                 }
             }
+            labelHelpBooksEditing.Visible = true;
         }
 
-        private void ShowReadersEditingControls()
+        private void ShowLibrariansEditingControls()
         {
-            for (int i = 0; i < tabControlReaders.TabPages["tabPageEdit"].Controls.Count; i++)
+            for (int i = 0; i < tabControlLibrarians.TabPages["tabPageEditLibrarian"].Controls.Count; i++)
             {
-                Control control = tabControlReaders.TabPages["tabPageEdit"].Controls[i];
+                Control control = tabControlLibrarians.TabPages["tabPageEditLibrarian"].Controls[i];
                 if (control.Tag != null && control.Tag.ToString() == "Hidden")
                 {
                     control.Visible = true;
                 }
             }
+            labelHelpLibrariansEditing.Visible = false;
+        }
+
+        private void HideReadersEditingControls()
+        {
+            for (int i = 0; i < tabControlReaders.TabPages["tabPageEditReader"].Controls.Count; i++)
+            {
+                Control control = tabControlReaders.TabPages["tabPageEditReader"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = false;
+                }
+            }
+            labelHelpLibrariansEditing.Visible = true;
+        }
+
+        private void ShowReadersEditingControls()
+        {
+            for (int i = 0; i < tabControlReaders.TabPages["tabPageEditReader"].Controls.Count; i++)
+            {
+                Control control = tabControlReaders.TabPages["tabPageEditReader"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = true;
+                }
+            }
+            labelHelpReadersEditing.Visible = false;
+        }
+
+        private void ShowAutorsEditingControls()
+        {
+            for (int i = 0; i < tabControlAutors.TabPages["tabPageAutorEdit"].Controls.Count; i++)
+            {
+                Control control = tabControlAutors.TabPages["tabPageAutorEdit"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = true;
+                }
+            }
+            labelHelpAutorsEditing.Visible = false;
+        }
+
+        private void HideAutorsEditingControls()
+        {
+            for (int i = 0; i < tabControlAutors.TabPages["tabPageAutorEdit"].Controls.Count; i++)
+            {
+                Control control = tabControlAutors.TabPages["tabPageAutorEdit"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = false;
+                }
+            }
+            labelHelpAutorsEditing.Visible = true;
         }
 
         private void pictureBoxEdit_Click(object sender, EventArgs e)
@@ -988,59 +1024,415 @@ namespace Library
 
                 textBoxContactNumberOldValue.Text = dataGridViewReaders[1, e.RowIndex].Value.ToString();
                 textBoxMailReaderOldValue.Text = dataGridViewReaders[2, e.RowIndex].Value.ToString();
-                tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEdit"];
+                tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEditReader"];
                 ShowReadersEditingControls();
             }
         }
 
         private void buttonReadersEditing_Click(object sender, EventArgs e)
         {
-            List<SearchSettings> searchSettings = new List<SearchSettings>();
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
 
             string surname = textBoxSurnameReaderOldValue.Text;
             string name = textBoxNameReaderOldValue.Text;
             string patronymic = textBoxPatronymicReaderOldValue.Text;
+            bool isFioChanged = false;
+            bool isAllCorrect = true;
+            string errorMessage = "";
+
             if (!string.IsNullOrEmpty(textBoxSurnameReaderNewValue.Text))
             {
                 surname = textBoxSurnameReaderNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(surname))
+                {
+                    errorMessage += "\n" + "Фамилия читателя не должна содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
             }
             if (!string.IsNullOrEmpty(textBoxNameReaderNewValue.Text))
             {
                 name = textBoxNameReaderNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(name))
+                {
+                    errorMessage += "\n" + "Имя читателя не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
             }
             if (!string.IsNullOrEmpty(textBoxPatronymicReaderNewValue.Text))
             {
                 patronymic = textBoxPatronymicReaderNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
+                {
+                    errorMessage += "\n" + "Отчество читателя не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
             }
+
             string fio = surname + " " + name + " " + patronymic;
 
-            if (DatabaseSelectorSomeInformation.IsReaderExists(fio))
+            if (isFioChanged && DatabaseSelectorSomeInformation.IsReaderExists(fio))
             {
-                MessageBox.Show("Читатель с таким ФИО уже существует");
-                return;
+                errorMessage += "\n" +  "Читатель с таким ФИО уже существует";
             }
             else
             {
-                searchSettings.Add(new SearchSettings("fioReader", fio));
+                searchSettings.Add(new QuerySettings("fioReader", fio));
             }
 
-            if(CheckInformationAndPrintMessage.IsContactNumberCorrect(textBoxContactNumberReaderNewValue.Text))
+            if(DataValidation.IsContactNumberCorrect(textBoxContactNumberReaderNewValue.Text))
             {
-                searchSettings.Add(new SearchSettings("contactNumber", textBoxContactNumberReaderNewValue.Text));
+                searchSettings.Add(new QuerySettings("contactNumber", textBoxContactNumberReaderNewValue.Text));
             }          
 
             if (!string.IsNullOrEmpty(textBoxMailReaderNewValue.Text))
             {
-                searchSettings.Add(new SearchSettings("email", textBoxMailReaderNewValue.Text));
+                if (!DataValidation.IsEmailCorrect(textBoxMailReaderNewValue.Text))
+                {
+                    errorMessage += "\n" + "Заполните поле почта правильно." +
+                        " Если вы уверены что ваша почта заполнена правильно, обратитесь к разработчику!";
+                }
+                searchSettings.Add(new QuerySettings("email", textBoxMailReaderNewValue.Text));
             }
 
             if(searchSettings.Count != 0)
             {
-                string oldFioReader = textBoxSurnameReaderOldValue.Text + " " + textBoxNameReaderOldValue.Text + " " +
-                    textBoxPatronymicReaderOldValue.Text;
-                DatabaseUpdater.UpdateReaders(searchSettings, oldFioReader);
-                HideReadersEditingControls();
-                ReadersChange?.Invoke();
+                if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    MessageBox.Show(errorMessage, "Перед редактированием устраните следующие ошибки:", MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string oldFioReader = textBoxSurnameReaderOldValue.Text + " " + textBoxNameReaderOldValue.Text + " " +
+                                        textBoxPatronymicReaderOldValue.Text;
+                    DatabaseUpdater.UpdateReaders(searchSettings, oldFioReader);
+                    HideReadersEditingControls();
+                    ReadersChange?.Invoke();
+                }              
+            }
+            else
+            {
+                MessageBox.Show("Измените хотя бы 1 поле");
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSurnameAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNameAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPatronymicAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxBiographyAutor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewAutors_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                tabControlAutors.SelectedTab = tabControlAutors.TabPages["tabPageAutorEdit"];
+
+                string fio = dataGridViewAutors[0, e.RowIndex].Value.ToString();
+
+                textBoxBiographyAutorOldValue.Text = dataGridViewAutors[1, e.RowIndex].Value.ToString();
+
+                string[] partsOfFio = fio.Split(new char[] { ' ' });
+
+                textBoxSurnameAutorOldValue.Text = partsOfFio[0];
+                textBoxNameAutorOldValue.Text = partsOfFio[1];
+                textBoxPatronymicAutorOldValue.Text = partsOfFio[2];
+                ShowAutorsEditingControls();
+            }
+        }
+
+        private void buttonAutorsEditing_Click(object sender, EventArgs e)
+        {
+            List<QuerySettings> querySettings = new List<QuerySettings>();
+
+            string surname = textBoxSurnameAutorOldValue.Text;
+            string name = textBoxNameAutorOldValue.Text;
+            string patronymic = textBoxPatronymicAutorOldValue.Text;
+            bool isFioChanged = false;
+            string errorMessage = "";
+
+            if (!string.IsNullOrEmpty(textBoxSurnameAutorNewValue.Text))
+            {
+                
+                surname = textBoxSurnameAutorNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(surname))
+                {
+                    errorMessage += "\n" + "Фамилия автора не должна содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+            if (!string.IsNullOrEmpty(textBoxNameAutorNewValue.Text))
+            {
+                name = textBoxNameAutorNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(name))
+                {
+                    errorMessage += "\n" + "Имя автора не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+            if (!string.IsNullOrEmpty(textBoxPatronymicAutorNewValue.Text))
+            {
+                patronymic = textBoxPatronymicAutorNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
+                {
+                    errorMessage += "\n" + "Отчество автора не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+
+            string fio = surname + " " + name + " " + patronymic;
+
+            if (isFioChanged && DatabaseSelectorSomeInformation.IsAutorExists(fio))
+            {
+                errorMessage += "\n" +  "Автор с таким ФИО уже существует";
+            }
+            else
+            {
+                querySettings.Add(new QuerySettings("fioAutor", fio));
+            }
+
+            if (!string.IsNullOrEmpty(textBoxBiographyAutorNewValue.Text))
+            {
+                querySettings.Add(new QuerySettings("biography", textBoxBiographyAutorNewValue.Text));
+            }
+
+            if(querySettings.Count != 0)
+            {
+                if (string.IsNullOrEmpty(errorMessage))
+                {
+                    string oldFioAutor = textBoxSurnameAutorOldValue.Text + " " + textBoxNameAutorOldValue.Text + " " +
+                   textBoxPatronymicAutorOldValue.Text;
+                    DatabaseUpdater.UpdateAutors(querySettings, oldFioAutor);
+                    AutorsChange?.Invoke();
+                    HideAutorsEditingControls();
+                }
+                else
+                {
+                    PrintMessage.WarningMessage(errorMessage, "Перед редактированием устраните следующие ошибки:");
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Измените хотя бы 1 поле");
+            }
+        }
+
+        private void buttonGoToReturnBook_Click(object sender, EventArgs e)
+        {
+            tabControlBookDelivery.SelectedTab = tabControlBookDelivery.TabPages["tabPageBookReturn"];
+        }
+
+        private void buttonGoToAddBook_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageBooks"];
+            tabControlBooks.SelectedTab = tabControlReaders.TabPages["tabPageAddBook"];
+        }
+
+        private void buttonGoToAddInstances_Click(object sender, EventArgs e)
+        {
+            tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageInstances"];
+            tabControlInstances.SelectedTab = tabControlReaders.TabPages["tabPageAddInstances"];
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMailReader_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label69_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMailReaderNewValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label97_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSurnameLibrarianOldValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label96_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmailLibrarianOldValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label91_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmailLibrarianNewValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxContactNumberLibrarian_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewLibrarians_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                tabControlLibrarians.SelectedTab = tabControlLibrarians.TabPages["tabPageEditLibrarian"];
+
+                string fio = dataGridViewLibrarians[0, e.RowIndex].Value.ToString();
+
+                textBoxContactNumberLibrarianOldValue.Text = dataGridViewLibrarians[1, e.RowIndex].Value.ToString();
+                textBoxEmailLibrarianOldValue.Text = dataGridViewLibrarians[2, e.RowIndex].Value.ToString();
+
+                string[] partsOfFio = fio.Split(new char[] { ' ' });
+
+                textBoxSurnameLibrarianOldValue.Text = partsOfFio[0];
+                textBoxNameLibrarianOldValue.Text = partsOfFio[1];
+                textBoxPatronymicLibrarianOldValue.Text = partsOfFio[2];
+                ShowLibrariansEditingControls();
+            }
+        }
+
+        private void buttonLibrariansEdit_Click(object sender, EventArgs e)
+        {
+            List<QuerySettings> searchSettings = new List<QuerySettings>();
+
+            string surname = textBoxSurnameReaderOldValue.Text;
+            string name = textBoxNameReaderOldValue.Text;
+            string patronymic = textBoxPatronymicReaderOldValue.Text;
+            bool isFioChanged = false;
+            string errorMessage = "";
+
+            if (!string.IsNullOrEmpty(textBoxSurnameLibrarianNewValue.Text))
+            {
+                surname = textBoxSurnameLibrarianNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(surname))
+                {
+                    errorMessage += "\n" + "Фамилия библиотекаря не должна содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+            if (!string.IsNullOrEmpty(textBoxNameLibrarianNewValue.Text))
+            {
+                name = textBoxNameLibrarianNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(name))
+                {
+                    errorMessage += "\n" + "Имя библиотекаря не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+            if (!string.IsNullOrEmpty(textBoxPatronymicLibrarianNewValue.Text))
+            {
+                patronymic = textBoxPatronymicLibrarianNewValue.Text;
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
+                {
+                    errorMessage += "\n" + "Отчество библиотекаря не должно содержать цифр и состоять как минимум из 2 букв";
+                }
+                isFioChanged = true;
+            }
+
+            string fio = surname + " " + name + " " + patronymic;
+
+            if (isFioChanged && DatabaseSelectorSomeInformation.IsLibrarianExists(fio))
+            {
+                errorMessage += "\n" + "Библиотекарь с таким ФИО уже существует";
+            }
+            else if(isFioChanged)
+            {
+                searchSettings.Add(new QuerySettings("fioLibrarian", fio));
+            }
+
+            if (DataValidation.IsContactNumberCorrect(textBoxContactNumberLibrarianNewValue.Text))
+            {
+                searchSettings.Add(new QuerySettings("contactNumber", textBoxContactNumberLibrarianNewValue.Text));
+            }
+
+            if (!string.IsNullOrEmpty(textBoxEmailLibrarianNewValue.Text))
+            {
+                if (!DataValidation.IsEmailCorrect(textBoxEmailLibrarianNewValue.Text))
+                {
+                    errorMessage += "\n" + "Заполните поле почта правильно." +
+                        " Если вы уверены что ваша почта заполнена правильно, обратитесь к разработчику!";
+                }
+                searchSettings.Add(new QuerySettings("email", textBoxMailReaderNewValue.Text));
+            }
+
+            if (searchSettings.Count != 0)
+            {
+                if (!string.IsNullOrEmpty(errorMessage))
+                {
+                    MessageBox.Show(errorMessage, "Перед редактированием устраните следующие ошибки:", MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string oldFioLibrarian = textBoxSurnameLibrarianOldValue.Text + " " + textBoxNameLibrarianOldValue.Text + " " +
+                                        textBoxPatronymicLibrarianOldValue.Text;
+                    DatabaseUpdater.UpdateLibrarians(searchSettings, oldFioLibrarian);
+                    HideLibrariansEditingControls();
+                    LibrariansChange?.Invoke();
+                }
             }
             else
             {

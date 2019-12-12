@@ -10,44 +10,17 @@ namespace Library
 {
     public static class CheckInformationAndPrintMessage
     {
-        public static bool IsBookCorrect(string nameBook, string fioAutor, string countInStock, string category,string picture,string yearOfIssue)
+        public static bool IsBookCorrect(string nameBook, string fioAutor, string category,string picture)
         {
-            int countInStockNormal = 0;
-            int yearOfIssueNormal = 0;
             string errorMessage = "";
 
-            try
-            {
-                countInStockNormal = Convert.ToInt32(countInStock);
-
-            }
-            catch (FormatException)
-            {
-                errorMessage += "\n" + "Количество в наличии должно быть целочисленным";
-            }
-            try
-            {
-                yearOfIssueNormal = Convert.ToInt32(yearOfIssue);
-            }
-            catch (FormatException)
-            {
-                errorMessage += "\n" + "Год издания должен быть целочисленным";
-            }
-            if(countInStockNormal <= 0)
-            {
-                errorMessage += "\n" + "Количество в наличии должно быть натуральным числом";
-            }
             if (string.IsNullOrEmpty(nameBook))
             {
                 errorMessage += "\n" + "Заполните поле имя книги";
             }
             if (string.IsNullOrEmpty(fioAutor))
             {
-                errorMessage += "\n" + "Заполните поле имя автора";
-            }
-            if (string.IsNullOrEmpty(countInStock))
-            {
-                errorMessage += "\n" + "Заполните поле количество экземпляров";
+                errorMessage += "\n" + "Заполните поле ФИО автора";
             }
             if (string.IsNullOrEmpty(category))
             {
@@ -57,32 +30,30 @@ namespace Library
             {
                 errorMessage += "\n" + "Выберите фотографию";
             }
-            if (string.IsNullOrEmpty(picture)) 
-            {
-                errorMessage += "\n" + "Заполните поле год издания";
-            }
             if (DatabaseSelectorSomeInformation.IsBookExists(nameBook))
             {
                 errorMessage += "\n" + "Книга с таким названием уже существует";
             }
 
-
             if (string.IsNullOrEmpty(errorMessage))
             {
                 return true;
             }
-            
             else
             {
-                MessageBox.Show(errorMessage,"Перед добавлением устраните следующие ошибки:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                PrintMessage.WarningMessage(errorMessage,"Перед добавлением устраните следующие ошибки:");
                 return false;
             }
         }
 
-        public static bool IsReaderCorrect(string surname,string name,string patronymic,string contactNumber,string email)
+        public static bool IsReaderCorrect(string fio,string contactNumber,string email)
         {
+            string[] partsOfFio = fio.Split(new char[] { ' ' });
+
+            string surname = partsOfFio[0];
+            string name = partsOfFio[1];
+            string patronymic = partsOfFio[2];
             string errorMessage = "";
-          
 
             if (string.IsNullOrEmpty(surname))
             {
@@ -90,7 +61,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(surname))
+                if (!DataValidation.IsPathOfFioCorrect(surname))
                 {
                     errorMessage += "\n" + "Фамилия читателя не должна содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -102,7 +73,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(name))
+                if (!DataValidation.IsPathOfFioCorrect(name))
                 {
                     errorMessage += "\n" + "Имя читателя не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -115,7 +86,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(patronymic))
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
                 {
                     errorMessage += "\n" + "Отчество читателя не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -127,7 +98,7 @@ namespace Library
             }
             else
             {
-                if (!IsContactNumberCorrect(contactNumber))
+                if (!DataValidation.IsContactNumberCorrect(contactNumber))
                 {
                     errorMessage += "\n" + "Заполните номер телефона по шаблону";
                 }
@@ -139,7 +110,7 @@ namespace Library
             }
             else
             {
-                if (!IsEmailCorrect(email))
+                if (!DataValidation.IsEmailCorrect(email))
                 {
                     errorMessage += "\n" + "Заполните поле почта правильно." +
                         " Если вы уверены что ваша почта заполнена правильно, обратитесь к разработчику!";
@@ -159,15 +130,19 @@ namespace Library
             }
             else
             {
-                MessageBox.Show(errorMessage, "Перед добавлением устраните следующие ошибки:", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                PrintMessage.WarningMessage(errorMessage, "Перед добавлением устраните следующие ошибки:");
                 return false;
             }
         }
 
-        public static bool IsLibrarianCorrect(string surname, string name, string patronymic, string contactNumber, string email, string password,
+        public static bool IsLibrarianCorrect(string fio, string contactNumber, string email, string password,
             string passwordRepeat)
         {
+            string[] partsOfFio = fio.Split(new char[] { ' ' });
+
+            string surname = partsOfFio[0];
+            string name = partsOfFio[1];
+            string patronymic = partsOfFio[2];
             string errorMessage = "";
 
 
@@ -177,7 +152,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(surname))
+                if (!DataValidation.IsPathOfFioCorrect(surname))
                 {
                     errorMessage += "\n" + "Фамилия библиотекаря не должна содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -189,7 +164,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(name))
+                if (!DataValidation.IsPathOfFioCorrect(name))
                 {
                     errorMessage += "\n" + "Имя библиотекаря не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -202,7 +177,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(patronymic))
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
                 {
                     errorMessage += "\n" + "Отчество библиотекаря не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -214,7 +189,7 @@ namespace Library
             }
             else
             {
-                if (!IsContactNumberCorrect(contactNumber))
+                if (!DataValidation.IsContactNumberCorrect(contactNumber))
                 {
                     errorMessage += "\n" + "Заполните номер телефона по шаблону";
                 }
@@ -229,7 +204,7 @@ namespace Library
             }
             else
             {
-                if (!IsEmailCorrect(email))
+                if (!DataValidation.IsEmailCorrect(email))
                 {
                     errorMessage += "\n" + "Заполните поле почта правильно." +
                         " Если вы уверены что ваша почта заполнена правильно, обратитесь к разработчику!";
@@ -259,8 +234,7 @@ namespace Library
             }
             else
             {
-                MessageBox.Show(errorMessage, "Перед добавлением устраните следующие ошибки:", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                PrintMessage.WarningMessage(errorMessage, "Перед добавлением устраните следующие ошибки:");
                 return false;
             }
         }
@@ -276,7 +250,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(surname))
+                if (!DataValidation.IsPathOfFioCorrect(surname))
                 {
                     errorMessage += "\n" + "Фамилия автора не должна содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -288,7 +262,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(name))
+                if (!DataValidation.IsPathOfFioCorrect(name))
                 {
                     errorMessage += "\n" + "Имя автора не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -301,7 +275,7 @@ namespace Library
             }
             else
             {
-                if (!IsPathOfFioCorrect(patronymic))
+                if (!DataValidation.IsPathOfFioCorrect(patronymic))
                 {
                     errorMessage += "\n" + "Отчество автора не должно содержать цифр и состоять как минимум из 2 букв";
                 }
@@ -320,31 +294,54 @@ namespace Library
             }
             else
             {
-                MessageBox.Show(errorMessage, "Перед добавлением устраните следующие ошибки:", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                PrintMessage.WarningMessage(errorMessage, "Перед добавлением устраните следующие ошибки:");
                 return false;
             }
         }
 
-        private static bool IsEmailCorrect(string email)
+        public static List<QuerySettings> GetBooksQuerySettingsOrPrintErrorMessage(string bookName,string fioAutor, string category,
+            string picture, bool isPictureNeedToEdit, int yearOfIssue, bool isYearOfIssueNeedToEdit)
         {
-            Regex checkFIO = new Regex(@"[0-9a-z_.]+@[0-9a-z_^.]+.[a-z]{2,3}");
+            List<QuerySettings> querySettings = new List<QuerySettings>();
+            string errorMessage = "";
 
-            return checkFIO.IsMatch(email) ? true : false;
+            if (!string.IsNullOrEmpty(bookName))
+            {
+                if (DatabaseSelectorSomeInformation.IsBookExists(bookName))
+                {
+                    errorMessage += "\n" + "Книга с таким названием уже существует";
+                }
+                querySettings.Add(new QuerySettings("nameBook", bookName));
+            }
+            if (!string.IsNullOrEmpty(fioAutor))
+            {
+                int idAutor = DatabaseSelectorSomeInformation.GetIdAutor(fioAutor);
+
+                querySettings.Add(new QuerySettings("idAutor", idAutor.ToString()));
+            }
+            if (!string.IsNullOrEmpty(category))
+            {
+                querySettings.Add(new QuerySettings("category", category));
+            }
+            if (!string.IsNullOrEmpty(picture) && isPictureNeedToEdit)
+            {
+                querySettings.Add(new QuerySettings("picture", picture));
+            }
+            if (isYearOfIssueNeedToEdit)
+            {
+                querySettings.Add(new QuerySettings("yearOfIssue", yearOfIssue.ToString()));
+            }
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                PrintMessage.WarningMessage(errorMessage, "Перед редактированием устраните следующие ошибки:");
+                return null;
+            }
+            else
+            {
+                return querySettings;
+            }
+                
         }
 
-        private static bool IsPathOfFioCorrect(string partOfFio)
-        {
-            Regex checkFIO = new Regex(@"(\D{2})+");
-
-            return checkFIO.IsMatch(partOfFio) ? true : false;
-        }
-
-        public static bool IsContactNumberCorrect(string phoneNumber)
-        {
-            Regex checkFIO = new Regex(@"[0-9]{2}.[0-9]{3}.[0-9]{2}.[0-9]{2}");
-
-            return checkFIO.IsMatch(phoneNumber) ? true : false;
-        }
     }
 }
