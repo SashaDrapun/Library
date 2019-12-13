@@ -18,5 +18,15 @@ namespace Library
         {
             MessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public static void WarningMessage(string text)
+        {
+            MessageBox.Show(text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void InformationMessage(string text)
+        {
+            MessageBox.Show(text, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

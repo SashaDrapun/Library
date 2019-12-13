@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Instance.cs" />
     <Compile Include="Librarian.cs" />
+    <Compile Include="MessageToEmail.cs" />
     <Compile Include="PrintMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

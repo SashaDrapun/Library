@@ -48,10 +48,15 @@ namespace Library
             AutorsChange?.Invoke();
 
             LibrariansChange += LoadLibrariansMainContent;
+            LibrariansChange += LoadAutorization;
+
             LibrariansChange?.Invoke();
         }
 
         private Book AddedBook = null;
+        private List<Book> BooksForDisplay = new List<Book>();
+        private int CurrentBookNumber;
+        private int ConfirmationCode = 0;
 
         #region Authorization
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -60,9 +65,14 @@ namespace Library
             checkBoxShowPassword.Text = checkBoxShowPassword.Checked ? "Cкрыть пароль" : "Показать пароль";
         }
 
-        private void buttonAutorization_Click(object sender, EventArgs e)
+        private void LoadAutorization()
         {
-            tabControlMain.Visible = true;
+            List<Librarian> librarians = DatabaseSelectorAllInformation.GetAllLibrarians();
+
+            for (int i = 0; i < librarians.Count; i++)
+            {
+                comboBoxNameLibrarian.Items.Add(librarians[i].FioLibrarian);
+            }
         }
         #endregion
 
@@ -71,7 +81,7 @@ namespace Library
             MessageBox.Show(DateTime.Now.ToString());
         }
 
-        #region PageBookDeliveries
+        #region BookDeliveries
 
         private void TextBoxesBookDeliverySeacrh_TextChanged(object sender, EventArgs e)
         {
@@ -80,10 +90,9 @@ namespace Library
 
         private void LoadBookDeliveryMainContent()
         {
-            List<BookDelivery> bookDeliveries = DatabaseSelectorAllInformation.GetAllBookDelivery(GetSeacrhSettingsBookDelivery());
+            List<BookDelivery> bookDeliveries = DatabaseSelectorAllInformation.GetAllBookDelivery(GetSeacrhSettingsBookDelivery(),
+                checkBoxOnlyDebtorsBookDelivery.Checked);
             dataGridViewBookDelivery.Rows.Clear();
-
-            Image ig = Image.FromFile("1.jpg");
 
             for (int i = 0; i < bookDeliveries.Count; i++)
             {
@@ -94,8 +103,7 @@ namespace Library
                     bookDeliveries[i].FioLibrarian,
                     bookDeliveries[i].DateOfIssue,
                     bookDeliveries[i].ReturnDate,
-                    bookDeliveries[i].IdInstances,
-                    ig
+                    bookDeliveries[i].IdInstances
                 });
             }
         }
@@ -279,23 +287,30 @@ namespace Library
         private void LoadBookMainContent()
         {
             List<Book> books = DatabaseSelectorAllInformation.GetAllBooks(GetSearchSettingsBooks());
-            dataGridViewBooks.Rows.Clear();
+            BooksForDisplay = books;
 
-           
+            CurrentBookNumber = 0;
 
-            for (int i = 0; i < books.Count; i++)
+            if(books.Count == 0)
             {
-                Image picture = Image.FromFile(books[i].Picture);
-                dataGridViewBooks.Rows.Add(new object[]
-                {
-                    books[i].NameBook,
-                    books[i].FioAutor,
-                    books[i].CountInStock,
-                    books[i].Category,
-                    books[i].YearOfIssue,
-                    picture
-                });
+
             }
+            else
+            {
+                ShowBook(0);
+            }
+        }
+
+        private void ShowBook(int numberBook)
+        {
+            textBoxNameBookMainValue.Text = BooksForDisplay[numberBook].NameBook;
+            textBoxFioAutorMainValue.Text = BooksForDisplay[numberBook].FioAutor;
+            textBoxYearOfIssueMainValue.Text = BooksForDisplay[numberBook].YearOfIssue.ToString();
+            textBoxCategoryMainValue.Text = BooksForDisplay[numberBook].Category;
+            textBoxCountInStockMainValue.Text = BooksForDisplay[numberBook].CountInStock.ToString();
+            pictureBoxMainValue.Load(BooksForDisplay[numberBook].Picture);
+            labelNumberCurrentBook.Text = "Книга " + (numberBook+1) + " из " + BooksForDisplay.Count;
+
         }
 
         private void LoadBooksSideContent()
@@ -398,13 +413,69 @@ namespace Library
                 comboBoxNameBookInstances.Items.Add(books[i].NameBook);
             }
         }
+
+        private void buttonAddInstances_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idInstances = Convert.ToInt32(textBoxIdInstancesInstances.Text);
+
+                if (DatabaseSelectorSomeInformation.IsInstancesExists(idInstances))
+                {
+                    MessageBox.Show("Такой номер экземпляра уже существует");
+                    return;
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(comboBoxNameBookInstances.Text))
+                    {
+                        MessageBox.Show("Выберите имя книги из списка");
+                        return;
+                    }
+                    else
+                    {
+                        DatabaseInserter.InsertIntoInstances(new Instance(idInstances, comboBoxNameBookInstances.Text));
+                        MessageBox.Show("Добавление экземпляра произошло успешно");
+                        InstancesChange?.Invoke();
+
+                        if (AddedBook != null)
+                        {
+                            AddedBook.CountInStock--;
+                            if (AddedBook.CountInStock == 0)
+                            {
+                                MessageBox.Show("Добавление книги " + AddedBook.NameBook + " и всех её экземпляров произошло успешно");
+                                AddedBook = null;
+                                comboBoxNameBookInstances.Enabled = true;
+                                labelNumberOfCopiesLeftToAdd.Visible = false;
+                                InstancesChange?.Invoke();
+                            }
+                            else
+                            {
+                                labelNumberOfCopiesLeftToAdd.Text = "Осталось добавить " + AddedBook.CountInStock +
+                                    " экземпляров книги " + AddedBook.NameBook;
+                            }
+                        }
+
+                    }
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Номер экземпляра должен быть целым числом");
+            }
+        }
+
+        private void TextBoxesInstancesChange(object sender, EventArgs e)
+        {
+            LoadInstancesMainContent();
+        }
         #endregion
 
         #region Readers
 
         private void LoadReadersMainContent()
         {
-            List<Reader> readers = DatabaseSelectorAllInformation.GetAllReaders(GetSearchSettingsReaders());
+            List<Reader> readers = DatabaseSelectorAllInformation.GetAllReaders(GetSearchSettingsReaders(), checkBoxOnlyDebtors.Checked);
             dataGridViewReaders.Rows.Clear();
 
             for (int i = 0; i < readers.Count; i++)
@@ -522,12 +593,6 @@ namespace Library
         }
         #endregion
 
-        private void dataGridViewBookDelivery_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            
-        }
-
         private void tabPageBooks_Click(object sender, EventArgs e)
         {
             MessageBox.Show(tabControlBooks.TabPages["tabPageEditBook"].Controls.Count.ToString());
@@ -548,63 +613,7 @@ namespace Library
             tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEditReader"];
         }
 
-       
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAddInstances_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int idInstances = Convert.ToInt32(textBoxIdInstancesInstances.Text);
-
-                if (DatabaseSelectorSomeInformation.IsInstancesExists(idInstances))
-                {
-                    MessageBox.Show("Такой номер экземпляра уже существует");
-                    return;
-                }
-                else
-                {
-                    if (string.IsNullOrEmpty(comboBoxNameBookInstances.Text))
-                    {
-                        MessageBox.Show("Выберите имя книги из списка");
-                        return;
-                    }
-                    else
-                    {
-                        DatabaseInserter.InsertIntoInstances(new Instance(idInstances, comboBoxNameBookInstances.Text));
-                        MessageBox.Show("Добавление экземпляра произошло успешно");
-                        InstancesChange?.Invoke();
-
-                        if (AddedBook != null)
-                        {
-                            AddedBook.CountInStock--;
-                            if(AddedBook.CountInStock == 0)
-                            {
-                                MessageBox.Show("Добавление книги " + AddedBook.NameBook + " и всех её экземпляров произошло успешно");
-                                AddedBook = null;
-                                comboBoxNameBookInstances.Enabled = true;
-                                labelNumberOfCopiesLeftToAdd.Visible = false;
-                                InstancesChange?.Invoke();
-                            }
-                            else
-                            {
-                                labelNumberOfCopiesLeftToAdd.Text = "Осталось добавить " + AddedBook.CountInStock +
-                                    " экземпляров книги " + AddedBook.NameBook;
-                            }
-                        }
-                        
-                    }
-                }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Номер экземпляра должен быть целым числом");
-            }
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -645,10 +654,7 @@ namespace Library
             }
         }
 
-        private void TextBoxesInstancesChange(object sender, EventArgs e)
-        {
-            LoadInstancesMainContent();
-        }
+
 
         private static Random random = new Random();
 
@@ -819,21 +825,6 @@ namespace Library
                 DatabaseInserter.InsertIntoLibrarians(new Librarian(fioLibrarian, textBoxContactNumberLibrarian.Text,
                     textBoxMailLibrarian.Text, textBoxPassword.Text));
                 LibrariansChange?.Invoke();
-            }
-        }
-
-        private void dataGridViewBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex != -1)
-            {
-                ShowBooksEditingControls();
-                textBoxNameBookEditOldValue.Text = dataGridViewBooks[0, e.RowIndex].Value.ToString();
-                textBoxFioAutorEditOldValue.Text = dataGridViewBooks[1, e.RowIndex].Value.ToString();
-                textBoxCategoryEditOldValue.Text = dataGridViewBooks[3, e.RowIndex].Value.ToString();
-                textBoxYearOfIssueEditOldValue.Text = dataGridViewBooks[4, e.RowIndex].Value.ToString();
-                Image image = (Image)dataGridViewBooks[5, e.RowIndex].Value;
-                pictureBoxBookEditOldValue.Image = image;
-                tabControlBooks.SelectedTab = tabControlBooks.TabPages["tabPageEditBook"];
             }
         }
 
@@ -1438,6 +1429,221 @@ namespace Library
             {
                 MessageBox.Show("Измените хотя бы 1 поле");
             }
+        }
+
+        private void label93_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label88_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label95_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label100_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label99_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPreviousBook_Click(object sender, EventArgs e)
+        {
+            if (CurrentBookNumber != 0)
+            {
+                ShowBook(--CurrentBookNumber);
+            }
+        }
+
+        private void buttonNextBook_Click(object sender, EventArgs e)
+        {
+            if(CurrentBookNumber != BooksForDisplay.Count-1)
+            {
+                ShowBook(++CurrentBookNumber);
+            }
+        }
+
+        private void buttonBooksEdit_Click(object sender, EventArgs e)
+        {
+            ShowBooksEditingControls();
+            textBoxNameBookEditOldValue.Text = textBoxNameBookMainValue.Text;
+            textBoxFioAutorEditOldValue.Text = textBoxFioAutorMainValue.Text;
+            textBoxCategoryEditOldValue.Text = textBoxCategoryMainValue.Text;
+            textBoxYearOfIssueEditOldValue.Text = textBoxYearOfIssueMainValue.Text;
+            pictureBoxBookEditOldValue.Image = pictureBoxMainValue.Image;
+            tabControlBooks.SelectedTab = tabControlBooks.TabPages["tabPageEditBook"];
+        }
+
+        private void buttonPasswordRecovery_Click(object sender, EventArgs e)
+        {
+            if(comboBoxNameLibrarian.Text == "")
+            {
+                PrintMessage.WarningMessage("Выберите ФИО библиотекаря", "Внимание");
+                return;
+            }
+            ConfirmationCode = random.Next(1, 1000000);
+
+            string message = "<h1>" + "Вы пытаетесь сменить пароль в приложении Библиотека" + "</h1>"+
+                "<p>" + "Ваш код подтверждения - "+ ConfirmationCode + "</p>";
+            string email = DatabaseSelectorSomeInformation.GetLibrarianEmail(comboBoxNameLibrarian.Text);
+          
+            PrintMessage.InformationMessage("Мы выслали на вашу почту " + email + " код подтверждения, введите его для смены пароля",
+                "Код подтверждения");
+            ChangeVisibleConfirmationCode();
+            ChangeVisibleAutorization();
+            MessageToEmail.SendMessageAsync(email, message);
+        }
+
+        private void ChangeVisibleAutorization()
+        {
+            for (int i = 0; i < tabControlMain.TabPages["tabPageAutorization"].Controls.Count; i++)
+            {
+                Control control = tabControlMain.TabPages["tabPageAutorization"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Autorization")
+                {
+                    control.Visible = control.Visible ? false :true;
+                }
+            }
+        }
+
+        private void ChangeVisibleConfirmationCode()
+        {
+            for (int i = 0; i < tabControlMain.TabPages["tabPageAutorization"].Controls.Count; i++)
+            {
+                Control control = tabControlMain.TabPages["tabPageAutorization"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "ConfirmationCode")
+                {
+                    control.Visible = control.Visible ? false : true;
+                }
+            }
+        }
+
+        private void ChangeVisibleNewPassword()
+        {
+            for (int i = 0; i < tabControlMain.TabPages["tabPageAutorization"].Controls.Count; i++)
+            {
+                Control control = tabControlMain.TabPages["tabPageAutorization"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "NewPassword")
+                {
+                    control.Visible = control.Visible ? false : true;
+                }
+            }
+        }
+
+        private void buttonCodeConfirmation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConfirmationCode == Convert.ToInt32(textBoxCodeConfirmation.Text))
+                {
+                    PrintMessage.InformationMessage("Подтверждение кода выполнено успешно", "Код подтверждения");
+                    ChangeVisibleConfirmationCode();
+                    ChangeVisibleNewPassword();
+                }
+                else
+                {
+                    PrintMessage.WarningMessage("Код подтверждения введен неверно", "Код подтверждения");
+                }
+            }
+            catch (FormatException)
+            {
+                PrintMessage.WarningMessage("Код подтверждения введен неверно", "Код подтверждения");
+            }
+        }
+
+        private void buttonCancelChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangeVisibleConfirmationCode();
+            ChangeVisibleAutorization();
+        }
+
+        private void buttonCancelChangePassword2_Click(object sender, EventArgs e)
+        {
+            ChangeVisibleNewPassword();
+            ChangeVisibleAutorization();
+        }
+
+        private void checkBoxShowPasswordConfirmationPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxConfirmationNewPassword.PasswordChar = checkBoxShowPasswordConfirmationPassword.Checked ? char.MinValue : '*';
+            checkBoxShowPasswordConfirmationPassword.Text = checkBoxShowPasswordConfirmationPassword.Checked ?
+                "Cкрыть пароль" : "Показать пароль";
+        }
+
+        private void checkBoxShowPasswordNewPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxNewPassword.PasswordChar = checkBoxShowPasswordNewPassword.Checked ? char.MinValue : '*';
+            checkBoxShowPasswordNewPassword.Text = checkBoxShowPasswordNewPassword.Checked ?
+                "Cкрыть пароль" : "Показать пароль";
+        }
+
+        private void textBoxCodeConfirmation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label103_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonConfirmNewPassword_Click(object sender, EventArgs e)
+        {
+            if(textBoxNewPassword.Text != textBoxConfirmationNewPassword.Text)
+            {
+                PrintMessage.WarningMessage("Пароли не совпадают");
+            }
+            else
+            {
+                DatabaseUpdater.UpdatePasswordLibrarian(comboBoxNameLibrarian.Text, textBoxNewPassword.Text);
+                ChangeVisibleNewPassword();
+                ChangeVisibleAutorization();
+                PrintMessage.InformationMessage("Смена пароля прошла успешно");
+            }
+        }
+
+        private void checkBoxOnlyDebtors_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadBookDeliveryMainContent();
+        }
+
+        private void checkBoxOnlyDebtors_CheckedChanged_1(object sender, EventArgs e)
+        {
+            LoadReadersMainContent();
         }
     }
 }

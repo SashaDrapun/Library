@@ -9,7 +9,7 @@ namespace Library
 {
     public class DatabaseSelectorAllInformation : DatabaseHandler
     {
-        public static List<BookDelivery> GetAllBookDelivery(List<QuerySettings> searchSettings)
+        public static List<BookDelivery> GetAllBookDelivery(List<QuerySettings> searchSettings,bool onlyDebtors)
         {
             string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance" +
             " from BookDelivery inner join Books inner join Readers" +
@@ -20,6 +20,18 @@ namespace Library
             " and Books.idBook = Instances.idBook ";
 
             bool wasWhereWritten = false;
+
+            if (onlyDebtors)
+            {
+                query += "where fioReader in((select fioReader" +
+                " from Readers inner join BookDelivery" +
+                " on BookDelivery.idReader = Readers.idReader" +
+                " where returnDate is null and dateOfIssue<CURDATE()-30" +
+                " group by fioReader)) ";
+                wasWhereWritten = true;
+            }
+
+            
 
             for (int i = 0; i < searchSettings.Count; i++)
             {
@@ -175,9 +187,15 @@ namespace Library
             return result;
         }
 
-        public static List<Reader> GetAllReaders(List<QuerySettings> searchSettings)
+        public static List<Reader> GetAllReaders(List<QuerySettings> searchSettings, bool onlyDebtors)
         {
             string query = "select fioReader,contactNumber,email from Readers";
+
+            if (onlyDebtors)
+            {
+               query += " inner join BookDelivery"+
+                " on BookDelivery.idReader = Readers.idReader ";
+            }
 
             bool wasWhereWritten = false;
 
@@ -192,7 +210,19 @@ namespace Library
                 {
                     query += " and " + searchSettings[i].Column + " Like '" + searchSettings[i].Value + "%'";
                 }
+            }
 
+            if(onlyDebtors && wasWhereWritten)
+            {
+                query += " and " + " returnDate is null and dateOfIssue<CURDATE()-30";
+            }
+            if(onlyDebtors && !wasWhereWritten)
+            {
+                query += " where returnDate is null and dateOfIssue<CURDATE()-30";
+            }
+            if (onlyDebtors)
+            {
+                query += " group by fioReader";
             }
 
             List<Reader> result = new List<Reader>();

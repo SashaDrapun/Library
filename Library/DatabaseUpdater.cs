@@ -135,5 +135,20 @@ namespace Library
             command.Dispose();
             Connection.Close();
         }
+
+        public static void UpdatePasswordLibrarian(string fioLibrarian, string newPassword)
+        {
+            string query = "update Librarians set passwordLibrarian = '" + newPassword + "'" +
+                " where fioLibrarian = '" + fioLibrarian+"'";
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            command.ExecuteNonQuery();
+
+            command.Dispose();
+            Connection.Close();
+        }
     }
 }

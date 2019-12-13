@@ -78,14 +78,26 @@
             this.textBoxFioLibrarianBookDelivery = new System.Windows.Forms.TextBox();
             this.textBoxFioReaderBookDelivery = new System.Windows.Forms.TextBox();
             this.dataGridViewBookDelivery = new System.Windows.Forms.DataGridView();
-            this.FioReader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdInstances = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Photo = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabPageBooks = new System.Windows.Forms.TabPage();
+            this.labelTotalFound = new System.Windows.Forms.Label();
+            this.labelNumberCurrentBook = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonBooksEdit = new System.Windows.Forms.Button();
+            this.textBoxCountInStockMainValue = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.textBoxNameBookMainValue = new System.Windows.Forms.TextBox();
+            this.textBoxCountOfReaders = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.textBoxYearOfIssueMainValue = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.textBoxCategoryMainValue = new System.Windows.Forms.TextBox();
+            this.textBoxFioAutorMainValue = new System.Windows.Forms.TextBox();
+            this.buttonPreviousBook = new System.Windows.Forms.Button();
+            this.buttonNextBook = new System.Windows.Forms.Button();
+            this.pictureBoxMainValue = new System.Windows.Forms.PictureBox();
             this.tabControlBooks = new System.Windows.Forms.TabControl();
             this.tabPageAddBook = new System.Windows.Forms.TabPage();
             this.textBoxYearOfIssueAdd = new System.Windows.Forms.NumericUpDown();
@@ -138,13 +150,6 @@
             this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
             this.textBoxNameBook = new System.Windows.Forms.TextBox();
-            this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
-            this.nameBookBooks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameAutorBooks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountInStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Сategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhotoBook = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabPageInstances = new System.Windows.Forms.TabPage();
             this.groupBoxSearchInstances = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -310,6 +315,28 @@
             this.contactNumberLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.label101 = new System.Windows.Forms.Label();
+            this.buttonPasswordRecovery = new System.Windows.Forms.Button();
+            this.textBoxCodeConfirmation = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.buttonCancelChangePassword = new System.Windows.Forms.Button();
+            this.label104 = new System.Windows.Forms.Label();
+            this.textBoxConfirmationNewPassword = new System.Windows.Forms.TextBox();
+            this.label105 = new System.Windows.Forms.Label();
+            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
+            this.buttonConfirmNewPassword = new System.Windows.Forms.Button();
+            this.buttonCodeConfirmation = new System.Windows.Forms.Button();
+            this.buttonCancelChangePassword2 = new System.Windows.Forms.Button();
+            this.checkBoxShowPasswordConfirmationPassword = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowPasswordNewPassword = new System.Windows.Forms.CheckBox();
+            this.FioReader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdInstances = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxOnlyDebtorsBookDelivery = new System.Windows.Forms.CheckBox();
+            this.checkBoxOnlyDebtors = new System.Windows.Forms.CheckBox();
             this.tabControlMain.SuspendLayout();
             this.tabPageAutorization.SuspendLayout();
             this.tabPageBookingDelivery.SuspendLayout();
@@ -320,6 +347,8 @@
             this.groupBoxSearchBookDelivery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookDelivery)).BeginInit();
             this.tabPageBooks.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainValue)).BeginInit();
             this.tabControlBooks.SuspendLayout();
             this.tabPageAddBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxYearOfIssueAdd)).BeginInit();
@@ -330,7 +359,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).BeginInit();
             this.groupBoxBookSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
             this.tabPageInstances.SuspendLayout();
             this.groupBoxSearchInstances.SuspendLayout();
             this.tabControlInstances.SuspendLayout();
@@ -378,6 +406,20 @@
             // tabPageAutorization
             // 
             this.tabPageAutorization.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageAutorization.Controls.Add(this.checkBoxShowPasswordNewPassword);
+            this.tabPageAutorization.Controls.Add(this.checkBoxShowPasswordConfirmationPassword);
+            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword2);
+            this.tabPageAutorization.Controls.Add(this.buttonCodeConfirmation);
+            this.tabPageAutorization.Controls.Add(this.buttonConfirmNewPassword);
+            this.tabPageAutorization.Controls.Add(this.label104);
+            this.tabPageAutorization.Controls.Add(this.textBoxConfirmationNewPassword);
+            this.tabPageAutorization.Controls.Add(this.label105);
+            this.tabPageAutorization.Controls.Add(this.textBoxNewPassword);
+            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword);
+            this.tabPageAutorization.Controls.Add(this.label103);
+            this.tabPageAutorization.Controls.Add(this.textBoxCodeConfirmation);
+            this.tabPageAutorization.Controls.Add(this.buttonPasswordRecovery);
+            this.tabPageAutorization.Controls.Add(this.label101);
             this.tabPageAutorization.Controls.Add(this.checkBoxShowPassword);
             this.tabPageAutorization.Controls.Add(this.textBoxPassword);
             this.tabPageAutorization.Controls.Add(this.labelPassword);
@@ -389,7 +431,7 @@
             this.tabPageAutorization.Name = "tabPageAutorization";
             this.tabPageAutorization.Size = new System.Drawing.Size(1232, 574);
             this.tabPageAutorization.TabIndex = 6;
-            this.tabPageAutorization.Text = "Сменить пользователя";
+            this.tabPageAutorization.Text = "Авторизация";
             // 
             // checkBoxShowPassword
             // 
@@ -397,32 +439,34 @@
             this.checkBoxShowPassword.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBoxShowPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(420, 346);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(435, 262);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
             this.checkBoxShowPassword.Size = new System.Drawing.Size(189, 29);
             this.checkBoxShowPassword.TabIndex = 26;
-            this.checkBoxShowPassword.Tag = "1";
+            this.checkBoxShowPassword.Tag = "Autorization";
             this.checkBoxShowPassword.Text = "Показать пароль";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxPassword.Location = new System.Drawing.Point(420, 299);
+            this.textBoxPassword.Location = new System.Drawing.Point(435, 215);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(368, 30);
             this.textBoxPassword.TabIndex = 25;
+            this.textBoxPassword.Tag = "Autorization";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(551, 265);
+            this.labelPassword.Location = new System.Drawing.Point(566, 181);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(98, 31);
             this.labelPassword.TabIndex = 24;
+            this.labelPassword.Tag = "Autorization";
             this.labelPassword.Text = "Пароль";
             this.labelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -431,10 +475,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(491, 189);
+            this.label1.Location = new System.Drawing.Point(506, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(238, 31);
             this.label1.TabIndex = 23;
+            this.label1.Tag = "Autorization";
             this.label1.Text = "ФИО библиотекаря";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -442,19 +487,21 @@
             // 
             this.comboBoxNameLibrarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.comboBoxNameLibrarian.FormattingEnabled = true;
-            this.comboBoxNameLibrarian.Location = new System.Drawing.Point(420, 223);
+            this.comboBoxNameLibrarian.Location = new System.Drawing.Point(435, 139);
             this.comboBoxNameLibrarian.Name = "comboBoxNameLibrarian";
             this.comboBoxNameLibrarian.Size = new System.Drawing.Size(368, 36);
             this.comboBoxNameLibrarian.TabIndex = 22;
+            this.comboBoxNameLibrarian.Tag = "Autorization";
             // 
             // labelAutorizationText
             // 
             this.labelAutorizationText.Font = new System.Drawing.Font("Times New Roman", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelAutorizationText.ForeColor = System.Drawing.Color.White;
-            this.labelAutorizationText.Location = new System.Drawing.Point(-28, 98);
+            this.labelAutorizationText.Location = new System.Drawing.Point(-13, 14);
             this.labelAutorizationText.Name = "labelAutorizationText";
             this.labelAutorizationText.Size = new System.Drawing.Size(1264, 79);
             this.labelAutorizationText.TabIndex = 21;
+            this.labelAutorizationText.Tag = "Autorization";
             this.labelAutorizationText.Text = "Авторизация";
             this.labelAutorizationText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -463,16 +510,18 @@
             this.buttonAutorization.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonAutorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.buttonAutorization.ForeColor = System.Drawing.Color.White;
-            this.buttonAutorization.Location = new System.Drawing.Point(420, 381);
+            this.buttonAutorization.Location = new System.Drawing.Point(435, 297);
             this.buttonAutorization.Name = "buttonAutorization";
             this.buttonAutorization.Size = new System.Drawing.Size(368, 58);
             this.buttonAutorization.TabIndex = 27;
+            this.buttonAutorization.Tag = "Autorization";
             this.buttonAutorization.Text = "Авторизоваться";
             this.buttonAutorization.UseVisualStyleBackColor = false;
             // 
             // tabPageBookingDelivery
             // 
-            this.tabPageBookingDelivery.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tabPageBookingDelivery.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageBookingDelivery.Controls.Add(this.checkBoxOnlyDebtorsBookDelivery);
             this.tabPageBookingDelivery.Controls.Add(this.tabControlBookDelivery);
             this.tabPageBookingDelivery.Controls.Add(this.groupBoxSearchBookDelivery);
             this.tabPageBookingDelivery.Controls.Add(this.dataGridViewBookDelivery);
@@ -932,7 +981,6 @@
             this.dataGridViewBookDelivery.AllowUserToDeleteRows = false;
             this.dataGridViewBookDelivery.AllowUserToResizeColumns = false;
             this.dataGridViewBookDelivery.AllowUserToResizeRows = false;
-            this.dataGridViewBookDelivery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewBookDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBookDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FioReader,
@@ -940,8 +988,7 @@
             this.fioLibrarian,
             this.dateOfIssue,
             this.ReturnDate,
-            this.IdInstances,
-            this.Photo});
+            this.IdInstances});
             this.dataGridViewBookDelivery.Location = new System.Drawing.Point(20, 20);
             this.dataGridViewBookDelivery.Name = "dataGridViewBookDelivery";
             this.dataGridViewBookDelivery.ReadOnly = true;
@@ -949,71 +996,18 @@
             this.dataGridViewBookDelivery.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewBookDelivery.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewBookDelivery.TabIndex = 0;
-            this.dataGridViewBookDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookDelivery_CellContentClick);
-            // 
-            // FioReader
-            // 
-            this.FioReader.Frozen = true;
-            this.FioReader.HeaderText = "ФИО Читателя";
-            this.FioReader.Name = "FioReader";
-            this.FioReader.ReadOnly = true;
-            this.FioReader.Width = 101;
-            // 
-            // NameBook
-            // 
-            this.NameBook.Frozen = true;
-            this.NameBook.HeaderText = "Наименование книги";
-            this.NameBook.Name = "NameBook";
-            this.NameBook.ReadOnly = true;
-            this.NameBook.Width = 128;
-            // 
-            // fioLibrarian
-            // 
-            this.fioLibrarian.Frozen = true;
-            this.fioLibrarian.HeaderText = "ФИО Библиотекаря выдавшего книгу";
-            this.fioLibrarian.Name = "fioLibrarian";
-            this.fioLibrarian.ReadOnly = true;
-            this.fioLibrarian.Width = 179;
-            // 
-            // dateOfIssue
-            // 
-            this.dateOfIssue.Frozen = true;
-            this.dateOfIssue.HeaderText = "Дата выдачи";
-            this.dateOfIssue.Name = "dateOfIssue";
-            this.dateOfIssue.ReadOnly = true;
-            this.dateOfIssue.Width = 90;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.Frozen = true;
-            this.ReturnDate.HeaderText = "Дата возврата";
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.ReadOnly = true;
-            this.ReturnDate.Width = 99;
-            // 
-            // IdInstances
-            // 
-            this.IdInstances.Frozen = true;
-            this.IdInstances.HeaderText = "Номер экземпляра";
-            this.IdInstances.Name = "IdInstances";
-            this.IdInstances.ReadOnly = true;
-            this.IdInstances.Width = 120;
-            // 
-            // Photo
-            // 
-            this.Photo.Frozen = true;
-            this.Photo.HeaderText = "Фото";
-            this.Photo.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Photo.Name = "Photo";
-            this.Photo.ReadOnly = true;
-            this.Photo.Width = 41;
             // 
             // tabPageBooks
             // 
             this.tabPageBooks.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageBooks.Controls.Add(this.labelTotalFound);
+            this.tabPageBooks.Controls.Add(this.labelNumberCurrentBook);
+            this.tabPageBooks.Controls.Add(this.panel1);
+            this.tabPageBooks.Controls.Add(this.buttonPreviousBook);
+            this.tabPageBooks.Controls.Add(this.buttonNextBook);
+            this.tabPageBooks.Controls.Add(this.pictureBoxMainValue);
             this.tabPageBooks.Controls.Add(this.tabControlBooks);
             this.tabPageBooks.Controls.Add(this.groupBoxBookSearch);
-            this.tabPageBooks.Controls.Add(this.dataGridViewBooks);
             this.tabPageBooks.Location = new System.Drawing.Point(4, 22);
             this.tabPageBooks.Name = "tabPageBooks";
             this.tabPageBooks.Padding = new System.Windows.Forms.Padding(3);
@@ -1021,6 +1015,203 @@
             this.tabPageBooks.TabIndex = 1;
             this.tabPageBooks.Text = "Книги";
             this.tabPageBooks.Click += new System.EventHandler(this.tabPageBooks_Click);
+            // 
+            // labelTotalFound
+            // 
+            this.labelTotalFound.AutoSize = true;
+            this.labelTotalFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelTotalFound.Location = new System.Drawing.Point(343, 10);
+            this.labelTotalFound.Name = "labelTotalFound";
+            this.labelTotalFound.Size = new System.Drawing.Size(243, 25);
+            this.labelTotalFound.TabIndex = 21;
+            this.labelTotalFound.Text = "Количество у читателей";
+            // 
+            // labelNumberCurrentBook
+            // 
+            this.labelNumberCurrentBook.AutoSize = true;
+            this.labelNumberCurrentBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelNumberCurrentBook.Location = new System.Drawing.Point(343, 318);
+            this.labelNumberCurrentBook.Name = "labelNumberCurrentBook";
+            this.labelNumberCurrentBook.Size = new System.Drawing.Size(243, 25);
+            this.labelNumberCurrentBook.TabIndex = 18;
+            this.labelNumberCurrentBook.Text = "Количество у читателей";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonBooksEdit);
+            this.panel1.Controls.Add(this.textBoxCountInStockMainValue);
+            this.panel1.Controls.Add(this.label88);
+            this.panel1.Controls.Add(this.textBoxNameBookMainValue);
+            this.panel1.Controls.Add(this.textBoxCountOfReaders);
+            this.panel1.Controls.Add(this.label93);
+            this.panel1.Controls.Add(this.label102);
+            this.panel1.Controls.Add(this.label95);
+            this.panel1.Controls.Add(this.label99);
+            this.panel1.Controls.Add(this.textBoxYearOfIssueMainValue);
+            this.panel1.Controls.Add(this.label100);
+            this.panel1.Controls.Add(this.textBoxCategoryMainValue);
+            this.panel1.Controls.Add(this.textBoxFioAutorMainValue);
+            this.panel1.Location = new System.Drawing.Point(96, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 269);
+            this.panel1.TabIndex = 20;
+            // 
+            // buttonBooksEdit
+            // 
+            this.buttonBooksEdit.Location = new System.Drawing.Point(130, 238);
+            this.buttonBooksEdit.Name = "buttonBooksEdit";
+            this.buttonBooksEdit.Size = new System.Drawing.Size(124, 23);
+            this.buttonBooksEdit.TabIndex = 18;
+            this.buttonBooksEdit.Text = "Редактировать";
+            this.buttonBooksEdit.UseVisualStyleBackColor = true;
+            this.buttonBooksEdit.Click += new System.EventHandler(this.buttonBooksEdit_Click);
+            // 
+            // textBoxCountInStockMainValue
+            // 
+            this.textBoxCountInStockMainValue.Location = new System.Drawing.Point(130, 149);
+            this.textBoxCountInStockMainValue.Name = "textBoxCountInStockMainValue";
+            this.textBoxCountInStockMainValue.ReadOnly = true;
+            this.textBoxCountInStockMainValue.Size = new System.Drawing.Size(124, 20);
+            this.textBoxCountInStockMainValue.TabIndex = 12;
+            this.textBoxCountInStockMainValue.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label88.Location = new System.Drawing.Point(15, 6);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(205, 25);
+            this.label88.TabIndex = 4;
+            this.label88.Text = "Наименование книги";
+            this.label88.Click += new System.EventHandler(this.label88_Click);
+            // 
+            // textBoxNameBookMainValue
+            // 
+            this.textBoxNameBookMainValue.Location = new System.Drawing.Point(20, 34);
+            this.textBoxNameBookMainValue.Name = "textBoxNameBookMainValue";
+            this.textBoxNameBookMainValue.ReadOnly = true;
+            this.textBoxNameBookMainValue.Size = new System.Drawing.Size(191, 20);
+            this.textBoxNameBookMainValue.TabIndex = 5;
+            this.textBoxNameBookMainValue.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBoxCountOfReaders
+            // 
+            this.textBoxCountOfReaders.Location = new System.Drawing.Point(130, 210);
+            this.textBoxCountOfReaders.Name = "textBoxCountOfReaders";
+            this.textBoxCountOfReaders.ReadOnly = true;
+            this.textBoxCountOfReaders.Size = new System.Drawing.Size(124, 20);
+            this.textBoxCountOfReaders.TabIndex = 17;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label93.Location = new System.Drawing.Point(48, 62);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(129, 25);
+            this.label93.TabIndex = 6;
+            this.label93.Text = "ФИО автора";
+            this.label93.Click += new System.EventHandler(this.label93_Click);
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label102.Location = new System.Drawing.Point(81, 182);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(243, 25);
+            this.label102.TabIndex = 16;
+            this.label102.Text = "Количество у читателей";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label95.Location = new System.Drawing.Point(81, 120);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(220, 25);
+            this.label95.TabIndex = 7;
+            this.label95.Text = "Количество в наличии";
+            this.label95.Click += new System.EventHandler(this.label95_Click);
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label99.Location = new System.Drawing.Point(227, 59);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(109, 25);
+            this.label99.TabIndex = 8;
+            this.label99.Text = "Категория";
+            this.label99.Click += new System.EventHandler(this.label99_Click);
+            // 
+            // textBoxYearOfIssueMainValue
+            // 
+            this.textBoxYearOfIssueMainValue.Location = new System.Drawing.Point(219, 35);
+            this.textBoxYearOfIssueMainValue.Name = "textBoxYearOfIssueMainValue";
+            this.textBoxYearOfIssueMainValue.ReadOnly = true;
+            this.textBoxYearOfIssueMainValue.Size = new System.Drawing.Size(122, 20);
+            this.textBoxYearOfIssueMainValue.TabIndex = 14;
+            this.textBoxYearOfIssueMainValue.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label100.Location = new System.Drawing.Point(214, 7);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(129, 25);
+            this.label100.TabIndex = 9;
+            this.label100.Text = "Год издания";
+            this.label100.Click += new System.EventHandler(this.label100_Click);
+            // 
+            // textBoxCategoryMainValue
+            // 
+            this.textBoxCategoryMainValue.Location = new System.Drawing.Point(217, 90);
+            this.textBoxCategoryMainValue.Name = "textBoxCategoryMainValue";
+            this.textBoxCategoryMainValue.ReadOnly = true;
+            this.textBoxCategoryMainValue.Size = new System.Drawing.Size(122, 20);
+            this.textBoxCategoryMainValue.TabIndex = 13;
+            this.textBoxCategoryMainValue.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
+            // 
+            // textBoxFioAutorMainValue
+            // 
+            this.textBoxFioAutorMainValue.Location = new System.Drawing.Point(20, 90);
+            this.textBoxFioAutorMainValue.Name = "textBoxFioAutorMainValue";
+            this.textBoxFioAutorMainValue.ReadOnly = true;
+            this.textBoxFioAutorMainValue.Size = new System.Drawing.Size(191, 20);
+            this.textBoxFioAutorMainValue.TabIndex = 11;
+            this.textBoxFioAutorMainValue.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // buttonPreviousBook
+            // 
+            this.buttonPreviousBook.Location = new System.Drawing.Point(8, 167);
+            this.buttonPreviousBook.Name = "buttonPreviousBook";
+            this.buttonPreviousBook.Size = new System.Drawing.Size(75, 23);
+            this.buttonPreviousBook.TabIndex = 19;
+            this.buttonPreviousBook.Text = "<";
+            this.buttonPreviousBook.UseVisualStyleBackColor = true;
+            this.buttonPreviousBook.Click += new System.EventHandler(this.buttonPreviousBook_Click);
+            // 
+            // buttonNextBook
+            // 
+            this.buttonNextBook.Location = new System.Drawing.Point(805, 167);
+            this.buttonNextBook.Name = "buttonNextBook";
+            this.buttonNextBook.Size = new System.Drawing.Size(75, 23);
+            this.buttonNextBook.TabIndex = 18;
+            this.buttonNextBook.Text = ">";
+            this.buttonNextBook.UseVisualStyleBackColor = true;
+            this.buttonNextBook.Click += new System.EventHandler(this.buttonNextBook_Click);
+            // 
+            // pictureBoxMainValue
+            // 
+            this.pictureBoxMainValue.Location = new System.Drawing.Point(470, 42);
+            this.pictureBoxMainValue.Name = "pictureBoxMainValue";
+            this.pictureBoxMainValue.Size = new System.Drawing.Size(329, 266);
+            this.pictureBoxMainValue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMainValue.TabIndex = 15;
+            this.pictureBoxMainValue.TabStop = false;
             // 
             // tabControlBooks
             // 
@@ -1254,6 +1445,7 @@
             this.checkBoxIsNeedToEditPicture.Tag = "Hidden";
             this.checkBoxIsNeedToEditPicture.Text = "Редактировать фото";
             this.checkBoxIsNeedToEditPicture.UseVisualStyleBackColor = true;
+            this.checkBoxIsNeedToEditPicture.Visible = false;
             // 
             // checkBoxIsNeedToEditYearOfIssue
             // 
@@ -1265,6 +1457,7 @@
             this.checkBoxIsNeedToEditYearOfIssue.Tag = "Hidden";
             this.checkBoxIsNeedToEditYearOfIssue.Text = "Редактировать год издания";
             this.checkBoxIsNeedToEditYearOfIssue.UseVisualStyleBackColor = true;
+            this.checkBoxIsNeedToEditYearOfIssue.Visible = false;
             // 
             // textBoxYearOfIssueNewValue
             // 
@@ -1293,6 +1486,7 @@
             0,
             0,
             0});
+            this.textBoxYearOfIssueNewValue.Visible = false;
             // 
             // comboBoxFioAutorEditNewValue
             // 
@@ -1540,14 +1734,14 @@
             // 
             // labelHelpBooksEditing
             // 
-            this.labelHelpBooksEditing.AutoSize = true;
             this.labelHelpBooksEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.labelHelpBooksEditing.Location = new System.Drawing.Point(179, 81);
+            this.labelHelpBooksEditing.Location = new System.Drawing.Point(3, 81);
             this.labelHelpBooksEditing.Name = "labelHelpBooksEditing";
-            this.labelHelpBooksEditing.Size = new System.Drawing.Size(944, 26);
+            this.labelHelpBooksEditing.Size = new System.Drawing.Size(1199, 26);
             this.labelHelpBooksEditing.TabIndex = 0;
-            this.labelHelpBooksEditing.Text = "Чтобы начать редактирование кликните дважды по строке, которую хотите редактирова" +
-    "ть";
+            this.labelHelpBooksEditing.Text = "Чтобы произвести редактирование выберите нужную книгу и нажмите кнопку редактиров" +
+    "ать";
+            this.labelHelpBooksEditing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBoxBookSearch
             // 
@@ -1560,9 +1754,9 @@
             this.groupBoxBookSearch.Controls.Add(this.textBoxAuthor);
             this.groupBoxBookSearch.Controls.Add(this.textBoxNameBook);
             this.groupBoxBookSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.groupBoxBookSearch.Location = new System.Drawing.Point(858, 30);
+            this.groupBoxBookSearch.Location = new System.Drawing.Point(899, 30);
             this.groupBoxBookSearch.Name = "groupBoxBookSearch";
-            this.groupBoxBookSearch.Size = new System.Drawing.Size(364, 310);
+            this.groupBoxBookSearch.Size = new System.Drawing.Size(312, 310);
             this.groupBoxBookSearch.TabIndex = 2;
             this.groupBoxBookSearch.TabStop = false;
             this.groupBoxBookSearch.Text = "Поиск по";
@@ -1650,77 +1844,6 @@
             this.textBoxNameBook.Tag = "groupBoxSearchBookDelivery";
             this.textBoxNameBook.TextChanged += new System.EventHandler(this.TextBoxesBookChanged);
             this.textBoxNameBook.DoubleClick += new System.EventHandler(this.OnAllTextBoxDoubleClick);
-            // 
-            // dataGridViewBooks
-            // 
-            this.dataGridViewBooks.AllowUserToAddRows = false;
-            this.dataGridViewBooks.AllowUserToDeleteRows = false;
-            this.dataGridViewBooks.AllowUserToResizeColumns = false;
-            this.dataGridViewBooks.AllowUserToResizeRows = false;
-            this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameBookBooks,
-            this.NameAutorBooks,
-            this.CountInStock,
-            this.Сategory,
-            this.yearOfIssue,
-            this.PhotoBook});
-            this.dataGridViewBooks.Location = new System.Drawing.Point(20, 30);
-            this.dataGridViewBooks.Name = "dataGridViewBooks";
-            this.dataGridViewBooks.ReadOnly = true;
-            this.dataGridViewBooks.RowHeadersVisible = false;
-            this.dataGridViewBooks.RowTemplate.Height = 120;
-            this.dataGridViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBooks.Size = new System.Drawing.Size(832, 310);
-            this.dataGridViewBooks.TabIndex = 1;
-            this.dataGridViewBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooks_CellDoubleClick);
-            // 
-            // nameBookBooks
-            // 
-            this.nameBookBooks.Frozen = true;
-            this.nameBookBooks.HeaderText = "Наименование книги";
-            this.nameBookBooks.Name = "nameBookBooks";
-            this.nameBookBooks.ReadOnly = true;
-            // 
-            // NameAutorBooks
-            // 
-            this.NameAutorBooks.Frozen = true;
-            this.NameAutorBooks.HeaderText = "ФИО автора";
-            this.NameAutorBooks.Name = "NameAutorBooks";
-            this.NameAutorBooks.ReadOnly = true;
-            this.NameAutorBooks.Width = 130;
-            // 
-            // CountInStock
-            // 
-            this.CountInStock.Frozen = true;
-            this.CountInStock.HeaderText = "Количество в наличии";
-            this.CountInStock.Name = "CountInStock";
-            this.CountInStock.ReadOnly = true;
-            // 
-            // Сategory
-            // 
-            this.Сategory.Frozen = true;
-            this.Сategory.HeaderText = "Категория";
-            this.Сategory.Name = "Сategory";
-            this.Сategory.ReadOnly = true;
-            this.Сategory.Width = 80;
-            // 
-            // yearOfIssue
-            // 
-            this.yearOfIssue.Frozen = true;
-            this.yearOfIssue.HeaderText = "Год издания";
-            this.yearOfIssue.Name = "yearOfIssue";
-            this.yearOfIssue.ReadOnly = true;
-            this.yearOfIssue.Width = 60;
-            // 
-            // PhotoBook
-            // 
-            this.PhotoBook.Frozen = true;
-            this.PhotoBook.HeaderText = "Фотография";
-            this.PhotoBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.PhotoBook.Name = "PhotoBook";
-            this.PhotoBook.ReadOnly = true;
-            this.PhotoBook.Width = 360;
             // 
             // tabPageInstances
             // 
@@ -1845,7 +1968,6 @@
             this.label15.Size = new System.Drawing.Size(154, 20);
             this.label15.TabIndex = 10;
             this.label15.Text = "Номер экземпляра";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // comboBoxNameBookInstances
             // 
@@ -2374,6 +2496,7 @@
             // 
             // groupBoxReaders
             // 
+            this.groupBoxReaders.Controls.Add(this.checkBoxOnlyDebtors);
             this.groupBoxReaders.Controls.Add(this.label33);
             this.groupBoxReaders.Controls.Add(this.textBoxMailReadersSearch);
             this.groupBoxReaders.Controls.Add(this.label24);
@@ -3575,6 +3698,271 @@
             this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label101.ForeColor = System.Drawing.Color.White;
+            this.label101.Location = new System.Drawing.Point(506, 358);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(197, 31);
+            this.label101.TabIndex = 28;
+            this.label101.Tag = "Autorization";
+            this.label101.Text = "Забыли пароль?";
+            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonPasswordRecovery
+            // 
+            this.buttonPasswordRecovery.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonPasswordRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonPasswordRecovery.ForeColor = System.Drawing.Color.White;
+            this.buttonPasswordRecovery.Location = new System.Drawing.Point(435, 392);
+            this.buttonPasswordRecovery.Name = "buttonPasswordRecovery";
+            this.buttonPasswordRecovery.Size = new System.Drawing.Size(368, 58);
+            this.buttonPasswordRecovery.TabIndex = 29;
+            this.buttonPasswordRecovery.Tag = "Autorization";
+            this.buttonPasswordRecovery.Text = "Восстановить пароль";
+            this.buttonPasswordRecovery.UseVisualStyleBackColor = false;
+            this.buttonPasswordRecovery.Click += new System.EventHandler(this.buttonPasswordRecovery_Click);
+            // 
+            // textBoxCodeConfirmation
+            // 
+            this.textBoxCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxCodeConfirmation.Location = new System.Drawing.Point(526, 184);
+            this.textBoxCodeConfirmation.Name = "textBoxCodeConfirmation";
+            this.textBoxCodeConfirmation.Size = new System.Drawing.Size(186, 30);
+            this.textBoxCodeConfirmation.TabIndex = 30;
+            this.textBoxCodeConfirmation.Tag = "ConfirmationCode";
+            this.textBoxCodeConfirmation.Visible = false;
+            this.textBoxCodeConfirmation.TextChanged += new System.EventHandler(this.textBoxCodeConfirmation_TextChanged);
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label103.ForeColor = System.Drawing.Color.White;
+            this.label103.Location = new System.Drawing.Point(463, 150);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(323, 31);
+            this.label103.TabIndex = 31;
+            this.label103.Tag = "ConfirmationCode";
+            this.label103.Text = "Введите код подтвержения";
+            this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label103.Visible = false;
+            this.label103.Click += new System.EventHandler(this.label103_Click);
+            // 
+            // buttonCancelChangePassword
+            // 
+            this.buttonCancelChangePassword.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCancelChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCancelChangePassword.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelChangePassword.Location = new System.Drawing.Point(442, 284);
+            this.buttonCancelChangePassword.Name = "buttonCancelChangePassword";
+            this.buttonCancelChangePassword.Size = new System.Drawing.Size(368, 58);
+            this.buttonCancelChangePassword.TabIndex = 33;
+            this.buttonCancelChangePassword.Tag = "ConfirmationCode";
+            this.buttonCancelChangePassword.Text = "Отменить смену пароля";
+            this.buttonCancelChangePassword.UseVisualStyleBackColor = false;
+            this.buttonCancelChangePassword.Visible = false;
+            this.buttonCancelChangePassword.Click += new System.EventHandler(this.buttonCancelChangePassword_Click);
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label104.ForeColor = System.Drawing.Color.White;
+            this.label104.Location = new System.Drawing.Point(476, 199);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(297, 31);
+            this.label104.TabIndex = 40;
+            this.label104.Tag = "NewPassword";
+            this.label104.Text = "Подтвержение пароля";
+            this.label104.Visible = false;
+            // 
+            // textBoxConfirmationNewPassword
+            // 
+            this.textBoxConfirmationNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxConfirmationNewPassword.Location = new System.Drawing.Point(531, 233);
+            this.textBoxConfirmationNewPassword.Name = "textBoxConfirmationNewPassword";
+            this.textBoxConfirmationNewPassword.PasswordChar = '*';
+            this.textBoxConfirmationNewPassword.Size = new System.Drawing.Size(179, 30);
+            this.textBoxConfirmationNewPassword.TabIndex = 39;
+            this.textBoxConfirmationNewPassword.Tag = "NewPassword";
+            this.textBoxConfirmationNewPassword.Visible = false;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label105.ForeColor = System.Drawing.Color.White;
+            this.label105.Location = new System.Drawing.Point(524, 102);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(193, 31);
+            this.label105.TabIndex = 38;
+            this.label105.Tag = "NewPassword";
+            this.label105.Text = "Новый пароль";
+            this.label105.Visible = false;
+            // 
+            // textBoxNewPassword
+            // 
+            this.textBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(530, 136);
+            this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.PasswordChar = '*';
+            this.textBoxNewPassword.Size = new System.Drawing.Size(179, 30);
+            this.textBoxNewPassword.TabIndex = 37;
+            this.textBoxNewPassword.Tag = "NewPassword";
+            this.textBoxNewPassword.Visible = false;
+            // 
+            // buttonConfirmNewPassword
+            // 
+            this.buttonConfirmNewPassword.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonConfirmNewPassword.ForeColor = System.Drawing.Color.White;
+            this.buttonConfirmNewPassword.Location = new System.Drawing.Point(435, 297);
+            this.buttonConfirmNewPassword.Name = "buttonConfirmNewPassword";
+            this.buttonConfirmNewPassword.Size = new System.Drawing.Size(368, 58);
+            this.buttonConfirmNewPassword.TabIndex = 41;
+            this.buttonConfirmNewPassword.Tag = "NewPassword";
+            this.buttonConfirmNewPassword.Text = "Сменить пароль";
+            this.buttonConfirmNewPassword.UseVisualStyleBackColor = false;
+            this.buttonConfirmNewPassword.Visible = false;
+            this.buttonConfirmNewPassword.Click += new System.EventHandler(this.buttonConfirmNewPassword_Click);
+            // 
+            // buttonCodeConfirmation
+            // 
+            this.buttonCodeConfirmation.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCodeConfirmation.ForeColor = System.Drawing.Color.White;
+            this.buttonCodeConfirmation.Location = new System.Drawing.Point(442, 220);
+            this.buttonCodeConfirmation.Name = "buttonCodeConfirmation";
+            this.buttonCodeConfirmation.Size = new System.Drawing.Size(368, 58);
+            this.buttonCodeConfirmation.TabIndex = 42;
+            this.buttonCodeConfirmation.Tag = "ConfirmationCode";
+            this.buttonCodeConfirmation.Text = "Подтвердить код подтверждения";
+            this.buttonCodeConfirmation.UseVisualStyleBackColor = false;
+            this.buttonCodeConfirmation.Visible = false;
+            this.buttonCodeConfirmation.Click += new System.EventHandler(this.buttonCodeConfirmation_Click);
+            // 
+            // buttonCancelChangePassword2
+            // 
+            this.buttonCancelChangePassword2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCancelChangePassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCancelChangePassword2.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelChangePassword2.Location = new System.Drawing.Point(435, 361);
+            this.buttonCancelChangePassword2.Name = "buttonCancelChangePassword2";
+            this.buttonCancelChangePassword2.Size = new System.Drawing.Size(368, 58);
+            this.buttonCancelChangePassword2.TabIndex = 43;
+            this.buttonCancelChangePassword2.Tag = "NewPassword";
+            this.buttonCancelChangePassword2.Text = "Отменить смену пароля";
+            this.buttonCancelChangePassword2.UseVisualStyleBackColor = false;
+            this.buttonCancelChangePassword2.Visible = false;
+            this.buttonCancelChangePassword2.Click += new System.EventHandler(this.buttonCancelChangePassword2_Click);
+            // 
+            // checkBoxShowPasswordConfirmationPassword
+            // 
+            this.checkBoxShowPasswordConfirmationPassword.AutoSize = true;
+            this.checkBoxShowPasswordConfirmationPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxShowPasswordConfirmationPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPasswordConfirmationPassword.ForeColor = System.Drawing.Color.White;
+            this.checkBoxShowPasswordConfirmationPassword.Location = new System.Drawing.Point(531, 268);
+            this.checkBoxShowPasswordConfirmationPassword.Name = "checkBoxShowPasswordConfirmationPassword";
+            this.checkBoxShowPasswordConfirmationPassword.Size = new System.Drawing.Size(189, 29);
+            this.checkBoxShowPasswordConfirmationPassword.TabIndex = 44;
+            this.checkBoxShowPasswordConfirmationPassword.Tag = "NewPassword";
+            this.checkBoxShowPasswordConfirmationPassword.Text = "Показать пароль";
+            this.checkBoxShowPasswordConfirmationPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPasswordConfirmationPassword.Visible = false;
+            this.checkBoxShowPasswordConfirmationPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordConfirmationPassword_CheckedChanged);
+            // 
+            // checkBoxShowPasswordNewPassword
+            // 
+            this.checkBoxShowPasswordNewPassword.AutoSize = true;
+            this.checkBoxShowPasswordNewPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxShowPasswordNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPasswordNewPassword.ForeColor = System.Drawing.Color.White;
+            this.checkBoxShowPasswordNewPassword.Location = new System.Drawing.Point(530, 165);
+            this.checkBoxShowPasswordNewPassword.Name = "checkBoxShowPasswordNewPassword";
+            this.checkBoxShowPasswordNewPassword.Size = new System.Drawing.Size(189, 29);
+            this.checkBoxShowPasswordNewPassword.TabIndex = 45;
+            this.checkBoxShowPasswordNewPassword.Tag = "NewPassword";
+            this.checkBoxShowPasswordNewPassword.Text = "Показать пароль";
+            this.checkBoxShowPasswordNewPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPasswordNewPassword.Visible = false;
+            this.checkBoxShowPasswordNewPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordNewPassword_CheckedChanged);
+            // 
+            // FioReader
+            // 
+            this.FioReader.Frozen = true;
+            this.FioReader.HeaderText = "ФИО Читателя";
+            this.FioReader.Name = "FioReader";
+            this.FioReader.ReadOnly = true;
+            this.FioReader.Width = 195;
+            // 
+            // NameBook
+            // 
+            this.NameBook.Frozen = true;
+            this.NameBook.HeaderText = "Наименование книги";
+            this.NameBook.Name = "NameBook";
+            this.NameBook.ReadOnly = true;
+            this.NameBook.Width = 128;
+            // 
+            // fioLibrarian
+            // 
+            this.fioLibrarian.Frozen = true;
+            this.fioLibrarian.HeaderText = "ФИО Библиотекаря выдавшего книгу";
+            this.fioLibrarian.Name = "fioLibrarian";
+            this.fioLibrarian.ReadOnly = true;
+            this.fioLibrarian.Width = 195;
+            // 
+            // dateOfIssue
+            // 
+            this.dateOfIssue.Frozen = true;
+            this.dateOfIssue.HeaderText = "Дата выдачи";
+            this.dateOfIssue.Name = "dateOfIssue";
+            this.dateOfIssue.ReadOnly = true;
+            this.dateOfIssue.Width = 90;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.Frozen = true;
+            this.ReturnDate.HeaderText = "Дата возврата";
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
+            this.ReturnDate.Width = 99;
+            // 
+            // IdInstances
+            // 
+            this.IdInstances.Frozen = true;
+            this.IdInstances.HeaderText = "Номер экземпляра";
+            this.IdInstances.Name = "IdInstances";
+            this.IdInstances.ReadOnly = true;
+            this.IdInstances.Width = 120;
+            // 
+            // checkBoxOnlyDebtorsBookDelivery
+            // 
+            this.checkBoxOnlyDebtorsBookDelivery.AutoSize = true;
+            this.checkBoxOnlyDebtorsBookDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxOnlyDebtorsBookDelivery.Location = new System.Drawing.Point(868, 301);
+            this.checkBoxOnlyDebtorsBookDelivery.Name = "checkBoxOnlyDebtorsBookDelivery";
+            this.checkBoxOnlyDebtorsBookDelivery.Size = new System.Drawing.Size(304, 29);
+            this.checkBoxOnlyDebtorsBookDelivery.TabIndex = 3;
+            this.checkBoxOnlyDebtorsBookDelivery.Text = "Выводить только должников";
+            this.checkBoxOnlyDebtorsBookDelivery.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyDebtorsBookDelivery.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged);
+            // 
+            // checkBoxOnlyDebtors
+            // 
+            this.checkBoxOnlyDebtors.AutoSize = true;
+            this.checkBoxOnlyDebtors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxOnlyDebtors.Location = new System.Drawing.Point(28, 275);
+            this.checkBoxOnlyDebtors.Name = "checkBoxOnlyDebtors";
+            this.checkBoxOnlyDebtors.Size = new System.Drawing.Size(304, 29);
+            this.checkBoxOnlyDebtors.TabIndex = 12;
+            this.checkBoxOnlyDebtors.Text = "Выводить только должников";
+            this.checkBoxOnlyDebtors.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyDebtors.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged_1);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3594,6 +3982,7 @@
             this.tabPageAutorization.ResumeLayout(false);
             this.tabPageAutorization.PerformLayout();
             this.tabPageBookingDelivery.ResumeLayout(false);
+            this.tabPageBookingDelivery.PerformLayout();
             this.tabControlBookDelivery.ResumeLayout(false);
             this.tabPageBookIssuence.ResumeLayout(false);
             this.tabPageBookIssuence.PerformLayout();
@@ -3604,6 +3993,10 @@
             this.groupBoxSearchBookDelivery.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBookDelivery)).EndInit();
             this.tabPageBooks.ResumeLayout(false);
+            this.tabPageBooks.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainValue)).EndInit();
             this.tabControlBooks.ResumeLayout(false);
             this.tabPageAddBook.ResumeLayout(false);
             this.tabPageAddBook.PerformLayout();
@@ -3617,7 +4010,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).EndInit();
             this.groupBoxBookSearch.ResumeLayout(false);
             this.groupBoxBookSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             this.tabPageInstances.ResumeLayout(false);
             this.groupBoxSearchInstances.ResumeLayout(false);
             this.groupBoxSearchInstances.PerformLayout();
@@ -3666,7 +4058,6 @@
         private System.Windows.Forms.TabPage tabPageAutorization;
         private System.Windows.Forms.DataGridView dataGridViewBookDelivery;
         private System.Windows.Forms.GroupBox groupBoxSearchBookDelivery;
-        private System.Windows.Forms.DataGridView dataGridViewBooks;
         private System.Windows.Forms.DataGridView dataGridViewReaders;
         private System.Windows.Forms.DataGridView dataGridViewAutors;
         private System.Windows.Forms.DataGridView dataGridViewLibrarians;
@@ -3676,13 +4067,6 @@
         private System.Windows.Forms.TextBox textBoxNameBookBookDelivery;
         private System.Windows.Forms.TextBox textBoxFioLibrarianBookDelivery;
         private System.Windows.Forms.TextBox textBoxFioReaderBookDelivery;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FioReader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameBook;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fioLibrarian;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfIssue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdInstances;
-        private System.Windows.Forms.DataGridViewImageColumn Photo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fioReaderReaders;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
@@ -3926,12 +4310,6 @@
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.TextBox textBoxSurnameLibrarianOldValue;
         private System.Windows.Forms.NumericUpDown textBoxYearOfIssueAdd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameBookBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameAutorBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountInStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Сategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearOfIssue;
-        private System.Windows.Forms.DataGridViewImageColumn PhotoBook;
         private System.Windows.Forms.NumericUpDown textBoxYearOfIssueNewValue;
         private System.Windows.Forms.TextBox textBoxYearOfIssueEditOldValue;
         private System.Windows.Forms.CheckBox checkBoxIsNeedToEditPicture;
@@ -3940,6 +4318,47 @@
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox textBoxYearOfIssueMainValue;
+        private System.Windows.Forms.TextBox textBoxCategoryMainValue;
+        private System.Windows.Forms.TextBox textBoxCountInStockMainValue;
+        private System.Windows.Forms.TextBox textBoxFioAutorMainValue;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.TextBox textBoxNameBookMainValue;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TextBox textBoxCountOfReaders;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.PictureBox pictureBoxMainValue;
+        private System.Windows.Forms.Label labelTotalFound;
+        private System.Windows.Forms.Label labelNumberCurrentBook;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonBooksEdit;
+        private System.Windows.Forms.Button buttonPreviousBook;
+        private System.Windows.Forms.Button buttonNextBook;
+        private System.Windows.Forms.Button buttonPasswordRecovery;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.TextBox textBoxCodeConfirmation;
+        private System.Windows.Forms.Button buttonCancelChangePassword;
+        private System.Windows.Forms.Button buttonCancelChangePassword2;
+        private System.Windows.Forms.Button buttonCodeConfirmation;
+        private System.Windows.Forms.Button buttonConfirmNewPassword;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox textBoxConfirmationNewPassword;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.TextBox textBoxNewPassword;
+        private System.Windows.Forms.CheckBox checkBoxShowPasswordNewPassword;
+        private System.Windows.Forms.CheckBox checkBoxShowPasswordConfirmationPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FioReader;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fioLibrarian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfIssue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdInstances;
+        private System.Windows.Forms.CheckBox checkBoxOnlyDebtorsBookDelivery;
+        private System.Windows.Forms.CheckBox checkBoxOnlyDebtors;
     }
 }
 

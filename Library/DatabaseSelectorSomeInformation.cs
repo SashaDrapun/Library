@@ -140,5 +140,20 @@ namespace Library
             Connection.Close();
             return result;
         }
+
+        public static string GetLibrarianEmail(string fioLibrarian)
+        {
+            string query = "select email from Librarians where fioLibrarian = '" + fioLibrarian + "'";
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            string result = command.ExecuteScalar().ToString();
+
+            command.Dispose();
+            Connection.Close();
+            return result;
+        }
     }
 }
