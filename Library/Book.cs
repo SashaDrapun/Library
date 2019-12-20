@@ -14,6 +14,18 @@ namespace Library
         public string Category { get => category; set => category = value; }
         public string Picture { get => picture; set => picture = value; }
         public int YearOfIssue { get => yearOfIssue; set => yearOfIssue = value; }
+        public int CountOnHand { get => countOnHand; set => countOnHand = value; }
+
+        public Book(string nameBook, string fioAutor, int countInStock, string category, string picture, int yearOfIssue, int countOnHand)
+        {
+            this.nameBook = nameBook;
+            this.fioAutor = fioAutor;
+            this.countInStock = countInStock;
+            this.category = category;
+            this.picture = picture;
+            this.yearOfIssue = yearOfIssue;
+            this.countOnHand = countOnHand;
+        }
 
         public Book(string nameBook, string fioAutor, int countInStock, string category, string picture, int yearOfIssue)
         {
@@ -31,5 +43,6 @@ namespace Library
         private string category;
         private string picture;
         private int yearOfIssue;
+        private int countOnHand;
     }
 }

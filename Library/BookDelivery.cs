@@ -14,8 +14,10 @@ namespace Library
         public string FioLibrarian { get => fioLibrarian; set => fioLibrarian = value; }
         public int IdInstances { get => idInstances; set => idInstances = value; }
         public string NameBook { get => nameBook; set => nameBook = value; }
+        public int NumberOfDaysAfterIssue { get => numberOfDaysAfterIssue; set => numberOfDaysAfterIssue = value; }
 
-        public BookDelivery(string dateOfIssue, string returnDate, string fioReader, string nameBook, string fioLibrarian, int idInstances)
+        public BookDelivery(string dateOfIssue, string returnDate, string fioReader, string nameBook, string fioLibrarian, int idInstances,
+            int numberOfDaysAfterIssue)
         {
             this.dateOfIssue = dateOfIssue;
             this.returnDate = returnDate;
@@ -23,6 +25,7 @@ namespace Library
             this.nameBook = nameBook;
             this.fioLibrarian = fioLibrarian;
             this.idInstances = idInstances;
+            this.numberOfDaysAfterIssue = numberOfDaysAfterIssue;
         }
 
         public BookDelivery(string dateOfIssue, string fioReader, string nameBook, string fioLibrarian, int idInstances)
@@ -40,6 +43,6 @@ namespace Library
         private string nameBook;
         private string fioLibrarian;
         private int idInstances;
-
+        private int numberOfDaysAfterIssue;
     }
 }

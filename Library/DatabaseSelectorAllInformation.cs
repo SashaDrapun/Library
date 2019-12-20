@@ -9,9 +9,9 @@ namespace Library
 {
     public class DatabaseSelectorAllInformation : DatabaseHandler
     {
-        public static List<BookDelivery> GetAllBookDelivery(List<QuerySettings> searchSettings,bool onlyDebtors)
+        public static List<BookDelivery> GetAllBookDelivery(List<QuerySettings> searchSettings, bool onlyDebtors)
         {
-            string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance" +
+            string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance,CURDATE()-dateOfIssue" +
             " from BookDelivery inner join Books inner join Readers" +
             " inner join Librarians inner join Instances" +
             " on BookDelivery.idReader = Readers.idReader" +
@@ -31,11 +31,11 @@ namespace Library
                 wasWhereWritten = true;
             }
 
-            
+
 
             for (int i = 0; i < searchSettings.Count; i++)
             {
-                if(!wasWhereWritten)
+                if (!wasWhereWritten)
                 {
                     query += " where " + searchSettings[i].Column + " Like '" + searchSettings[i].Value + "%'";
                     wasWhereWritten = true;
@@ -44,7 +44,7 @@ namespace Library
                 {
                     query += " and " + searchSettings[i].Column + " Like '" + searchSettings[i].Value + "%'";
                 }
-                
+
             }
 
             List<BookDelivery> result = new List<BookDelivery>();
@@ -61,7 +61,7 @@ namespace Library
                 result.Add(new BookDelivery(DateParser.FromStringToDate(reader[0].ToString()),
                 DateParser.FromStringToDate(reader[1].ToString()),
                 reader[2].ToString(),
-                reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5])));
+                reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5]), Convert.ToInt32(reader[6])));
             }
 
             command.Dispose();
@@ -71,14 +71,14 @@ namespace Library
 
         public static List<BookDelivery> GetAllBookDelivery(string fioReader)
         {
-            string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance" +
+            string query = "select dateOfIssue,returnDate,fioReader,nameBook,fioLibrarian,BookDelivery.idInstance,CURDATE()-dateOfIssue" +
             " from BookDelivery inner join Books inner join Readers" +
             " inner join Librarians inner join Instances" +
             " on BookDelivery.idReader = Readers.idReader" +
             " and BookDelivery.idInstance = Instances.idInstance" +
             " and BookDelivery.idLibrarian = Librarians.idLibrarian" +
-            " and Books.idBook = Instances.idBook "+
-            " where fioReader = '"+fioReader + "'" +
+            " and Books.idBook = Instances.idBook " +
+            " where fioReader = '" + fioReader + "'" +
             " and returnDate is null";
 
             List<BookDelivery> result = new List<BookDelivery>();
@@ -95,7 +95,7 @@ namespace Library
                 result.Add(new BookDelivery(DateParser.FromStringToDate(reader[0].ToString()),
                 DateParser.FromStringToDate(reader[1].ToString()),
                 reader[2].ToString(),
-                reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5])));
+                reader[3].ToString(), reader[4].ToString(), Convert.ToInt32(reader[5]), Convert.ToInt32(reader[6])));
             }
 
             command.Dispose();
@@ -179,7 +179,29 @@ namespace Library
 
             while (reader.Read())
             {
-                result.Add(new Reader(reader[0].ToString(),reader[1].ToString(),reader[2].ToString()));
+                result.Add(new Reader(reader[0].ToString(), reader[1].ToString(), reader[2].ToString()));
+            }
+
+            command.Dispose();
+            Connection.Close();
+            return result;
+        }
+
+        public static List<Reader> GetAllReaders(string fioReader)
+        {
+            string query = "select fioReader,contactNumber,email from Readers where fioReader like '" + fioReader + "%'";
+
+            List<Reader> result = new List<Reader>();
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result.Add(new Reader(reader[0].ToString(), reader[1].ToString(), reader[2].ToString()));
             }
 
             command.Dispose();
@@ -193,8 +215,8 @@ namespace Library
 
             if (onlyDebtors)
             {
-               query += " inner join BookDelivery"+
-                " on BookDelivery.idReader = Readers.idReader ";
+                query += " inner join BookDelivery" +
+                 " on BookDelivery.idReader = Readers.idReader ";
             }
 
             bool wasWhereWritten = false;
@@ -212,11 +234,11 @@ namespace Library
                 }
             }
 
-            if(onlyDebtors && wasWhereWritten)
+            if (onlyDebtors && wasWhereWritten)
             {
                 query += " and " + " returnDate is null and dateOfIssue<CURDATE()-30";
             }
-            if(onlyDebtors && !wasWhereWritten)
+            if (onlyDebtors && !wasWhereWritten)
             {
                 query += " where returnDate is null and dateOfIssue<CURDATE()-30";
             }
@@ -244,6 +266,29 @@ namespace Library
             return result;
         }
 
+        public static List<string> GetFiosReader(string fioReader)
+        {
+            string query = "select fioReader from Readers where fioReader like '"+ fioReader + "%'";
+
+            List<string> result = new List<string>();
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result.Add(reader[0].ToString());
+            }
+
+
+            command.Dispose();
+            Connection.Close();
+            return result;
+        }
+
         public static List<Autor> GetAllAutors()
         {
             string query = "select fioAutor,biography from Autors";
@@ -258,7 +303,29 @@ namespace Library
 
             while (reader.Read())
             {
-                result.Add(new Autor(reader[0].ToString(),reader[1].ToString()));
+                result.Add(new Autor(reader[0].ToString(), reader[1].ToString()));
+            }
+
+            Connection.Close();
+            command.Dispose();
+            return result;
+        }
+
+        public static List<Autor> GetAllAutors(string fioAutor)
+        {
+            string query = "select fioAutor,biography from Autors where fioAutor like '"+ fioAutor + "%'";
+
+            List<Autor> result = new List<Autor>();
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result.Add(new Autor(reader[0].ToString(), reader[1].ToString()));
             }
 
             Connection.Close();
@@ -306,9 +373,24 @@ namespace Library
 
         public static List<Book> GetAllBooks()
         {
-            string query = "select nameBook,fioAutor,countInStock,category,picture,yearOfIssue" +
-            " from Books inner join Autors" +
-            " on Books.idAutor = Autors.idAutor";
+            string query = "select nameBook,fioAutor,countInStock,category,picture,yearOfIssue,count(idBookDelivery)" +
+             " from Books inner join Autors inner join BookDelivery inner join Instances" +
+             " on Books.idAutor = Autors.idAutor and" +
+             " BookDelivery.idInstance = Instances.idInstance and" +
+             " Books.idBook = Instances.idBook";
+
+            query += " group by nameBook";
+
+            query += " union (select nameBook,fioAutor,countInStock,category,picture,yearOfIssue,0" +
+            " from books inner join autors" +
+            " on books.idAutor = autors.idAutor" +
+            " where nameBook not in (" +
+            " (select nameBook" +
+            " from Books inner join Autors inner join BookDelivery inner join Instances" +
+            " on Books.idAutor = Autors.idAutor and" +
+            " BookDelivery.idInstance = Instances.idInstance and" +
+            " Books.idBook = Instances.idBook)))";
+
 
             List<Book> result = new List<Book>();
 
@@ -322,7 +404,7 @@ namespace Library
             {
                 result.Add(new Book(reader[0].ToString(), reader[1].ToString(),
                     Convert.ToInt32(reader[2]), reader[3].ToString(), reader[4].ToString(),
-                 Convert.ToInt32(reader[5])));
+                 Convert.ToInt32(reader[5]), Convert.ToInt32(reader[5])));
             }
 
             command.Dispose();
@@ -330,13 +412,43 @@ namespace Library
             return result;
         }
 
-        public static List<Book> GetAllBooks(List<QuerySettings> searchSettings)
+        public static List<string> GetNamesOfBooks(string nameBook)
         {
-            string query = "select nameBook,fioAutor,countInStock,category,picture,yearOfIssue"+
-            " from Books inner join Autors"+
-            " on Books.idAutor = Autors.idAutor";
+            List<string> result = new List<string>();
+            string query = "select nameBook from Books where nameBook like '" + nameBook + "%'";
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result.Add(reader[0].ToString());
+            }
+
+            Connection.Close();
+            command.Dispose();
+            return result;
+        }
+
+        public static List<Book> GetAllBooks(List<QuerySettings> searchSettings, bool onlyInStock)
+        {
+            string query = "select nameBook,fioAutor,countInStock,category,picture,yearOfIssue,count(idBookDelivery)"+
+            " from Books inner join Autors inner join BookDelivery inner join Instances" +
+            " on Books.idAutor = Autors.idAutor and" +
+            " BookDelivery.idInstance = Instances.idInstance and" +
+            " Books.idBook = Instances.idBook";
+
 
             bool wasWhereWritten = false;
+
+            if (onlyInStock)
+            {
+                query += " where countInStock !=0";
+                wasWhereWritten = true;
+            }
 
             for (int i = 0; i < searchSettings.Count; i++)
             {
@@ -352,6 +464,31 @@ namespace Library
 
             }
 
+            query += " group by nameBook";
+
+            query += " union (select nameBook,fioAutor,countInStock,category,picture,yearOfIssue,0" +
+            " from books inner join autors" +
+            " on books.idAutor = autors.idAutor" +
+            " where nameBook not in (" +
+            " (select nameBook" +
+            " from Books inner join Autors inner join BookDelivery inner join Instances" +
+            " on Books.idAutor = Autors.idAutor and" +
+            " BookDelivery.idInstance = Instances.idInstance and" +
+            " Books.idBook = Instances.idBook))";
+
+            if (onlyInStock)
+            {
+                query += " and countInStock !=0";
+                wasWhereWritten = true;
+            }
+
+            for (int i = 0; i < searchSettings.Count; i++)
+            {
+                    query += " and " + searchSettings[i].Column + " Like '" + searchSettings[i].Value + "%'";
+            }
+
+            query += ")";
+
             List<Book> result = new List<Book>();
 
             Connection.Open();
@@ -364,7 +501,7 @@ namespace Library
             {
                 result.Add(new Book(reader[0].ToString(),reader[1].ToString(),
                     Convert.ToInt32(reader[2]),reader[3].ToString(),reader[4].ToString(),
-                     Convert.ToInt32(reader[5])));
+                     Convert.ToInt32(reader[5]), Convert.ToInt32(reader[6])));
             }
 
             command.Dispose();

@@ -155,5 +155,36 @@ namespace Library
             Connection.Close();
             return result;
         }
+
+        public static string GetLibrarianPassword(string fioLibrarian)
+        {
+            string query = "select passwordLibrarian from Librarians where fioLibrarian = '" + fioLibrarian + "'";
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            string result = command.ExecuteScalar().ToString();
+
+            command.Dispose();
+            Connection.Close();
+            return result;
+        }
+
+
+        public static string GetReaderEmail(string fioReader)
+        {
+            string query = "select email from Readers where fioReader = '" + fioReader + "'";
+
+            Connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+
+            string result = command.ExecuteScalar().ToString();
+
+            command.Dispose();
+            Connection.Close();
+            return result;
+        }
     }
 }

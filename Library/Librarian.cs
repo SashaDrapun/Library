@@ -13,6 +13,13 @@ namespace Library
         public string Email { get => email; set => email = value; }
         public string PasswordLibrarian { get => passwordLibrarian; set => passwordLibrarian = value; }
 
+        public Librarian(string fioLibrarian, string email, string passwordLibrarian)
+        {
+            this.fioLibrarian = fioLibrarian;
+            this.email = email;
+            this.passwordLibrarian = passwordLibrarian;
+        }
+
         public Librarian(string fioLibrarian, string contactNumber, string email, string passwordLibrarian)
         {
             this.fioLibrarian = fioLibrarian;

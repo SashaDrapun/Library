@@ -41,6 +41,4 @@ namespace Library
             return "templeOfTheEpiphany";
         }
     }
-
-
 }

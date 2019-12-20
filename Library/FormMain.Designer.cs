@@ -30,6 +30,16 @@
         {
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageAutorization = new System.Windows.Forms.TabPage();
+            this.checkBoxShowPasswordNewPassword = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowPasswordConfirmationPassword = new System.Windows.Forms.CheckBox();
+            this.label104 = new System.Windows.Forms.Label();
+            this.textBoxConfirmationNewPassword = new System.Windows.Forms.TextBox();
+            this.label105 = new System.Windows.Forms.Label();
+            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.textBoxCodeConfirmation = new System.Windows.Forms.TextBox();
+            this.buttonPasswordRecovery = new System.Windows.Forms.Button();
+            this.label101 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -37,7 +47,12 @@
             this.comboBoxNameLibrarian = new System.Windows.Forms.ComboBox();
             this.labelAutorizationText = new System.Windows.Forms.Label();
             this.buttonAutorization = new System.Windows.Forms.Button();
+            this.buttonConfirmNewPassword = new System.Windows.Forms.Button();
+            this.buttonCancelChangePassword = new System.Windows.Forms.Button();
+            this.buttonCodeConfirmation = new System.Windows.Forms.Button();
+            this.buttonCancelChangePassword2 = new System.Windows.Forms.Button();
             this.tabPageBookingDelivery = new System.Windows.Forms.TabPage();
+            this.checkBoxOnlyDebtorsBookDelivery = new System.Windows.Forms.CheckBox();
             this.tabControlBookDelivery = new System.Windows.Forms.TabControl();
             this.tabPageBookIssuence = new System.Windows.Forms.TabPage();
             this.buttonGoToAddInstances = new System.Windows.Forms.Button();
@@ -57,17 +72,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxFIOReader = new System.Windows.Forms.ComboBox();
             this.tabPageBookReturn = new System.Windows.Forms.TabPage();
+            this.dataGridViewBookDeliveryReturnBooks = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSendMail = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxFioReaderReturnsBooks = new System.Windows.Forms.ComboBox();
-            this.dataGridViewBookDeliveryReturnBooks = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBoxSearchBookDelivery = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,8 +94,15 @@
             this.textBoxFioLibrarianBookDelivery = new System.Windows.Forms.TextBox();
             this.textBoxFioReaderBookDelivery = new System.Windows.Forms.TextBox();
             this.dataGridViewBookDelivery = new System.Windows.Forms.DataGridView();
+            this.FioReader = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fioLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdInstances = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageBooks = new System.Windows.Forms.TabPage();
-            this.labelTotalFound = new System.Windows.Forms.Label();
+            this.labelNotFound = new System.Windows.Forms.Label();
             this.labelNumberCurrentBook = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonBooksEdit = new System.Windows.Forms.Button();
@@ -115,18 +138,16 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBoxNameBookBooks = new System.Windows.Forms.TextBox();
             this.tabPageEditBook = new System.Windows.Forms.TabPage();
+            this.textBoxCategoryBookNewValue = new System.Windows.Forms.TextBox();
             this.checkBoxIsNeedToEditPicture = new System.Windows.Forms.CheckBox();
             this.checkBoxIsNeedToEditYearOfIssue = new System.Windows.Forms.CheckBox();
             this.textBoxYearOfIssueNewValue = new System.Windows.Forms.NumericUpDown();
             this.comboBoxFioAutorEditNewValue = new System.Windows.Forms.ComboBox();
-            this.pictureBoxEdit = new System.Windows.Forms.PictureBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.textBoxCategoryBookNewValue = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.textBoxNameBookNewValue = new System.Windows.Forms.TextBox();
-            this.pictureBoxBookEditOldValue = new System.Windows.Forms.PictureBox();
             this.textBoxFioAutorEditOldValue = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -142,6 +163,7 @@
             this.textBoxPictureEdit = new System.Windows.Forms.TextBox();
             this.labelHelpBooksEditing = new System.Windows.Forms.Label();
             this.groupBoxBookSearch = new System.Windows.Forms.GroupBox();
+            this.checkBoxOnlyInStock = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -209,6 +231,7 @@
             this.textBoxSurnameReaderOldValue = new System.Windows.Forms.TextBox();
             this.labelHelpReadersEditing = new System.Windows.Forms.Label();
             this.groupBoxReaders = new System.Windows.Forms.GroupBox();
+            this.checkBoxOnlyDebtors = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxMailReadersSearch = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -315,28 +338,7 @@
             this.contactNumberLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.label101 = new System.Windows.Forms.Label();
-            this.buttonPasswordRecovery = new System.Windows.Forms.Button();
-            this.textBoxCodeConfirmation = new System.Windows.Forms.TextBox();
-            this.label103 = new System.Windows.Forms.Label();
-            this.buttonCancelChangePassword = new System.Windows.Forms.Button();
-            this.label104 = new System.Windows.Forms.Label();
-            this.textBoxConfirmationNewPassword = new System.Windows.Forms.TextBox();
-            this.label105 = new System.Windows.Forms.Label();
-            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
-            this.buttonConfirmNewPassword = new System.Windows.Forms.Button();
-            this.buttonCodeConfirmation = new System.Windows.Forms.Button();
-            this.buttonCancelChangePassword2 = new System.Windows.Forms.Button();
-            this.checkBoxShowPasswordConfirmationPassword = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowPasswordNewPassword = new System.Windows.Forms.CheckBox();
-            this.FioReader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fioLibrarian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfIssue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdInstances = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBoxOnlyDebtorsBookDelivery = new System.Windows.Forms.CheckBox();
-            this.checkBoxOnlyDebtors = new System.Windows.Forms.CheckBox();
+            this.labelNowLibrarian = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabPageAutorization.SuspendLayout();
             this.tabPageBookingDelivery.SuspendLayout();
@@ -356,8 +358,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
             this.tabPageEditBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxYearOfIssueNewValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).BeginInit();
             this.groupBoxBookSearch.SuspendLayout();
             this.tabPageInstances.SuspendLayout();
             this.groupBoxSearchInstances.SuspendLayout();
@@ -393,29 +393,26 @@
             this.tabControlMain.Controls.Add(this.tabPageReaders);
             this.tabControlMain.Controls.Add(this.tabPageAutors);
             this.tabControlMain.Controls.Add(this.tabPageLibrarians);
+            this.tabControlMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.tabControlMain.ItemSize = new System.Drawing.Size(175, 18);
-            this.tabControlMain.Location = new System.Drawing.Point(12, 36);
+            this.tabControlMain.Location = new System.Drawing.Point(12, 53);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(1240, 600);
             this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMain.TabIndex = 0;
+            this.tabControlMain.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlMain_Selecting);
             this.tabControlMain.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlMain_Deselecting);
-            this.tabControlMain.Deselected += new System.Windows.Forms.TabControlEventHandler(this.tabControlMain_Deselected);
             // 
             // tabPageAutorization
             // 
             this.tabPageAutorization.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAutorization.Controls.Add(this.checkBoxShowPasswordNewPassword);
             this.tabPageAutorization.Controls.Add(this.checkBoxShowPasswordConfirmationPassword);
-            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword2);
-            this.tabPageAutorization.Controls.Add(this.buttonCodeConfirmation);
-            this.tabPageAutorization.Controls.Add(this.buttonConfirmNewPassword);
             this.tabPageAutorization.Controls.Add(this.label104);
             this.tabPageAutorization.Controls.Add(this.textBoxConfirmationNewPassword);
             this.tabPageAutorization.Controls.Add(this.label105);
             this.tabPageAutorization.Controls.Add(this.textBoxNewPassword);
-            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword);
             this.tabPageAutorization.Controls.Add(this.label103);
             this.tabPageAutorization.Controls.Add(this.textBoxCodeConfirmation);
             this.tabPageAutorization.Controls.Add(this.buttonPasswordRecovery);
@@ -427,11 +424,146 @@
             this.tabPageAutorization.Controls.Add(this.comboBoxNameLibrarian);
             this.tabPageAutorization.Controls.Add(this.labelAutorizationText);
             this.tabPageAutorization.Controls.Add(this.buttonAutorization);
+            this.tabPageAutorization.Controls.Add(this.buttonConfirmNewPassword);
+            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword);
+            this.tabPageAutorization.Controls.Add(this.buttonCodeConfirmation);
+            this.tabPageAutorization.Controls.Add(this.buttonCancelChangePassword2);
             this.tabPageAutorization.Location = new System.Drawing.Point(4, 22);
             this.tabPageAutorization.Name = "tabPageAutorization";
             this.tabPageAutorization.Size = new System.Drawing.Size(1232, 574);
             this.tabPageAutorization.TabIndex = 6;
             this.tabPageAutorization.Text = "Авторизация";
+            // 
+            // checkBoxShowPasswordNewPassword
+            // 
+            this.checkBoxShowPasswordNewPassword.AutoSize = true;
+            this.checkBoxShowPasswordNewPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxShowPasswordNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPasswordNewPassword.ForeColor = System.Drawing.Color.White;
+            this.checkBoxShowPasswordNewPassword.Location = new System.Drawing.Point(530, 165);
+            this.checkBoxShowPasswordNewPassword.Name = "checkBoxShowPasswordNewPassword";
+            this.checkBoxShowPasswordNewPassword.Size = new System.Drawing.Size(189, 29);
+            this.checkBoxShowPasswordNewPassword.TabIndex = 45;
+            this.checkBoxShowPasswordNewPassword.Tag = "NewPassword";
+            this.checkBoxShowPasswordNewPassword.Text = "Показать пароль";
+            this.checkBoxShowPasswordNewPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPasswordNewPassword.Visible = false;
+            this.checkBoxShowPasswordNewPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordNewPassword_CheckedChanged);
+            // 
+            // checkBoxShowPasswordConfirmationPassword
+            // 
+            this.checkBoxShowPasswordConfirmationPassword.AutoSize = true;
+            this.checkBoxShowPasswordConfirmationPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.checkBoxShowPasswordConfirmationPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxShowPasswordConfirmationPassword.ForeColor = System.Drawing.Color.White;
+            this.checkBoxShowPasswordConfirmationPassword.Location = new System.Drawing.Point(531, 268);
+            this.checkBoxShowPasswordConfirmationPassword.Name = "checkBoxShowPasswordConfirmationPassword";
+            this.checkBoxShowPasswordConfirmationPassword.Size = new System.Drawing.Size(189, 29);
+            this.checkBoxShowPasswordConfirmationPassword.TabIndex = 44;
+            this.checkBoxShowPasswordConfirmationPassword.Tag = "NewPassword";
+            this.checkBoxShowPasswordConfirmationPassword.Text = "Показать пароль";
+            this.checkBoxShowPasswordConfirmationPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPasswordConfirmationPassword.Visible = false;
+            this.checkBoxShowPasswordConfirmationPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordConfirmationPassword_CheckedChanged);
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label104.ForeColor = System.Drawing.Color.White;
+            this.label104.Location = new System.Drawing.Point(476, 199);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(297, 31);
+            this.label104.TabIndex = 40;
+            this.label104.Tag = "NewPassword";
+            this.label104.Text = "Подтвержение пароля";
+            this.label104.Visible = false;
+            // 
+            // textBoxConfirmationNewPassword
+            // 
+            this.textBoxConfirmationNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxConfirmationNewPassword.Location = new System.Drawing.Point(531, 233);
+            this.textBoxConfirmationNewPassword.Name = "textBoxConfirmationNewPassword";
+            this.textBoxConfirmationNewPassword.PasswordChar = '*';
+            this.textBoxConfirmationNewPassword.Size = new System.Drawing.Size(179, 30);
+            this.textBoxConfirmationNewPassword.TabIndex = 39;
+            this.textBoxConfirmationNewPassword.Tag = "NewPassword";
+            this.textBoxConfirmationNewPassword.Visible = false;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label105.ForeColor = System.Drawing.Color.White;
+            this.label105.Location = new System.Drawing.Point(524, 102);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(193, 31);
+            this.label105.TabIndex = 38;
+            this.label105.Tag = "NewPassword";
+            this.label105.Text = "Новый пароль";
+            this.label105.Visible = false;
+            // 
+            // textBoxNewPassword
+            // 
+            this.textBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(530, 136);
+            this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.PasswordChar = '*';
+            this.textBoxNewPassword.Size = new System.Drawing.Size(179, 30);
+            this.textBoxNewPassword.TabIndex = 37;
+            this.textBoxNewPassword.Tag = "NewPassword";
+            this.textBoxNewPassword.Visible = false;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label103.ForeColor = System.Drawing.Color.White;
+            this.label103.Location = new System.Drawing.Point(463, 150);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(323, 31);
+            this.label103.TabIndex = 31;
+            this.label103.Tag = "ConfirmationCode";
+            this.label103.Text = "Введите код подтвержения";
+            this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label103.Visible = false;
+            // 
+            // textBoxCodeConfirmation
+            // 
+            this.textBoxCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxCodeConfirmation.Location = new System.Drawing.Point(526, 184);
+            this.textBoxCodeConfirmation.Name = "textBoxCodeConfirmation";
+            this.textBoxCodeConfirmation.Size = new System.Drawing.Size(186, 30);
+            this.textBoxCodeConfirmation.TabIndex = 30;
+            this.textBoxCodeConfirmation.Tag = "ConfirmationCode";
+            this.textBoxCodeConfirmation.Visible = false;
+            // 
+            // buttonPasswordRecovery
+            // 
+            this.buttonPasswordRecovery.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonPasswordRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonPasswordRecovery.ForeColor = System.Drawing.Color.White;
+            this.buttonPasswordRecovery.Location = new System.Drawing.Point(440, 392);
+            this.buttonPasswordRecovery.Name = "buttonPasswordRecovery";
+            this.buttonPasswordRecovery.Size = new System.Drawing.Size(368, 58);
+            this.buttonPasswordRecovery.TabIndex = 29;
+            this.buttonPasswordRecovery.Tag = "Autorization";
+            this.buttonPasswordRecovery.Text = "Восстановить пароль";
+            this.buttonPasswordRecovery.UseVisualStyleBackColor = false;
+            this.buttonPasswordRecovery.Click += new System.EventHandler(this.buttonPasswordRecovery_Click);
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label101.ForeColor = System.Drawing.Color.White;
+            this.label101.Location = new System.Drawing.Point(520, 358);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(197, 31);
+            this.label101.TabIndex = 28;
+            this.label101.Tag = "Autorization";
+            this.label101.Text = "Забыли пароль?";
+            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // checkBoxShowPassword
             // 
@@ -446,6 +578,7 @@
             this.checkBoxShowPassword.Tag = "Autorization";
             this.checkBoxShowPassword.Text = "Показать пароль";
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // textBoxPassword
             // 
@@ -510,13 +643,74 @@
             this.buttonAutorization.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonAutorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.buttonAutorization.ForeColor = System.Drawing.Color.White;
-            this.buttonAutorization.Location = new System.Drawing.Point(435, 297);
+            this.buttonAutorization.Location = new System.Drawing.Point(440, 297);
             this.buttonAutorization.Name = "buttonAutorization";
             this.buttonAutorization.Size = new System.Drawing.Size(368, 58);
             this.buttonAutorization.TabIndex = 27;
             this.buttonAutorization.Tag = "Autorization";
             this.buttonAutorization.Text = "Авторизоваться";
             this.buttonAutorization.UseVisualStyleBackColor = false;
+            this.buttonAutorization.Click += new System.EventHandler(this.buttonAutorization_Click);
+            // 
+            // buttonConfirmNewPassword
+            // 
+            this.buttonConfirmNewPassword.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonConfirmNewPassword.ForeColor = System.Drawing.Color.White;
+            this.buttonConfirmNewPassword.Location = new System.Drawing.Point(442, 297);
+            this.buttonConfirmNewPassword.Name = "buttonConfirmNewPassword";
+            this.buttonConfirmNewPassword.Size = new System.Drawing.Size(368, 58);
+            this.buttonConfirmNewPassword.TabIndex = 41;
+            this.buttonConfirmNewPassword.Tag = "NewPassword";
+            this.buttonConfirmNewPassword.Text = "Сменить пароль";
+            this.buttonConfirmNewPassword.UseVisualStyleBackColor = false;
+            this.buttonConfirmNewPassword.Visible = false;
+            this.buttonConfirmNewPassword.Click += new System.EventHandler(this.buttonConfirmNewPassword_Click);
+            // 
+            // buttonCancelChangePassword
+            // 
+            this.buttonCancelChangePassword.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCancelChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCancelChangePassword.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelChangePassword.Location = new System.Drawing.Point(442, 284);
+            this.buttonCancelChangePassword.Name = "buttonCancelChangePassword";
+            this.buttonCancelChangePassword.Size = new System.Drawing.Size(368, 58);
+            this.buttonCancelChangePassword.TabIndex = 33;
+            this.buttonCancelChangePassword.Tag = "ConfirmationCode";
+            this.buttonCancelChangePassword.Text = "Отменить смену пароля";
+            this.buttonCancelChangePassword.UseVisualStyleBackColor = false;
+            this.buttonCancelChangePassword.Visible = false;
+            this.buttonCancelChangePassword.Click += new System.EventHandler(this.buttonCancelChangePassword_Click);
+            // 
+            // buttonCodeConfirmation
+            // 
+            this.buttonCodeConfirmation.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCodeConfirmation.ForeColor = System.Drawing.Color.White;
+            this.buttonCodeConfirmation.Location = new System.Drawing.Point(442, 220);
+            this.buttonCodeConfirmation.Name = "buttonCodeConfirmation";
+            this.buttonCodeConfirmation.Size = new System.Drawing.Size(368, 58);
+            this.buttonCodeConfirmation.TabIndex = 42;
+            this.buttonCodeConfirmation.Tag = "ConfirmationCode";
+            this.buttonCodeConfirmation.Text = "Подтвердить код подтверждения";
+            this.buttonCodeConfirmation.UseVisualStyleBackColor = false;
+            this.buttonCodeConfirmation.Visible = false;
+            this.buttonCodeConfirmation.Click += new System.EventHandler(this.buttonCodeConfirmation_Click);
+            // 
+            // buttonCancelChangePassword2
+            // 
+            this.buttonCancelChangePassword2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonCancelChangePassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonCancelChangePassword2.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelChangePassword2.Location = new System.Drawing.Point(442, 361);
+            this.buttonCancelChangePassword2.Name = "buttonCancelChangePassword2";
+            this.buttonCancelChangePassword2.Size = new System.Drawing.Size(368, 58);
+            this.buttonCancelChangePassword2.TabIndex = 43;
+            this.buttonCancelChangePassword2.Tag = "NewPassword";
+            this.buttonCancelChangePassword2.Text = "Отменить смену пароля";
+            this.buttonCancelChangePassword2.UseVisualStyleBackColor = false;
+            this.buttonCancelChangePassword2.Visible = false;
+            this.buttonCancelChangePassword2.Click += new System.EventHandler(this.buttonCancelChangePassword2_Click);
             // 
             // tabPageBookingDelivery
             // 
@@ -532,6 +726,19 @@
             this.tabPageBookingDelivery.TabIndex = 0;
             this.tabPageBookingDelivery.Text = "Выдача книг";
             this.tabPageBookingDelivery.Click += new System.EventHandler(this.tabPageBookingDelivery_Click);
+            // 
+            // checkBoxOnlyDebtorsBookDelivery
+            // 
+            this.checkBoxOnlyDebtorsBookDelivery.AutoSize = true;
+            this.checkBoxOnlyDebtorsBookDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxOnlyDebtorsBookDelivery.ForeColor = System.Drawing.Color.White;
+            this.checkBoxOnlyDebtorsBookDelivery.Location = new System.Drawing.Point(868, 301);
+            this.checkBoxOnlyDebtorsBookDelivery.Name = "checkBoxOnlyDebtorsBookDelivery";
+            this.checkBoxOnlyDebtorsBookDelivery.Size = new System.Drawing.Size(304, 29);
+            this.checkBoxOnlyDebtorsBookDelivery.TabIndex = 3;
+            this.checkBoxOnlyDebtorsBookDelivery.Text = "Выводить только должников";
+            this.checkBoxOnlyDebtorsBookDelivery.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyDebtorsBookDelivery.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged);
             // 
             // tabControlBookDelivery
             // 
@@ -562,10 +769,10 @@
             this.tabPageBookIssuence.Controls.Add(this.label6);
             this.tabPageBookIssuence.Controls.Add(this.label5);
             this.tabPageBookIssuence.Controls.Add(this.comboBoxFIOReader);
-            this.tabPageBookIssuence.Location = new System.Drawing.Point(4, 22);
+            this.tabPageBookIssuence.Location = new System.Drawing.Point(4, 24);
             this.tabPageBookIssuence.Name = "tabPageBookIssuence";
             this.tabPageBookIssuence.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBookIssuence.Size = new System.Drawing.Size(1178, 192);
+            this.tabPageBookIssuence.Size = new System.Drawing.Size(1178, 190);
             this.tabPageBookIssuence.TabIndex = 0;
             this.tabPageBookIssuence.Text = "Выдать книгу";
             // 
@@ -672,7 +879,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(718, 42);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label8
@@ -689,9 +896,9 @@
             // comboBoxIdInstance
             // 
             this.comboBoxIdInstance.FormattingEnabled = true;
-            this.comboBoxIdInstance.Location = new System.Drawing.Point(497, 41);
+            this.comboBoxIdInstance.Location = new System.Drawing.Point(493, 40);
             this.comboBoxIdInstance.Name = "comboBoxIdInstance";
-            this.comboBoxIdInstance.Size = new System.Drawing.Size(205, 21);
+            this.comboBoxIdInstance.Size = new System.Drawing.Size(205, 23);
             this.comboBoxIdInstance.TabIndex = 5;
             this.comboBoxIdInstance.Click += new System.EventHandler(this.comboBoxIdInstance_Click);
             // 
@@ -709,13 +916,14 @@
             // comboBoxNameBook
             // 
             this.comboBoxNameBook.FormattingEnabled = true;
-            this.comboBoxNameBook.Location = new System.Drawing.Point(272, 41);
+            this.comboBoxNameBook.Location = new System.Drawing.Point(273, 39);
             this.comboBoxNameBook.MaxDropDownItems = 100;
             this.comboBoxNameBook.Name = "comboBoxNameBook";
-            this.comboBoxNameBook.Size = new System.Drawing.Size(205, 21);
+            this.comboBoxNameBook.Size = new System.Drawing.Size(205, 23);
             this.comboBoxNameBook.Sorted = true;
             this.comboBoxNameBook.TabIndex = 3;
             this.comboBoxNameBook.SelectedValueChanged += new System.EventHandler(this.comboBoxNameBook_SelectedValueChanged);
+            this.comboBoxNameBook.TextChanged += new System.EventHandler(this.comboBoxNameBook_TextChanged);
             // 
             // label6
             // 
@@ -742,30 +950,125 @@
             // comboBoxFIOReader
             // 
             this.comboBoxFIOReader.FormattingEnabled = true;
-            this.comboBoxFIOReader.Location = new System.Drawing.Point(36, 41);
+            this.comboBoxFIOReader.IntegralHeight = false;
+            this.comboBoxFIOReader.Location = new System.Drawing.Point(35, 39);
             this.comboBoxFIOReader.Name = "comboBoxFIOReader";
-            this.comboBoxFIOReader.Size = new System.Drawing.Size(205, 21);
+            this.comboBoxFIOReader.Size = new System.Drawing.Size(205, 23);
             this.comboBoxFIOReader.TabIndex = 0;
+            this.comboBoxFIOReader.TextChanged += new System.EventHandler(this.comboBoxFIOReader_TextChanged);
             // 
             // tabPageBookReturn
             // 
+            this.tabPageBookReturn.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageBookReturn.Controls.Add(this.dataGridViewBookDeliveryReturnBooks);
+            this.tabPageBookReturn.Controls.Add(this.buttonSendMail);
             this.tabPageBookReturn.Controls.Add(this.label13);
             this.tabPageBookReturn.Controls.Add(this.label12);
             this.tabPageBookReturn.Controls.Add(this.comboBoxFioReaderReturnsBooks);
-            this.tabPageBookReturn.Controls.Add(this.dataGridViewBookDeliveryReturnBooks);
-            this.tabPageBookReturn.Location = new System.Drawing.Point(4, 22);
+            this.tabPageBookReturn.Location = new System.Drawing.Point(4, 24);
             this.tabPageBookReturn.Name = "tabPageBookReturn";
             this.tabPageBookReturn.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBookReturn.Size = new System.Drawing.Size(1178, 192);
+            this.tabPageBookReturn.Size = new System.Drawing.Size(1178, 190);
             this.tabPageBookReturn.TabIndex = 1;
             this.tabPageBookReturn.Text = "Оформить возврат книг";
-            this.tabPageBookReturn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewBookDeliveryReturnBooks
+            // 
+            this.dataGridViewBookDeliveryReturnBooks.AllowUserToAddRows = false;
+            this.dataGridViewBookDeliveryReturnBooks.AllowUserToDeleteRows = false;
+            this.dataGridViewBookDeliveryReturnBooks.AllowUserToResizeColumns = false;
+            this.dataGridViewBookDeliveryReturnBooks.AllowUserToResizeRows = false;
+            this.dataGridViewBookDeliveryReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBookDeliveryReturnBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.dataGridViewBookDeliveryReturnBooks.Location = new System.Drawing.Point(6, 56);
+            this.dataGridViewBookDeliveryReturnBooks.Name = "dataGridViewBookDeliveryReturnBooks";
+            this.dataGridViewBookDeliveryReturnBooks.ReadOnly = true;
+            this.dataGridViewBookDeliveryReturnBooks.RowHeadersVisible = false;
+            this.dataGridViewBookDeliveryReturnBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewBookDeliveryReturnBooks.Size = new System.Drawing.Size(880, 126);
+            this.dataGridViewBookDeliveryReturnBooks.TabIndex = 4;
+            this.dataGridViewBookDeliveryReturnBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookDeliveryReturnBooks_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.Frozen = true;
+            this.dataGridViewTextBoxColumn7.HeaderText = "ФИО Читателя";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.Frozen = true;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Наименование книги";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.Frozen = true;
+            this.dataGridViewTextBoxColumn9.HeaderText = "ФИО Библиотекаря выдавшего книгу";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.Frozen = true;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Дата выдачи";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.Frozen = true;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Дата возврата";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.Frozen = true;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Номер экземпляра";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.Frozen = true;
+            this.dataGridViewTextBoxColumn13.HeaderText = "Количество дней со дня выдачи";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // buttonSendMail
+            // 
+            this.buttonSendMail.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonSendMail.ForeColor = System.Drawing.Color.White;
+            this.buttonSendMail.Location = new System.Drawing.Point(892, 57);
+            this.buttonSendMail.Name = "buttonSendMail";
+            this.buttonSendMail.Size = new System.Drawing.Size(283, 125);
+            this.buttonSendMail.TabIndex = 19;
+            this.buttonSendMail.Text = "Отправить сообщение на почту";
+            this.buttonSendMail.UseVisualStyleBackColor = false;
+            this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label13.Location = new System.Drawing.Point(226, 14);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(228, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(642, 25);
             this.label13.TabIndex = 6;
@@ -775,6 +1078,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(21, 8);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(178, 17);
@@ -786,87 +1090,10 @@
             this.comboBoxFioReaderReturnsBooks.FormattingEnabled = true;
             this.comboBoxFioReaderReturnsBooks.Location = new System.Drawing.Point(6, 28);
             this.comboBoxFioReaderReturnsBooks.Name = "comboBoxFioReaderReturnsBooks";
-            this.comboBoxFioReaderReturnsBooks.Size = new System.Drawing.Size(205, 21);
+            this.comboBoxFioReaderReturnsBooks.Size = new System.Drawing.Size(205, 23);
             this.comboBoxFioReaderReturnsBooks.TabIndex = 4;
             this.comboBoxFioReaderReturnsBooks.SelectedIndexChanged += new System.EventHandler(this.comboBoxFioReaderReturnsBooks_SelectedIndexChanged);
-            // 
-            // dataGridViewBookDeliveryReturnBooks
-            // 
-            this.dataGridViewBookDeliveryReturnBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewBookDeliveryReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBookDeliveryReturnBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewImageColumn1});
-            this.dataGridViewBookDeliveryReturnBooks.Location = new System.Drawing.Point(6, 60);
-            this.dataGridViewBookDeliveryReturnBooks.Name = "dataGridViewBookDeliveryReturnBooks";
-            this.dataGridViewBookDeliveryReturnBooks.ReadOnly = true;
-            this.dataGridViewBookDeliveryReturnBooks.RowHeadersVisible = false;
-            this.dataGridViewBookDeliveryReturnBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBookDeliveryReturnBooks.Size = new System.Drawing.Size(862, 129);
-            this.dataGridViewBookDeliveryReturnBooks.TabIndex = 3;
-            this.dataGridViewBookDeliveryReturnBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookDeliveryReturnBooks_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ФИО Читателя";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Наименование книги";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 128;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "ФИО Библиотекаря выдавшего книгу";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 179;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.Frozen = true;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Дата выдачи";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.Frozen = true;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Дата возврата";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.Frozen = true;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Номер экземпляра";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 120;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.Frozen = true;
-            this.dataGridViewImageColumn1.HeaderText = "Фото";
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 41;
+            this.comboBoxFioReaderReturnsBooks.TextChanged += new System.EventHandler(this.comboBoxFioReaderReturnsBooks_TextChanged);
             // 
             // groupBoxSearchBookDelivery
             // 
@@ -879,7 +1106,7 @@
             this.groupBoxSearchBookDelivery.Controls.Add(this.textBoxFioLibrarianBookDelivery);
             this.groupBoxSearchBookDelivery.Controls.Add(this.textBoxFioReaderBookDelivery);
             this.groupBoxSearchBookDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.groupBoxSearchBookDelivery.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxSearchBookDelivery.ForeColor = System.Drawing.Color.White;
             this.groupBoxSearchBookDelivery.Location = new System.Drawing.Point(868, 20);
             this.groupBoxSearchBookDelivery.Name = "groupBoxSearchBookDelivery";
             this.groupBoxSearchBookDelivery.Size = new System.Drawing.Size(358, 265);
@@ -891,7 +1118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(84, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 26);
@@ -902,7 +1129,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(84, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(214, 26);
@@ -913,7 +1140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(84, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(229, 26);
@@ -924,7 +1151,7 @@
             // 
             this.labelFioReader.AutoSize = true;
             this.labelFioReader.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.labelFioReader.ForeColor = System.Drawing.Color.Black;
+            this.labelFioReader.ForeColor = System.Drawing.Color.White;
             this.labelFioReader.Location = new System.Drawing.Point(106, 27);
             this.labelFioReader.Name = "labelFioReader";
             this.labelFioReader.Size = new System.Drawing.Size(163, 26);
@@ -988,7 +1215,8 @@
             this.fioLibrarian,
             this.dateOfIssue,
             this.ReturnDate,
-            this.IdInstances});
+            this.IdInstances,
+            this.CountDays});
             this.dataGridViewBookDelivery.Location = new System.Drawing.Point(20, 20);
             this.dataGridViewBookDelivery.Name = "dataGridViewBookDelivery";
             this.dataGridViewBookDelivery.ReadOnly = true;
@@ -997,10 +1225,65 @@
             this.dataGridViewBookDelivery.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewBookDelivery.TabIndex = 0;
             // 
+            // FioReader
+            // 
+            this.FioReader.Frozen = true;
+            this.FioReader.HeaderText = "ФИО Читателя";
+            this.FioReader.Name = "FioReader";
+            this.FioReader.ReadOnly = true;
+            this.FioReader.Width = 175;
+            // 
+            // NameBook
+            // 
+            this.NameBook.Frozen = true;
+            this.NameBook.HeaderText = "Наименование книги";
+            this.NameBook.Name = "NameBook";
+            this.NameBook.ReadOnly = true;
+            this.NameBook.Width = 110;
+            // 
+            // fioLibrarian
+            // 
+            this.fioLibrarian.Frozen = true;
+            this.fioLibrarian.HeaderText = "ФИО Библиотекаря выдавшего книгу";
+            this.fioLibrarian.Name = "fioLibrarian";
+            this.fioLibrarian.ReadOnly = true;
+            this.fioLibrarian.Width = 175;
+            // 
+            // dateOfIssue
+            // 
+            this.dateOfIssue.Frozen = true;
+            this.dateOfIssue.HeaderText = "Дата выдачи";
+            this.dateOfIssue.Name = "dateOfIssue";
+            this.dateOfIssue.ReadOnly = true;
+            this.dateOfIssue.Width = 90;
+            // 
+            // ReturnDate
+            // 
+            this.ReturnDate.Frozen = true;
+            this.ReturnDate.HeaderText = "Дата возврата";
+            this.ReturnDate.Name = "ReturnDate";
+            this.ReturnDate.ReadOnly = true;
+            this.ReturnDate.Width = 90;
+            // 
+            // IdInstances
+            // 
+            this.IdInstances.Frozen = true;
+            this.IdInstances.HeaderText = "Номер экземпляра";
+            this.IdInstances.Name = "IdInstances";
+            this.IdInstances.ReadOnly = true;
+            this.IdInstances.Width = 90;
+            // 
+            // CountDays
+            // 
+            this.CountDays.Frozen = true;
+            this.CountDays.HeaderText = "Количество дней со дня выдачи";
+            this.CountDays.Name = "CountDays";
+            this.CountDays.ReadOnly = true;
+            // 
             // tabPageBooks
             // 
             this.tabPageBooks.BackColor = System.Drawing.Color.DimGray;
-            this.tabPageBooks.Controls.Add(this.labelTotalFound);
+            this.tabPageBooks.Controls.Add(this.labelNotFound);
             this.tabPageBooks.Controls.Add(this.labelNumberCurrentBook);
             this.tabPageBooks.Controls.Add(this.panel1);
             this.tabPageBooks.Controls.Add(this.buttonPreviousBook);
@@ -1008,6 +1291,7 @@
             this.tabPageBooks.Controls.Add(this.pictureBoxMainValue);
             this.tabPageBooks.Controls.Add(this.tabControlBooks);
             this.tabPageBooks.Controls.Add(this.groupBoxBookSearch);
+            this.tabPageBooks.ForeColor = System.Drawing.Color.Black;
             this.tabPageBooks.Location = new System.Drawing.Point(4, 22);
             this.tabPageBooks.Name = "tabPageBooks";
             this.tabPageBooks.Padding = new System.Windows.Forms.Padding(3);
@@ -1016,24 +1300,28 @@
             this.tabPageBooks.Text = "Книги";
             this.tabPageBooks.Click += new System.EventHandler(this.tabPageBooks_Click);
             // 
-            // labelTotalFound
+            // labelNotFound
             // 
-            this.labelTotalFound.AutoSize = true;
-            this.labelTotalFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.labelTotalFound.Location = new System.Drawing.Point(343, 10);
-            this.labelTotalFound.Name = "labelTotalFound";
-            this.labelTotalFound.Size = new System.Drawing.Size(243, 25);
-            this.labelTotalFound.TabIndex = 21;
-            this.labelTotalFound.Text = "Количество у читателей";
+            this.labelNotFound.AutoSize = true;
+            this.labelNotFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelNotFound.ForeColor = System.Drawing.Color.White;
+            this.labelNotFound.Location = new System.Drawing.Point(169, 122);
+            this.labelNotFound.Name = "labelNotFound";
+            this.labelNotFound.Size = new System.Drawing.Size(625, 76);
+            this.labelNotFound.TabIndex = 19;
+            this.labelNotFound.Text = "Ничего не найдено";
+            this.labelNotFound.Visible = false;
             // 
             // labelNumberCurrentBook
             // 
             this.labelNumberCurrentBook.AutoSize = true;
             this.labelNumberCurrentBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.labelNumberCurrentBook.Location = new System.Drawing.Point(343, 318);
+            this.labelNumberCurrentBook.ForeColor = System.Drawing.Color.White;
+            this.labelNumberCurrentBook.Location = new System.Drawing.Point(346, 302);
             this.labelNumberCurrentBook.Name = "labelNumberCurrentBook";
             this.labelNumberCurrentBook.Size = new System.Drawing.Size(243, 25);
             this.labelNumberCurrentBook.TabIndex = 18;
+            this.labelNumberCurrentBook.Tag = "Hidden";
             this.labelNumberCurrentBook.Text = "Количество у читателей";
             // 
             // panel1
@@ -1051,73 +1339,78 @@
             this.panel1.Controls.Add(this.label100);
             this.panel1.Controls.Add(this.textBoxCategoryMainValue);
             this.panel1.Controls.Add(this.textBoxFioAutorMainValue);
-            this.panel1.Location = new System.Drawing.Point(96, 41);
+            this.panel1.Location = new System.Drawing.Point(96, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 269);
             this.panel1.TabIndex = 20;
+            this.panel1.Tag = "Hidden";
             // 
             // buttonBooksEdit
             // 
-            this.buttonBooksEdit.Location = new System.Drawing.Point(130, 238);
+            this.buttonBooksEdit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonBooksEdit.ForeColor = System.Drawing.Color.White;
+            this.buttonBooksEdit.Location = new System.Drawing.Point(125, 235);
             this.buttonBooksEdit.Name = "buttonBooksEdit";
-            this.buttonBooksEdit.Size = new System.Drawing.Size(124, 23);
+            this.buttonBooksEdit.Size = new System.Drawing.Size(132, 31);
             this.buttonBooksEdit.TabIndex = 18;
             this.buttonBooksEdit.Text = "Редактировать";
-            this.buttonBooksEdit.UseVisualStyleBackColor = true;
+            this.buttonBooksEdit.UseVisualStyleBackColor = false;
             this.buttonBooksEdit.Click += new System.EventHandler(this.buttonBooksEdit_Click);
             // 
             // textBoxCountInStockMainValue
             // 
+            this.textBoxCountInStockMainValue.ForeColor = System.Drawing.Color.White;
             this.textBoxCountInStockMainValue.Location = new System.Drawing.Point(130, 149);
             this.textBoxCountInStockMainValue.Name = "textBoxCountInStockMainValue";
             this.textBoxCountInStockMainValue.ReadOnly = true;
-            this.textBoxCountInStockMainValue.Size = new System.Drawing.Size(124, 20);
+            this.textBoxCountInStockMainValue.Size = new System.Drawing.Size(124, 21);
             this.textBoxCountInStockMainValue.TabIndex = 12;
-            this.textBoxCountInStockMainValue.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label88
             // 
             this.label88.AutoSize = true;
             this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label88.ForeColor = System.Drawing.Color.White;
             this.label88.Location = new System.Drawing.Point(15, 6);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(205, 25);
             this.label88.TabIndex = 4;
             this.label88.Text = "Наименование книги";
-            this.label88.Click += new System.EventHandler(this.label88_Click);
             // 
             // textBoxNameBookMainValue
             // 
+            this.textBoxNameBookMainValue.ForeColor = System.Drawing.Color.White;
             this.textBoxNameBookMainValue.Location = new System.Drawing.Point(20, 34);
             this.textBoxNameBookMainValue.Name = "textBoxNameBookMainValue";
             this.textBoxNameBookMainValue.ReadOnly = true;
-            this.textBoxNameBookMainValue.Size = new System.Drawing.Size(191, 20);
+            this.textBoxNameBookMainValue.Size = new System.Drawing.Size(191, 21);
             this.textBoxNameBookMainValue.TabIndex = 5;
-            this.textBoxNameBookMainValue.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxCountOfReaders
             // 
+            this.textBoxCountOfReaders.ForeColor = System.Drawing.Color.White;
             this.textBoxCountOfReaders.Location = new System.Drawing.Point(130, 210);
             this.textBoxCountOfReaders.Name = "textBoxCountOfReaders";
             this.textBoxCountOfReaders.ReadOnly = true;
-            this.textBoxCountOfReaders.Size = new System.Drawing.Size(124, 20);
+            this.textBoxCountOfReaders.Size = new System.Drawing.Size(124, 21);
             this.textBoxCountOfReaders.TabIndex = 17;
             // 
             // label93
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label93.ForeColor = System.Drawing.Color.White;
             this.label93.Location = new System.Drawing.Point(48, 62);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(129, 25);
             this.label93.TabIndex = 6;
             this.label93.Text = "ФИО автора";
-            this.label93.Click += new System.EventHandler(this.label93_Click);
             // 
             // label102
             // 
             this.label102.AutoSize = true;
             this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label102.ForeColor = System.Drawing.Color.White;
             this.label102.Location = new System.Drawing.Point(81, 182);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(243, 25);
@@ -1128,95 +1421,103 @@
             // 
             this.label95.AutoSize = true;
             this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label95.ForeColor = System.Drawing.Color.White;
             this.label95.Location = new System.Drawing.Point(81, 120);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(220, 25);
             this.label95.TabIndex = 7;
             this.label95.Text = "Количество в наличии";
-            this.label95.Click += new System.EventHandler(this.label95_Click);
             // 
             // label99
             // 
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label99.ForeColor = System.Drawing.Color.White;
             this.label99.Location = new System.Drawing.Point(227, 59);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(109, 25);
             this.label99.TabIndex = 8;
             this.label99.Text = "Категория";
-            this.label99.Click += new System.EventHandler(this.label99_Click);
             // 
             // textBoxYearOfIssueMainValue
             // 
+            this.textBoxYearOfIssueMainValue.ForeColor = System.Drawing.Color.White;
             this.textBoxYearOfIssueMainValue.Location = new System.Drawing.Point(219, 35);
             this.textBoxYearOfIssueMainValue.Name = "textBoxYearOfIssueMainValue";
             this.textBoxYearOfIssueMainValue.ReadOnly = true;
-            this.textBoxYearOfIssueMainValue.Size = new System.Drawing.Size(122, 20);
+            this.textBoxYearOfIssueMainValue.Size = new System.Drawing.Size(122, 21);
             this.textBoxYearOfIssueMainValue.TabIndex = 14;
-            this.textBoxYearOfIssueMainValue.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label100
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label100.ForeColor = System.Drawing.Color.White;
             this.label100.Location = new System.Drawing.Point(214, 7);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(129, 25);
             this.label100.TabIndex = 9;
             this.label100.Text = "Год издания";
-            this.label100.Click += new System.EventHandler(this.label100_Click);
             // 
             // textBoxCategoryMainValue
             // 
+            this.textBoxCategoryMainValue.ForeColor = System.Drawing.Color.White;
             this.textBoxCategoryMainValue.Location = new System.Drawing.Point(217, 90);
             this.textBoxCategoryMainValue.Name = "textBoxCategoryMainValue";
             this.textBoxCategoryMainValue.ReadOnly = true;
-            this.textBoxCategoryMainValue.Size = new System.Drawing.Size(122, 20);
+            this.textBoxCategoryMainValue.Size = new System.Drawing.Size(122, 21);
             this.textBoxCategoryMainValue.TabIndex = 13;
-            this.textBoxCategoryMainValue.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // textBoxFioAutorMainValue
             // 
+            this.textBoxFioAutorMainValue.ForeColor = System.Drawing.Color.White;
             this.textBoxFioAutorMainValue.Location = new System.Drawing.Point(20, 90);
             this.textBoxFioAutorMainValue.Name = "textBoxFioAutorMainValue";
             this.textBoxFioAutorMainValue.ReadOnly = true;
-            this.textBoxFioAutorMainValue.Size = new System.Drawing.Size(191, 20);
+            this.textBoxFioAutorMainValue.Size = new System.Drawing.Size(191, 21);
             this.textBoxFioAutorMainValue.TabIndex = 11;
-            this.textBoxFioAutorMainValue.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // buttonPreviousBook
             // 
-            this.buttonPreviousBook.Location = new System.Drawing.Point(8, 167);
+            this.buttonPreviousBook.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonPreviousBook.ForeColor = System.Drawing.Color.White;
+            this.buttonPreviousBook.Location = new System.Drawing.Point(6, 147);
             this.buttonPreviousBook.Name = "buttonPreviousBook";
             this.buttonPreviousBook.Size = new System.Drawing.Size(75, 23);
             this.buttonPreviousBook.TabIndex = 19;
+            this.buttonPreviousBook.Tag = "Hidden";
             this.buttonPreviousBook.Text = "<";
-            this.buttonPreviousBook.UseVisualStyleBackColor = true;
+            this.buttonPreviousBook.UseVisualStyleBackColor = false;
             this.buttonPreviousBook.Click += new System.EventHandler(this.buttonPreviousBook_Click);
             // 
             // buttonNextBook
             // 
-            this.buttonNextBook.Location = new System.Drawing.Point(805, 167);
+            this.buttonNextBook.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonNextBook.ForeColor = System.Drawing.Color.White;
+            this.buttonNextBook.Location = new System.Drawing.Point(805, 147);
             this.buttonNextBook.Name = "buttonNextBook";
-            this.buttonNextBook.Size = new System.Drawing.Size(75, 23);
+            this.buttonNextBook.Size = new System.Drawing.Size(77, 23);
             this.buttonNextBook.TabIndex = 18;
+            this.buttonNextBook.Tag = "Hidden";
             this.buttonNextBook.Text = ">";
-            this.buttonNextBook.UseVisualStyleBackColor = true;
+            this.buttonNextBook.UseVisualStyleBackColor = false;
             this.buttonNextBook.Click += new System.EventHandler(this.buttonNextBook_Click);
             // 
             // pictureBoxMainValue
             // 
-            this.pictureBoxMainValue.Location = new System.Drawing.Point(470, 42);
+            this.pictureBoxMainValue.Location = new System.Drawing.Point(470, 21);
             this.pictureBoxMainValue.Name = "pictureBoxMainValue";
             this.pictureBoxMainValue.Size = new System.Drawing.Size(329, 266);
             this.pictureBoxMainValue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMainValue.TabIndex = 15;
             this.pictureBoxMainValue.TabStop = false;
+            this.pictureBoxMainValue.Tag = "Hidden";
             // 
             // tabControlBooks
             // 
             this.tabControlBooks.Controls.Add(this.tabPageAddBook);
             this.tabControlBooks.Controls.Add(this.tabPageEditBook);
+            this.tabControlBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.tabControlBooks.Location = new System.Drawing.Point(20, 346);
             this.tabControlBooks.Name = "tabControlBooks";
             this.tabControlBooks.SelectedIndex = 0;
@@ -1225,6 +1526,7 @@
             // 
             // tabPageAddBook
             // 
+            this.tabPageAddBook.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAddBook.Controls.Add(this.textBoxYearOfIssueAdd);
             this.tabPageAddBook.Controls.Add(this.textBoxCountInStock);
             this.tabPageAddBook.Controls.Add(this.label23);
@@ -1239,13 +1541,12 @@
             this.tabPageAddBook.Controls.Add(this.label20);
             this.tabPageAddBook.Controls.Add(this.label14);
             this.tabPageAddBook.Controls.Add(this.textBoxNameBookBooks);
-            this.tabPageAddBook.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAddBook.Location = new System.Drawing.Point(4, 26);
             this.tabPageAddBook.Name = "tabPageAddBook";
             this.tabPageAddBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddBook.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAddBook.Size = new System.Drawing.Size(1198, 192);
             this.tabPageAddBook.TabIndex = 0;
             this.tabPageAddBook.Text = "Добавление книги";
-            this.tabPageAddBook.UseVisualStyleBackColor = true;
             // 
             // textBoxYearOfIssueAdd
             // 
@@ -1254,7 +1555,7 @@
             0,
             0,
             0});
-            this.textBoxYearOfIssueAdd.Location = new System.Drawing.Point(463, 72);
+            this.textBoxYearOfIssueAdd.Location = new System.Drawing.Point(463, 70);
             this.textBoxYearOfIssueAdd.Maximum = new decimal(new int[] {
             2100,
             0,
@@ -1266,7 +1567,7 @@
             0,
             0});
             this.textBoxYearOfIssueAdd.Name = "textBoxYearOfIssueAdd";
-            this.textBoxYearOfIssueAdd.Size = new System.Drawing.Size(177, 20);
+            this.textBoxYearOfIssueAdd.Size = new System.Drawing.Size(177, 23);
             this.textBoxYearOfIssueAdd.TabIndex = 17;
             this.textBoxYearOfIssueAdd.Value = new decimal(new int[] {
             1000,
@@ -1276,14 +1577,14 @@
             // 
             // textBoxCountInStock
             // 
-            this.textBoxCountInStock.Location = new System.Drawing.Point(280, 72);
+            this.textBoxCountInStock.Location = new System.Drawing.Point(280, 70);
             this.textBoxCountInStock.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.textBoxCountInStock.Name = "textBoxCountInStock";
-            this.textBoxCountInStock.Size = new System.Drawing.Size(177, 20);
+            this.textBoxCountInStock.Size = new System.Drawing.Size(177, 23);
             this.textBoxCountInStock.TabIndex = 16;
             this.textBoxCountInStock.Value = new decimal(new int[] {
             1,
@@ -1295,6 +1596,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(320, 96);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(89, 20);
@@ -1305,50 +1607,54 @@
             // 
             this.textBoxCategoryBook.Location = new System.Drawing.Point(280, 117);
             this.textBoxCategoryBook.Name = "textBoxCategoryBook";
-            this.textBoxCategoryBook.Size = new System.Drawing.Size(177, 20);
+            this.textBoxCategoryBook.Size = new System.Drawing.Size(177, 23);
             this.textBoxCategoryBook.TabIndex = 14;
             // 
             // buttonBooksAdd
             // 
+            this.buttonBooksAdd.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonBooksAdd.ForeColor = System.Drawing.Color.White;
             this.buttonBooksAdd.Location = new System.Drawing.Point(929, 72);
             this.buttonBooksAdd.Name = "buttonBooksAdd";
             this.buttonBooksAdd.Size = new System.Drawing.Size(183, 54);
             this.buttonBooksAdd.TabIndex = 13;
             this.buttonBooksAdd.Text = "Произвести добавление";
-            this.buttonBooksAdd.UseVisualStyleBackColor = true;
+            this.buttonBooksAdd.UseVisualStyleBackColor = false;
             this.buttonBooksAdd.Click += new System.EventHandler(this.buttonBooksAdd_Click);
             // 
             // buttonLoadPicture
             // 
-            this.buttonLoadPicture.Location = new System.Drawing.Point(706, 167);
+            this.buttonLoadPicture.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonLoadPicture.ForeColor = System.Drawing.Color.White;
+            this.buttonLoadPicture.Location = new System.Drawing.Point(646, 157);
             this.buttonLoadPicture.Name = "buttonLoadPicture";
-            this.buttonLoadPicture.Size = new System.Drawing.Size(122, 23);
+            this.buttonLoadPicture.Size = new System.Drawing.Size(239, 29);
             this.buttonLoadPicture.TabIndex = 12;
             this.buttonLoadPicture.Text = "Загрузить картинку";
-            this.buttonLoadPicture.UseVisualStyleBackColor = true;
+            this.buttonLoadPicture.UseVisualStyleBackColor = false;
             this.buttonLoadPicture.Click += new System.EventHandler(this.buttonLoadPicture_Click);
             // 
             // pictureBoxAdd
             // 
-            this.pictureBoxAdd.Location = new System.Drawing.Point(646, 25);
+            this.pictureBoxAdd.Location = new System.Drawing.Point(646, 15);
             this.pictureBoxAdd.Name = "pictureBoxAdd";
             this.pictureBoxAdd.Size = new System.Drawing.Size(239, 136);
             this.pictureBoxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAdd.TabIndex = 10;
             this.pictureBoxAdd.TabStop = false;
-            this.pictureBoxAdd.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBoxPicture
             // 
             this.textBoxPicture.Location = new System.Drawing.Point(675, 90);
             this.textBoxPicture.Name = "textBoxPicture";
-            this.textBoxPicture.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPicture.Size = new System.Drawing.Size(100, 23);
             this.textBoxPicture.TabIndex = 11;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(496, 51);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(106, 20);
@@ -1359,6 +1665,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(115, 96);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(105, 20);
@@ -1370,13 +1677,15 @@
             this.comboBoxFioAutor.FormattingEnabled = true;
             this.comboBoxFioAutor.Location = new System.Drawing.Point(85, 116);
             this.comboBoxFioAutor.Name = "comboBoxFioAutor";
-            this.comboBoxFioAutor.Size = new System.Drawing.Size(177, 21);
+            this.comboBoxFioAutor.Size = new System.Drawing.Size(177, 25);
             this.comboBoxFioAutor.TabIndex = 6;
+            this.comboBoxFioAutor.TextChanged += new System.EventHandler(this.comboBoxFioAutor_TextChanged);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(276, 51);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(181, 20);
@@ -1387,6 +1696,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(113, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(129, 20);
@@ -1395,25 +1705,24 @@
             // 
             // textBoxNameBookBooks
             // 
-            this.textBoxNameBookBooks.Location = new System.Drawing.Point(85, 72);
+            this.textBoxNameBookBooks.Location = new System.Drawing.Point(85, 70);
             this.textBoxNameBookBooks.Name = "textBoxNameBookBooks";
-            this.textBoxNameBookBooks.Size = new System.Drawing.Size(177, 20);
+            this.textBoxNameBookBooks.Size = new System.Drawing.Size(177, 23);
             this.textBoxNameBookBooks.TabIndex = 0;
             // 
             // tabPageEditBook
             // 
+            this.tabPageEditBook.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageEditBook.Controls.Add(this.textBoxCategoryBookNewValue);
             this.tabPageEditBook.Controls.Add(this.checkBoxIsNeedToEditPicture);
             this.tabPageEditBook.Controls.Add(this.checkBoxIsNeedToEditYearOfIssue);
             this.tabPageEditBook.Controls.Add(this.textBoxYearOfIssueNewValue);
             this.tabPageEditBook.Controls.Add(this.comboBoxFioAutorEditNewValue);
-            this.tabPageEditBook.Controls.Add(this.pictureBoxEdit);
             this.tabPageEditBook.Controls.Add(this.label59);
-            this.tabPageEditBook.Controls.Add(this.textBoxCategoryBookNewValue);
             this.tabPageEditBook.Controls.Add(this.label60);
             this.tabPageEditBook.Controls.Add(this.label61);
             this.tabPageEditBook.Controls.Add(this.label62);
             this.tabPageEditBook.Controls.Add(this.textBoxNameBookNewValue);
-            this.tabPageEditBook.Controls.Add(this.pictureBoxBookEditOldValue);
             this.tabPageEditBook.Controls.Add(this.textBoxFioAutorEditOldValue);
             this.tabPageEditBook.Controls.Add(this.label57);
             this.tabPageEditBook.Controls.Add(this.label56);
@@ -1428,19 +1737,30 @@
             this.tabPageEditBook.Controls.Add(this.textBoxNameBookEditOldValue);
             this.tabPageEditBook.Controls.Add(this.textBoxPictureEdit);
             this.tabPageEditBook.Controls.Add(this.labelHelpBooksEditing);
-            this.tabPageEditBook.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditBook.Location = new System.Drawing.Point(4, 26);
             this.tabPageEditBook.Name = "tabPageEditBook";
-            this.tabPageEditBook.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageEditBook.Size = new System.Drawing.Size(1198, 192);
             this.tabPageEditBook.TabIndex = 1;
             this.tabPageEditBook.Text = "Редактирование книги";
-            this.tabPageEditBook.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCategoryBookNewValue
+            // 
+            this.textBoxCategoryBookNewValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxCategoryBookNewValue.Location = new System.Drawing.Point(825, 66);
+            this.textBoxCategoryBookNewValue.Name = "textBoxCategoryBookNewValue";
+            this.textBoxCategoryBookNewValue.Size = new System.Drawing.Size(177, 23);
+            this.textBoxCategoryBookNewValue.TabIndex = 40;
+            this.textBoxCategoryBookNewValue.Tag = "Hidden";
+            this.textBoxCategoryBookNewValue.Visible = false;
             // 
             // checkBoxIsNeedToEditPicture
             // 
             this.checkBoxIsNeedToEditPicture.AutoSize = true;
-            this.checkBoxIsNeedToEditPicture.Location = new System.Drawing.Point(1017, 151);
+            this.checkBoxIsNeedToEditPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxIsNeedToEditPicture.ForeColor = System.Drawing.Color.White;
+            this.checkBoxIsNeedToEditPicture.Location = new System.Drawing.Point(723, 166);
             this.checkBoxIsNeedToEditPicture.Name = "checkBoxIsNeedToEditPicture";
-            this.checkBoxIsNeedToEditPicture.Size = new System.Drawing.Size(131, 17);
+            this.checkBoxIsNeedToEditPicture.Size = new System.Drawing.Size(193, 24);
             this.checkBoxIsNeedToEditPicture.TabIndex = 49;
             this.checkBoxIsNeedToEditPicture.Tag = "Hidden";
             this.checkBoxIsNeedToEditPicture.Text = "Редактировать фото";
@@ -1450,9 +1770,11 @@
             // checkBoxIsNeedToEditYearOfIssue
             // 
             this.checkBoxIsNeedToEditYearOfIssue.AutoSize = true;
-            this.checkBoxIsNeedToEditYearOfIssue.Location = new System.Drawing.Point(1017, 112);
+            this.checkBoxIsNeedToEditYearOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxIsNeedToEditYearOfIssue.ForeColor = System.Drawing.Color.White;
+            this.checkBoxIsNeedToEditYearOfIssue.Location = new System.Drawing.Point(699, 139);
             this.checkBoxIsNeedToEditYearOfIssue.Name = "checkBoxIsNeedToEditYearOfIssue";
-            this.checkBoxIsNeedToEditYearOfIssue.Size = new System.Drawing.Size(168, 17);
+            this.checkBoxIsNeedToEditYearOfIssue.Size = new System.Drawing.Size(246, 24);
             this.checkBoxIsNeedToEditYearOfIssue.TabIndex = 48;
             this.checkBoxIsNeedToEditYearOfIssue.Tag = "Hidden";
             this.checkBoxIsNeedToEditYearOfIssue.Text = "Редактировать год издания";
@@ -1478,7 +1800,7 @@
             0,
             0});
             this.textBoxYearOfIssueNewValue.Name = "textBoxYearOfIssueNewValue";
-            this.textBoxYearOfIssueNewValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxYearOfIssueNewValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxYearOfIssueNewValue.TabIndex = 47;
             this.textBoxYearOfIssueNewValue.Tag = "Hidden";
             this.textBoxYearOfIssueNewValue.Value = new decimal(new int[] {
@@ -1493,27 +1815,17 @@
             this.comboBoxFioAutorEditNewValue.FormattingEnabled = true;
             this.comboBoxFioAutorEditNewValue.Location = new System.Drawing.Point(635, 108);
             this.comboBoxFioAutorEditNewValue.Name = "comboBoxFioAutorEditNewValue";
-            this.comboBoxFioAutorEditNewValue.Size = new System.Drawing.Size(177, 21);
+            this.comboBoxFioAutorEditNewValue.Size = new System.Drawing.Size(177, 25);
             this.comboBoxFioAutorEditNewValue.TabIndex = 45;
             this.comboBoxFioAutorEditNewValue.Tag = "Hidden";
             this.comboBoxFioAutorEditNewValue.Visible = false;
-            // 
-            // pictureBoxEdit
-            // 
-            this.pictureBoxEdit.Location = new System.Drawing.Point(635, 130);
-            this.pictureBoxEdit.Name = "pictureBoxEdit";
-            this.pictureBoxEdit.Size = new System.Drawing.Size(367, 63);
-            this.pictureBoxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEdit.TabIndex = 44;
-            this.pictureBoxEdit.TabStop = false;
-            this.pictureBoxEdit.Tag = "Hidden";
-            this.pictureBoxEdit.Visible = false;
-            this.pictureBoxEdit.Click += new System.EventHandler(this.pictureBoxEdit_Click);
+            this.comboBoxFioAutorEditNewValue.TextChanged += new System.EventHandler(this.comboBoxFioAutorEditNewValue_TextChanged);
             // 
             // label59
             // 
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label59.ForeColor = System.Drawing.Color.White;
             this.label59.Location = new System.Drawing.Point(867, 43);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(89, 20);
@@ -1522,19 +1834,11 @@
             this.label59.Text = "Категория";
             this.label59.Visible = false;
             // 
-            // textBoxCategoryBookNewValue
-            // 
-            this.textBoxCategoryBookNewValue.Location = new System.Drawing.Point(825, 66);
-            this.textBoxCategoryBookNewValue.Name = "textBoxCategoryBookNewValue";
-            this.textBoxCategoryBookNewValue.Size = new System.Drawing.Size(177, 20);
-            this.textBoxCategoryBookNewValue.TabIndex = 40;
-            this.textBoxCategoryBookNewValue.Tag = "Hidden";
-            this.textBoxCategoryBookNewValue.Visible = false;
-            // 
             // label60
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label60.ForeColor = System.Drawing.Color.White;
             this.label60.Location = new System.Drawing.Point(867, 87);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(106, 20);
@@ -1547,6 +1851,7 @@
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label61.ForeColor = System.Drawing.Color.White;
             this.label61.Location = new System.Drawing.Point(667, 89);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(105, 20);
@@ -1559,6 +1864,7 @@
             // 
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label62.ForeColor = System.Drawing.Color.White;
             this.label62.Location = new System.Drawing.Point(659, 43);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(129, 20);
@@ -1571,28 +1877,17 @@
             // 
             this.textBoxNameBookNewValue.Location = new System.Drawing.Point(635, 66);
             this.textBoxNameBookNewValue.Name = "textBoxNameBookNewValue";
-            this.textBoxNameBookNewValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxNameBookNewValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxNameBookNewValue.TabIndex = 35;
             this.textBoxNameBookNewValue.Tag = "Hidden";
             this.textBoxNameBookNewValue.Visible = false;
             // 
-            // pictureBoxBookEditOldValue
-            // 
-            this.pictureBoxBookEditOldValue.Location = new System.Drawing.Point(19, 135);
-            this.pictureBoxBookEditOldValue.Name = "pictureBoxBookEditOldValue";
-            this.pictureBoxBookEditOldValue.Size = new System.Drawing.Size(360, 58);
-            this.pictureBoxBookEditOldValue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBookEditOldValue.TabIndex = 34;
-            this.pictureBoxBookEditOldValue.TabStop = false;
-            this.pictureBoxBookEditOldValue.Tag = "Hidden";
-            this.pictureBoxBookEditOldValue.Visible = false;
-            // 
             // textBoxFioAutorEditOldValue
             // 
-            this.textBoxFioAutorEditOldValue.Location = new System.Drawing.Point(19, 109);
+            this.textBoxFioAutorEditOldValue.Location = new System.Drawing.Point(20, 109);
             this.textBoxFioAutorEditOldValue.Name = "textBoxFioAutorEditOldValue";
             this.textBoxFioAutorEditOldValue.ReadOnly = true;
-            this.textBoxFioAutorEditOldValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxFioAutorEditOldValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxFioAutorEditOldValue.TabIndex = 32;
             this.textBoxFioAutorEditOldValue.Tag = "Hidden";
             this.textBoxFioAutorEditOldValue.Visible = false;
@@ -1601,6 +1896,7 @@
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label57.ForeColor = System.Drawing.Color.White;
             this.label57.Location = new System.Drawing.Point(706, 11);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(239, 24);
@@ -1613,7 +1909,8 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label56.Location = new System.Drawing.Point(99, 11);
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.Location = new System.Drawing.Point(100, 11);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(167, 24);
             this.label56.TabIndex = 30;
@@ -1625,7 +1922,8 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label44.Location = new System.Drawing.Point(236, 42);
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.Location = new System.Drawing.Point(237, 42);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(89, 20);
             this.label44.TabIndex = 28;
@@ -1635,44 +1933,48 @@
             // 
             // textBoxCategoryEditOldValue
             // 
-            this.textBoxCategoryEditOldValue.Location = new System.Drawing.Point(202, 66);
+            this.textBoxCategoryEditOldValue.Location = new System.Drawing.Point(203, 66);
             this.textBoxCategoryEditOldValue.Name = "textBoxCategoryEditOldValue";
             this.textBoxCategoryEditOldValue.ReadOnly = true;
-            this.textBoxCategoryEditOldValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxCategoryEditOldValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxCategoryEditOldValue.TabIndex = 27;
             this.textBoxCategoryEditOldValue.Tag = "Hidden";
             this.textBoxCategoryEditOldValue.Visible = false;
             // 
             // buttonBooksEditing
             // 
+            this.buttonBooksEditing.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonBooksEditing.ForeColor = System.Drawing.Color.White;
             this.buttonBooksEditing.Location = new System.Drawing.Point(412, 55);
             this.buttonBooksEditing.Name = "buttonBooksEditing";
             this.buttonBooksEditing.Size = new System.Drawing.Size(198, 74);
             this.buttonBooksEditing.TabIndex = 26;
             this.buttonBooksEditing.Tag = "Hidden";
             this.buttonBooksEditing.Text = "Произвести редактирование";
-            this.buttonBooksEditing.UseVisualStyleBackColor = true;
+            this.buttonBooksEditing.UseVisualStyleBackColor = false;
             this.buttonBooksEditing.Visible = false;
             this.buttonBooksEditing.Click += new System.EventHandler(this.buttonBooksEditing_Click);
             // 
             // buttonPictureEditLoad
             // 
+            this.buttonPictureEditLoad.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonPictureEditLoad.ForeColor = System.Drawing.Color.White;
             this.buttonPictureEditLoad.Location = new System.Drawing.Point(425, 135);
             this.buttonPictureEditLoad.Name = "buttonPictureEditLoad";
             this.buttonPictureEditLoad.Size = new System.Drawing.Size(169, 53);
             this.buttonPictureEditLoad.TabIndex = 25;
             this.buttonPictureEditLoad.Tag = "Hidden";
             this.buttonPictureEditLoad.Text = "Загрузить новую картинку";
-            this.buttonPictureEditLoad.UseVisualStyleBackColor = true;
+            this.buttonPictureEditLoad.UseVisualStyleBackColor = false;
             this.buttonPictureEditLoad.Visible = false;
             this.buttonPictureEditLoad.Click += new System.EventHandler(this.buttonPictureEditLoad_Click);
             // 
             // textBoxYearOfIssueEditOldValue
             // 
-            this.textBoxYearOfIssueEditOldValue.Location = new System.Drawing.Point(202, 109);
+            this.textBoxYearOfIssueEditOldValue.Location = new System.Drawing.Point(203, 109);
             this.textBoxYearOfIssueEditOldValue.Name = "textBoxYearOfIssueEditOldValue";
             this.textBoxYearOfIssueEditOldValue.ReadOnly = true;
-            this.textBoxYearOfIssueEditOldValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxYearOfIssueEditOldValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxYearOfIssueEditOldValue.TabIndex = 23;
             this.textBoxYearOfIssueEditOldValue.Tag = "Hidden";
             this.textBoxYearOfIssueEditOldValue.Visible = false;
@@ -1681,7 +1983,8 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label45.Location = new System.Drawing.Point(236, 89);
+            this.label45.ForeColor = System.Drawing.Color.White;
+            this.label45.Location = new System.Drawing.Point(237, 89);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(106, 20);
             this.label45.TabIndex = 22;
@@ -1693,7 +1996,8 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label46.Location = new System.Drawing.Point(49, 89);
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(50, 89);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(105, 20);
             this.label46.TabIndex = 21;
@@ -1705,7 +2009,8 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label55.Location = new System.Drawing.Point(49, 43);
+            this.label55.ForeColor = System.Drawing.Color.White;
+            this.label55.Location = new System.Drawing.Point(50, 43);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(129, 20);
             this.label55.TabIndex = 17;
@@ -1715,19 +2020,19 @@
             // 
             // textBoxNameBookEditOldValue
             // 
-            this.textBoxNameBookEditOldValue.Location = new System.Drawing.Point(19, 66);
+            this.textBoxNameBookEditOldValue.Location = new System.Drawing.Point(20, 66);
             this.textBoxNameBookEditOldValue.Name = "textBoxNameBookEditOldValue";
             this.textBoxNameBookEditOldValue.ReadOnly = true;
-            this.textBoxNameBookEditOldValue.Size = new System.Drawing.Size(177, 20);
+            this.textBoxNameBookEditOldValue.Size = new System.Drawing.Size(177, 23);
             this.textBoxNameBookEditOldValue.TabIndex = 16;
             this.textBoxNameBookEditOldValue.Tag = "Hidden";
             this.textBoxNameBookEditOldValue.Visible = false;
             // 
             // textBoxPictureEdit
             // 
-            this.textBoxPictureEdit.Location = new System.Drawing.Point(650, 148);
+            this.textBoxPictureEdit.Location = new System.Drawing.Point(856, 66);
             this.textBoxPictureEdit.Name = "textBoxPictureEdit";
-            this.textBoxPictureEdit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPictureEdit.Size = new System.Drawing.Size(100, 23);
             this.textBoxPictureEdit.TabIndex = 46;
             this.textBoxPictureEdit.Tag = "Hidden";
             this.textBoxPictureEdit.Visible = false;
@@ -1735,6 +2040,7 @@
             // labelHelpBooksEditing
             // 
             this.labelHelpBooksEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelHelpBooksEditing.ForeColor = System.Drawing.Color.White;
             this.labelHelpBooksEditing.Location = new System.Drawing.Point(3, 81);
             this.labelHelpBooksEditing.Name = "labelHelpBooksEditing";
             this.labelHelpBooksEditing.Size = new System.Drawing.Size(1199, 26);
@@ -1745,6 +2051,7 @@
             // 
             // groupBoxBookSearch
             // 
+            this.groupBoxBookSearch.Controls.Add(this.checkBoxOnlyInStock);
             this.groupBoxBookSearch.Controls.Add(this.label19);
             this.groupBoxBookSearch.Controls.Add(this.label18);
             this.groupBoxBookSearch.Controls.Add(this.label17);
@@ -1754,6 +2061,7 @@
             this.groupBoxBookSearch.Controls.Add(this.textBoxAuthor);
             this.groupBoxBookSearch.Controls.Add(this.textBoxNameBook);
             this.groupBoxBookSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxBookSearch.ForeColor = System.Drawing.Color.White;
             this.groupBoxBookSearch.Location = new System.Drawing.Point(899, 30);
             this.groupBoxBookSearch.Name = "groupBoxBookSearch";
             this.groupBoxBookSearch.Size = new System.Drawing.Size(312, 310);
@@ -1761,10 +2069,24 @@
             this.groupBoxBookSearch.TabStop = false;
             this.groupBoxBookSearch.Text = "Поиск по";
             // 
+            // checkBoxOnlyInStock
+            // 
+            this.checkBoxOnlyInStock.AutoSize = true;
+            this.checkBoxOnlyInStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxOnlyInStock.ForeColor = System.Drawing.Color.White;
+            this.checkBoxOnlyInStock.Location = new System.Drawing.Point(39, 275);
+            this.checkBoxOnlyInStock.Name = "checkBoxOnlyInStock";
+            this.checkBoxOnlyInStock.Size = new System.Drawing.Size(250, 29);
+            this.checkBoxOnlyInStock.TabIndex = 13;
+            this.checkBoxOnlyInStock.Text = "Только книги в наличии";
+            this.checkBoxOnlyInStock.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyInStock.CheckedChanged += new System.EventHandler(this.checkBoxOnlyInStock_CheckedChanged);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(92, 194);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(150, 26);
@@ -1775,6 +2097,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(112, 139);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(117, 26);
@@ -1785,6 +2108,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(99, 80);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(140, 26);
@@ -1795,6 +2119,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(60, 25);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(229, 26);
@@ -1804,6 +2129,7 @@
             // textBoxYearOfIssue
             // 
             this.textBoxYearOfIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxYearOfIssue.ForeColor = System.Drawing.Color.Black;
             this.textBoxYearOfIssue.Location = new System.Drawing.Point(92, 221);
             this.textBoxYearOfIssue.Name = "textBoxYearOfIssue";
             this.textBoxYearOfIssue.Size = new System.Drawing.Size(154, 23);
@@ -1815,6 +2141,7 @@
             // textBoxCategory
             // 
             this.textBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxCategory.ForeColor = System.Drawing.Color.Black;
             this.textBoxCategory.Location = new System.Drawing.Point(92, 168);
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(154, 23);
@@ -1826,6 +2153,7 @@
             // textBoxAuthor
             // 
             this.textBoxAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxAuthor.ForeColor = System.Drawing.Color.Black;
             this.textBoxAuthor.Location = new System.Drawing.Point(92, 109);
             this.textBoxAuthor.Name = "textBoxAuthor";
             this.textBoxAuthor.Size = new System.Drawing.Size(154, 23);
@@ -1837,6 +2165,7 @@
             // textBoxNameBook
             // 
             this.textBoxNameBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.textBoxNameBook.ForeColor = System.Drawing.Color.Black;
             this.textBoxNameBook.Location = new System.Drawing.Point(92, 54);
             this.textBoxNameBook.Name = "textBoxNameBook";
             this.textBoxNameBook.Size = new System.Drawing.Size(154, 23);
@@ -1847,6 +2176,7 @@
             // 
             // tabPageInstances
             // 
+            this.tabPageInstances.BackColor = System.Drawing.Color.DimGray;
             this.tabPageInstances.Controls.Add(this.groupBoxSearchInstances);
             this.tabPageInstances.Controls.Add(this.tabControlInstances);
             this.tabPageInstances.Controls.Add(this.dataGridViewInstances);
@@ -1855,17 +2185,16 @@
             this.tabPageInstances.Size = new System.Drawing.Size(1232, 574);
             this.tabPageInstances.TabIndex = 7;
             this.tabPageInstances.Text = "Экземпляры";
-            this.tabPageInstances.UseVisualStyleBackColor = true;
-            this.tabPageInstances.Enter += new System.EventHandler(this.tabPageInstances_Enter);
-            this.tabPageInstances.Leave += new System.EventHandler(this.tabPageInstances_Leave);
             // 
             // groupBoxSearchInstances
             // 
+            this.groupBoxSearchInstances.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxSearchInstances.Controls.Add(this.label27);
             this.groupBoxSearchInstances.Controls.Add(this.label28);
             this.groupBoxSearchInstances.Controls.Add(this.textBoxIdInstanceInstancesSearch);
             this.groupBoxSearchInstances.Controls.Add(this.textBoxNameBookInstancesSearch);
             this.groupBoxSearchInstances.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxSearchInstances.ForeColor = System.Drawing.Color.White;
             this.groupBoxSearchInstances.Location = new System.Drawing.Point(862, 30);
             this.groupBoxSearchInstances.Name = "groupBoxSearchInstances";
             this.groupBoxSearchInstances.Size = new System.Drawing.Size(364, 310);
@@ -1877,6 +2206,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label27.ForeColor = System.Drawing.Color.White;
             this.label27.Location = new System.Drawing.Point(60, 80);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(219, 26);
@@ -1887,6 +2217,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(60, 25);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(229, 26);
@@ -1924,23 +2255,24 @@
             // 
             // tabPageAddInstances
             // 
+            this.tabPageAddInstances.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAddInstances.Controls.Add(this.labelNumberOfCopiesLeftToAdd);
             this.tabPageAddInstances.Controls.Add(this.buttonAddInstances);
             this.tabPageAddInstances.Controls.Add(this.label15);
             this.tabPageAddInstances.Controls.Add(this.comboBoxNameBookInstances);
             this.tabPageAddInstances.Controls.Add(this.label25);
             this.tabPageAddInstances.Controls.Add(this.textBoxIdInstancesInstances);
-            this.tabPageAddInstances.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAddInstances.Location = new System.Drawing.Point(4, 24);
             this.tabPageAddInstances.Name = "tabPageAddInstances";
             this.tabPageAddInstances.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddInstances.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAddInstances.Size = new System.Drawing.Size(1198, 194);
             this.tabPageAddInstances.TabIndex = 0;
             this.tabPageAddInstances.Text = "Добавление экземпляра";
-            this.tabPageAddInstances.UseVisualStyleBackColor = true;
             // 
             // labelNumberOfCopiesLeftToAdd
             // 
-            this.labelNumberOfCopiesLeftToAdd.Location = new System.Drawing.Point(6, 22);
+            this.labelNumberOfCopiesLeftToAdd.ForeColor = System.Drawing.Color.White;
+            this.labelNumberOfCopiesLeftToAdd.Location = new System.Drawing.Point(3, 3);
             this.labelNumberOfCopiesLeftToAdd.Name = "labelNumberOfCopiesLeftToAdd";
             this.labelNumberOfCopiesLeftToAdd.Size = new System.Drawing.Size(1192, 32);
             this.labelNumberOfCopiesLeftToAdd.TabIndex = 12;
@@ -1950,20 +2282,23 @@
             // 
             // buttonAddInstances
             // 
+            this.buttonAddInstances.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonAddInstances.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonAddInstances.Location = new System.Drawing.Point(493, 156);
+            this.buttonAddInstances.ForeColor = System.Drawing.Color.White;
+            this.buttonAddInstances.Location = new System.Drawing.Point(493, 145);
             this.buttonAddInstances.Name = "buttonAddInstances";
             this.buttonAddInstances.Size = new System.Drawing.Size(186, 34);
             this.buttonAddInstances.TabIndex = 11;
             this.buttonAddInstances.Text = "Добавить экземпляр";
-            this.buttonAddInstances.UseVisualStyleBackColor = true;
+            this.buttonAddInstances.UseVisualStyleBackColor = false;
             this.buttonAddInstances.Click += new System.EventHandler(this.buttonAddInstances_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label15.Location = new System.Drawing.Point(510, 104);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(510, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(154, 20);
             this.label15.TabIndex = 10;
@@ -1971,17 +2306,19 @@
             // 
             // comboBoxNameBookInstances
             // 
-            this.comboBoxNameBookInstances.Location = new System.Drawing.Point(514, 80);
+            this.comboBoxNameBookInstances.Location = new System.Drawing.Point(514, 69);
             this.comboBoxNameBookInstances.Name = "comboBoxNameBookInstances";
-            this.comboBoxNameBookInstances.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxNameBookInstances.Size = new System.Drawing.Size(150, 23);
             this.comboBoxNameBookInstances.Sorted = true;
             this.comboBoxNameBookInstances.TabIndex = 6;
+            this.comboBoxNameBookInstances.TextChanged += new System.EventHandler(this.comboBoxNameBookInstances_TextChanged);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label25.Location = new System.Drawing.Point(522, 57);
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(522, 46);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(129, 20);
             this.label25.TabIndex = 1;
@@ -1989,9 +2326,9 @@
             // 
             // textBoxIdInstancesInstances
             // 
-            this.textBoxIdInstancesInstances.Location = new System.Drawing.Point(541, 130);
+            this.textBoxIdInstancesInstances.Location = new System.Drawing.Point(541, 119);
             this.textBoxIdInstancesInstances.Name = "textBoxIdInstancesInstances";
-            this.textBoxIdInstancesInstances.Size = new System.Drawing.Size(110, 20);
+            this.textBoxIdInstancesInstances.Size = new System.Drawing.Size(110, 21);
             this.textBoxIdInstancesInstances.TabIndex = 0;
             // 
             // dataGridViewInstances
@@ -2030,6 +2367,7 @@
             // 
             // tabPageReaders
             // 
+            this.tabPageReaders.BackColor = System.Drawing.Color.DimGray;
             this.tabPageReaders.Controls.Add(this.tabControlReaders);
             this.tabPageReaders.Controls.Add(this.groupBoxReaders);
             this.tabPageReaders.Controls.Add(this.dataGridViewReaders);
@@ -2038,7 +2376,6 @@
             this.tabPageReaders.Size = new System.Drawing.Size(1232, 574);
             this.tabPageReaders.TabIndex = 2;
             this.tabPageReaders.Text = "Читатели";
-            this.tabPageReaders.UseVisualStyleBackColor = true;
             // 
             // tabControlReaders
             // 
@@ -2052,6 +2389,7 @@
             // 
             // tabPageAdd
             // 
+            this.tabPageAdd.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAdd.Controls.Add(this.label43);
             this.tabPageAdd.Controls.Add(this.textBoxContactNumberReader);
             this.tabPageAdd.Controls.Add(this.textBoxPatronymicReader);
@@ -2064,18 +2402,18 @@
             this.tabPageAdd.Controls.Add(this.textBoxMailReader);
             this.tabPageAdd.Controls.Add(this.label38);
             this.tabPageAdd.Controls.Add(this.textBoxSurnameReader);
-            this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAdd.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdd.Name = "tabPageAdd";
             this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdd.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAdd.Size = new System.Drawing.Size(1198, 194);
             this.tabPageAdd.TabIndex = 0;
             this.tabPageAdd.Text = "Добавление читателя";
-            this.tabPageAdd.UseVisualStyleBackColor = true;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label43.ForeColor = System.Drawing.Color.White;
             this.label43.Location = new System.Drawing.Point(356, 102);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(45, 20);
@@ -2084,35 +2422,35 @@
             // 
             // textBoxContactNumberReader
             // 
-            this.textBoxContactNumberReader.Location = new System.Drawing.Point(579, 102);
+            this.textBoxContactNumberReader.Location = new System.Drawing.Point(402, 102);
             this.textBoxContactNumberReader.Mask = "00-000-00-00";
             this.textBoxContactNumberReader.Name = "textBoxContactNumberReader";
-            this.textBoxContactNumberReader.Size = new System.Drawing.Size(171, 20);
+            this.textBoxContactNumberReader.Size = new System.Drawing.Size(171, 21);
             this.textBoxContactNumberReader.TabIndex = 21;
             // 
             // textBoxPatronymicReader
             // 
             this.textBoxPatronymicReader.Location = new System.Drawing.Point(161, 148);
             this.textBoxPatronymicReader.Name = "textBoxPatronymicReader";
-            this.textBoxPatronymicReader.Size = new System.Drawing.Size(156, 20);
+            this.textBoxPatronymicReader.Size = new System.Drawing.Size(156, 21);
             this.textBoxPatronymicReader.TabIndex = 19;
-            this.textBoxPatronymicReader.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label40.ForeColor = System.Drawing.Color.White;
             this.label40.Location = new System.Drawing.Point(157, 125);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(160, 20);
             this.label40.TabIndex = 18;
             this.label40.Text = "Отчество читателя";
-            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label39.ForeColor = System.Drawing.Color.White;
             this.label39.Location = new System.Drawing.Point(177, 79);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(117, 20);
@@ -2123,24 +2461,27 @@
             // 
             this.textBoxNameReader.Location = new System.Drawing.Point(163, 102);
             this.textBoxNameReader.Name = "textBoxNameReader";
-            this.textBoxNameReader.Size = new System.Drawing.Size(154, 20);
+            this.textBoxNameReader.Size = new System.Drawing.Size(154, 21);
             this.textBoxNameReader.TabIndex = 16;
             // 
             // buttonReadersAdd
             // 
+            this.buttonReadersAdd.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonReadersAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonReadersAdd.Location = new System.Drawing.Point(756, 83);
+            this.buttonReadersAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonReadersAdd.Location = new System.Drawing.Point(756, 86);
             this.buttonReadersAdd.Name = "buttonReadersAdd";
             this.buttonReadersAdd.Size = new System.Drawing.Size(205, 54);
             this.buttonReadersAdd.TabIndex = 13;
             this.buttonReadersAdd.Text = "Произвести добавление";
-            this.buttonReadersAdd.UseVisualStyleBackColor = true;
+            this.buttonReadersAdd.UseVisualStyleBackColor = false;
             this.buttonReadersAdd.Click += new System.EventHandler(this.buttonReadersAdd_Click);
             // 
             // label36
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label36.ForeColor = System.Drawing.Color.White;
             this.label36.Location = new System.Drawing.Point(398, 72);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(175, 20);
@@ -2151,25 +2492,25 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label37.ForeColor = System.Drawing.Color.White;
             this.label37.Location = new System.Drawing.Point(636, 72);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(57, 20);
             this.label37.TabIndex = 5;
             this.label37.Text = "Почта";
-            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // textBoxMailReader
             // 
-            this.textBoxMailReader.Location = new System.Drawing.Point(402, 102);
+            this.textBoxMailReader.Location = new System.Drawing.Point(579, 102);
             this.textBoxMailReader.Name = "textBoxMailReader";
-            this.textBoxMailReader.Size = new System.Drawing.Size(171, 20);
+            this.textBoxMailReader.Size = new System.Drawing.Size(171, 21);
             this.textBoxMailReader.TabIndex = 4;
-            this.textBoxMailReader.TextChanged += new System.EventHandler(this.textBoxMailReader_TextChanged);
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label38.ForeColor = System.Drawing.Color.White;
             this.label38.Location = new System.Drawing.Point(159, 27);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(158, 20);
@@ -2180,11 +2521,12 @@
             // 
             this.textBoxSurnameReader.Location = new System.Drawing.Point(163, 50);
             this.textBoxSurnameReader.Name = "textBoxSurnameReader";
-            this.textBoxSurnameReader.Size = new System.Drawing.Size(154, 20);
+            this.textBoxSurnameReader.Size = new System.Drawing.Size(154, 21);
             this.textBoxSurnameReader.TabIndex = 0;
             // 
             // tabPageEditReader
             // 
+            this.tabPageEditReader.BackColor = System.Drawing.Color.DimGray;
             this.tabPageEditReader.Controls.Add(this.label73);
             this.tabPageEditReader.Controls.Add(this.textBoxContactNumberOldValue);
             this.tabPageEditReader.Controls.Add(this.buttonReadersEditing);
@@ -2210,18 +2552,18 @@
             this.tabPageEditReader.Controls.Add(this.label65);
             this.tabPageEditReader.Controls.Add(this.textBoxSurnameReaderOldValue);
             this.tabPageEditReader.Controls.Add(this.labelHelpReadersEditing);
-            this.tabPageEditReader.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditReader.Location = new System.Drawing.Point(4, 24);
             this.tabPageEditReader.Name = "tabPageEditReader";
             this.tabPageEditReader.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEditReader.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageEditReader.Size = new System.Drawing.Size(1198, 194);
             this.tabPageEditReader.TabIndex = 1;
             this.tabPageEditReader.Text = "Редактирование читателя";
-            this.tabPageEditReader.UseVisualStyleBackColor = true;
             // 
             // label73
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label73.ForeColor = System.Drawing.Color.White;
             this.label73.Location = new System.Drawing.Point(905, 107);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(45, 20);
@@ -2234,20 +2576,22 @@
             this.textBoxContactNumberOldValue.Location = new System.Drawing.Point(108, 159);
             this.textBoxContactNumberOldValue.Name = "textBoxContactNumberOldValue";
             this.textBoxContactNumberOldValue.ReadOnly = true;
-            this.textBoxContactNumberOldValue.Size = new System.Drawing.Size(166, 20);
+            this.textBoxContactNumberOldValue.Size = new System.Drawing.Size(166, 21);
             this.textBoxContactNumberOldValue.TabIndex = 46;
             this.textBoxContactNumberOldValue.Tag = "Hidden";
             this.textBoxContactNumberOldValue.Visible = false;
             // 
             // buttonReadersEditing
             // 
-            this.buttonReadersEditing.Location = new System.Drawing.Point(409, 71);
+            this.buttonReadersEditing.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonReadersEditing.ForeColor = System.Drawing.Color.White;
+            this.buttonReadersEditing.Location = new System.Drawing.Point(432, 63);
             this.buttonReadersEditing.Name = "buttonReadersEditing";
             this.buttonReadersEditing.Size = new System.Drawing.Size(231, 74);
             this.buttonReadersEditing.TabIndex = 45;
             this.buttonReadersEditing.Tag = "Hidden";
             this.buttonReadersEditing.Text = "Произвести редактирование";
-            this.buttonReadersEditing.UseVisualStyleBackColor = true;
+            this.buttonReadersEditing.UseVisualStyleBackColor = false;
             this.buttonReadersEditing.Visible = false;
             this.buttonReadersEditing.Click += new System.EventHandler(this.buttonReadersEditing_Click);
             // 
@@ -2255,6 +2599,7 @@
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label71.ForeColor = System.Drawing.Color.White;
             this.label71.Location = new System.Drawing.Point(765, 3);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(239, 24);
@@ -2267,6 +2612,7 @@
             // 
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label72.ForeColor = System.Drawing.Color.White;
             this.label72.Location = new System.Drawing.Point(104, 3);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(167, 24);
@@ -2280,7 +2626,7 @@
             this.textBoxContactNumberReaderNewValue.Location = new System.Drawing.Point(954, 107);
             this.textBoxContactNumberReaderNewValue.Mask = "00-000-00-00";
             this.textBoxContactNumberReaderNewValue.Name = "textBoxContactNumberReaderNewValue";
-            this.textBoxContactNumberReaderNewValue.Size = new System.Drawing.Size(111, 20);
+            this.textBoxContactNumberReaderNewValue.Size = new System.Drawing.Size(111, 21);
             this.textBoxContactNumberReaderNewValue.TabIndex = 41;
             this.textBoxContactNumberReaderNewValue.Tag = "Hidden";
             this.textBoxContactNumberReaderNewValue.Visible = false;
@@ -2289,7 +2635,7 @@
             // 
             this.textBoxPatronymicReaderNewValue.Location = new System.Drawing.Point(728, 111);
             this.textBoxPatronymicReaderNewValue.Name = "textBoxPatronymicReaderNewValue";
-            this.textBoxPatronymicReaderNewValue.Size = new System.Drawing.Size(161, 20);
+            this.textBoxPatronymicReaderNewValue.Size = new System.Drawing.Size(161, 21);
             this.textBoxPatronymicReaderNewValue.TabIndex = 40;
             this.textBoxPatronymicReaderNewValue.Tag = "Hidden";
             this.textBoxPatronymicReaderNewValue.Visible = false;
@@ -2298,6 +2644,7 @@
             // 
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label66.ForeColor = System.Drawing.Color.White;
             this.label66.Location = new System.Drawing.Point(729, 88);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(160, 20);
@@ -2310,6 +2657,7 @@
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label67.ForeColor = System.Drawing.Color.White;
             this.label67.Location = new System.Drawing.Point(922, 41);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(117, 20);
@@ -2322,7 +2670,7 @@
             // 
             this.textBoxNameReaderNewValue.Location = new System.Drawing.Point(904, 64);
             this.textBoxNameReaderNewValue.Name = "textBoxNameReaderNewValue";
-            this.textBoxNameReaderNewValue.Size = new System.Drawing.Size(154, 20);
+            this.textBoxNameReaderNewValue.Size = new System.Drawing.Size(154, 21);
             this.textBoxNameReaderNewValue.TabIndex = 37;
             this.textBoxNameReaderNewValue.Tag = "Hidden";
             this.textBoxNameReaderNewValue.Visible = false;
@@ -2331,6 +2679,7 @@
             // 
             this.label68.AutoSize = true;
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label68.ForeColor = System.Drawing.Color.White;
             this.label68.Location = new System.Drawing.Point(900, 87);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(175, 20);
@@ -2343,6 +2692,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label69.ForeColor = System.Drawing.Color.White;
             this.label69.Location = new System.Drawing.Point(870, 136);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(57, 20);
@@ -2350,22 +2700,21 @@
             this.label69.Tag = "Hidden";
             this.label69.Text = "Почта";
             this.label69.Visible = false;
-            this.label69.Click += new System.EventHandler(this.label69_Click);
             // 
             // textBoxMailReaderNewValue
             // 
             this.textBoxMailReaderNewValue.Location = new System.Drawing.Point(841, 159);
             this.textBoxMailReaderNewValue.Name = "textBoxMailReaderNewValue";
-            this.textBoxMailReaderNewValue.Size = new System.Drawing.Size(116, 20);
+            this.textBoxMailReaderNewValue.Size = new System.Drawing.Size(116, 21);
             this.textBoxMailReaderNewValue.TabIndex = 34;
             this.textBoxMailReaderNewValue.Tag = "Hidden";
             this.textBoxMailReaderNewValue.Visible = false;
-            this.textBoxMailReaderNewValue.TextChanged += new System.EventHandler(this.textBoxMailReaderNewValue_TextChanged);
             // 
             // label70
             // 
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label70.ForeColor = System.Drawing.Color.White;
             this.label70.Location = new System.Drawing.Point(724, 41);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(158, 20);
@@ -2378,7 +2727,7 @@
             // 
             this.textBoxSurnameReaderNewValue.Location = new System.Drawing.Point(728, 64);
             this.textBoxSurnameReaderNewValue.Name = "textBoxSurnameReaderNewValue";
-            this.textBoxSurnameReaderNewValue.Size = new System.Drawing.Size(154, 20);
+            this.textBoxSurnameReaderNewValue.Size = new System.Drawing.Size(154, 21);
             this.textBoxSurnameReaderNewValue.TabIndex = 32;
             this.textBoxSurnameReaderNewValue.Tag = "Hidden";
             this.textBoxSurnameReaderNewValue.Visible = false;
@@ -2388,7 +2737,7 @@
             this.textBoxPatronymicReaderOldValue.Location = new System.Drawing.Point(24, 107);
             this.textBoxPatronymicReaderOldValue.Name = "textBoxPatronymicReaderOldValue";
             this.textBoxPatronymicReaderOldValue.ReadOnly = true;
-            this.textBoxPatronymicReaderOldValue.Size = new System.Drawing.Size(156, 20);
+            this.textBoxPatronymicReaderOldValue.Size = new System.Drawing.Size(156, 21);
             this.textBoxPatronymicReaderOldValue.TabIndex = 30;
             this.textBoxPatronymicReaderOldValue.Tag = "Hidden";
             this.textBoxPatronymicReaderOldValue.Visible = false;
@@ -2397,6 +2746,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label54.ForeColor = System.Drawing.Color.White;
             this.label54.Location = new System.Drawing.Point(20, 84);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(160, 20);
@@ -2409,6 +2759,7 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label58.ForeColor = System.Drawing.Color.White;
             this.label58.Location = new System.Drawing.Point(203, 33);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(117, 20);
@@ -2422,7 +2773,7 @@
             this.textBoxNameReaderOldValue.Location = new System.Drawing.Point(186, 57);
             this.textBoxNameReaderOldValue.Name = "textBoxNameReaderOldValue";
             this.textBoxNameReaderOldValue.ReadOnly = true;
-            this.textBoxNameReaderOldValue.Size = new System.Drawing.Size(166, 20);
+            this.textBoxNameReaderOldValue.Size = new System.Drawing.Size(166, 21);
             this.textBoxNameReaderOldValue.TabIndex = 27;
             this.textBoxNameReaderOldValue.Tag = "Hidden";
             this.textBoxNameReaderOldValue.Visible = false;
@@ -2431,6 +2782,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label63.ForeColor = System.Drawing.Color.White;
             this.label63.Location = new System.Drawing.Point(186, 83);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(175, 20);
@@ -2443,6 +2795,7 @@
             // 
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label64.ForeColor = System.Drawing.Color.White;
             this.label64.Location = new System.Drawing.Point(157, 136);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(57, 20);
@@ -2456,7 +2809,7 @@
             this.textBoxMailReaderOldValue.Location = new System.Drawing.Point(186, 106);
             this.textBoxMailReaderOldValue.Name = "textBoxMailReaderOldValue";
             this.textBoxMailReaderOldValue.ReadOnly = true;
-            this.textBoxMailReaderOldValue.Size = new System.Drawing.Size(166, 20);
+            this.textBoxMailReaderOldValue.Size = new System.Drawing.Size(166, 21);
             this.textBoxMailReaderOldValue.TabIndex = 24;
             this.textBoxMailReaderOldValue.Tag = "Hidden";
             this.textBoxMailReaderOldValue.Visible = false;
@@ -2465,6 +2818,7 @@
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label65.ForeColor = System.Drawing.Color.White;
             this.label65.Location = new System.Drawing.Point(22, 34);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(158, 20);
@@ -2478,7 +2832,7 @@
             this.textBoxSurnameReaderOldValue.Location = new System.Drawing.Point(26, 57);
             this.textBoxSurnameReaderOldValue.Name = "textBoxSurnameReaderOldValue";
             this.textBoxSurnameReaderOldValue.ReadOnly = true;
-            this.textBoxSurnameReaderOldValue.Size = new System.Drawing.Size(154, 20);
+            this.textBoxSurnameReaderOldValue.Size = new System.Drawing.Size(154, 21);
             this.textBoxSurnameReaderOldValue.TabIndex = 22;
             this.textBoxSurnameReaderOldValue.Tag = "Hidden";
             this.textBoxSurnameReaderOldValue.Visible = false;
@@ -2487,6 +2841,7 @@
             // 
             this.labelHelpReadersEditing.AutoSize = true;
             this.labelHelpReadersEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelHelpReadersEditing.ForeColor = System.Drawing.Color.White;
             this.labelHelpReadersEditing.Location = new System.Drawing.Point(60, 87);
             this.labelHelpReadersEditing.Name = "labelHelpReadersEditing";
             this.labelHelpReadersEditing.Size = new System.Drawing.Size(944, 26);
@@ -2496,6 +2851,7 @@
             // 
             // groupBoxReaders
             // 
+            this.groupBoxReaders.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxReaders.Controls.Add(this.checkBoxOnlyDebtors);
             this.groupBoxReaders.Controls.Add(this.label33);
             this.groupBoxReaders.Controls.Add(this.textBoxMailReadersSearch);
@@ -2504,6 +2860,7 @@
             this.groupBoxReaders.Controls.Add(this.textBoxFioReaderReadersSearch);
             this.groupBoxReaders.Controls.Add(this.textBoxContactNumberReadersSearch);
             this.groupBoxReaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxReaders.ForeColor = System.Drawing.Color.White;
             this.groupBoxReaders.Location = new System.Drawing.Point(865, 30);
             this.groupBoxReaders.Name = "groupBoxReaders";
             this.groupBoxReaders.Size = new System.Drawing.Size(364, 310);
@@ -2511,10 +2868,23 @@
             this.groupBoxReaders.TabStop = false;
             this.groupBoxReaders.Text = "Поиск по";
             // 
+            // checkBoxOnlyDebtors
+            // 
+            this.checkBoxOnlyDebtors.AutoSize = true;
+            this.checkBoxOnlyDebtors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.checkBoxOnlyDebtors.Location = new System.Drawing.Point(28, 275);
+            this.checkBoxOnlyDebtors.Name = "checkBoxOnlyDebtors";
+            this.checkBoxOnlyDebtors.Size = new System.Drawing.Size(304, 29);
+            this.checkBoxOnlyDebtors.TabIndex = 12;
+            this.checkBoxOnlyDebtors.Text = "Выводить только должников";
+            this.checkBoxOnlyDebtors.UseVisualStyleBackColor = true;
+            this.checkBoxOnlyDebtors.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged_1);
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label33.ForeColor = System.Drawing.Color.White;
             this.label33.Location = new System.Drawing.Point(130, 135);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(74, 26);
@@ -2530,11 +2900,13 @@
             this.textBoxMailReadersSearch.TabIndex = 10;
             this.textBoxMailReadersSearch.Tag = "groupBoxSearchBookDelivery";
             this.textBoxMailReadersSearch.TextChanged += new System.EventHandler(this.TextBoxesReadersChange);
+            this.textBoxMailReadersSearch.DoubleClick += new System.EventHandler(this.OnAllTextBoxDoubleClick);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(48, 80);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(252, 26);
@@ -2545,6 +2917,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(83, 25);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(163, 26);
@@ -2560,6 +2933,7 @@
             this.textBoxFioReaderReadersSearch.TabIndex = 5;
             this.textBoxFioReaderReadersSearch.Tag = "groupBoxSearchBookDelivery";
             this.textBoxFioReaderReadersSearch.TextChanged += new System.EventHandler(this.TextBoxesReadersChange);
+            this.textBoxFioReaderReadersSearch.DoubleClick += new System.EventHandler(this.OnAllTextBoxDoubleClick);
             // 
             // textBoxContactNumberReadersSearch
             // 
@@ -2570,6 +2944,7 @@
             this.textBoxContactNumberReadersSearch.TabIndex = 3;
             this.textBoxContactNumberReadersSearch.Tag = "groupBoxSearchBookDelivery";
             this.textBoxContactNumberReadersSearch.TextChanged += new System.EventHandler(this.TextBoxesReadersChange);
+            this.textBoxContactNumberReadersSearch.DoubleClick += new System.EventHandler(this.OnAllTextBoxDoubleClick);
             // 
             // dataGridViewReaders
             // 
@@ -2590,7 +2965,6 @@
             this.dataGridViewReaders.Size = new System.Drawing.Size(832, 310);
             this.dataGridViewReaders.TabIndex = 2;
             this.dataGridViewReaders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReaders_CellDoubleClick);
-            this.dataGridViewReaders.DoubleClick += new System.EventHandler(this.dataGridViewReaders_DoubleClick);
             // 
             // fioReaderReaders
             // 
@@ -2618,6 +2992,7 @@
             // 
             // tabPageAutors
             // 
+            this.tabPageAutors.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAutors.Controls.Add(this.tabControlAutors);
             this.tabPageAutors.Controls.Add(this.groupBoxAutors);
             this.tabPageAutors.Controls.Add(this.dataGridViewAutors);
@@ -2626,7 +3001,6 @@
             this.tabPageAutors.Size = new System.Drawing.Size(1232, 574);
             this.tabPageAutors.TabIndex = 3;
             this.tabPageAutors.Text = "Авторы";
-            this.tabPageAutors.UseVisualStyleBackColor = true;
             // 
             // tabControlAutors
             // 
@@ -2637,10 +3011,10 @@
             this.tabControlAutors.SelectedIndex = 0;
             this.tabControlAutors.Size = new System.Drawing.Size(1206, 222);
             this.tabControlAutors.TabIndex = 11;
-            this.tabControlAutors.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPageAutorAdd
             // 
+            this.tabPageAutorAdd.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAutorAdd.Controls.Add(this.textBoxBiographyAutor);
             this.tabPageAutorAdd.Controls.Add(this.label41);
             this.tabPageAutorAdd.Controls.Add(this.label32);
@@ -2650,13 +3024,12 @@
             this.tabPageAutorAdd.Controls.Add(this.buttonAutorAdd);
             this.tabPageAutorAdd.Controls.Add(this.label42);
             this.tabPageAutorAdd.Controls.Add(this.textBoxNameAutor);
-            this.tabPageAutorAdd.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAutorAdd.Location = new System.Drawing.Point(4, 24);
             this.tabPageAutorAdd.Name = "tabPageAutorAdd";
             this.tabPageAutorAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAutorAdd.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAutorAdd.Size = new System.Drawing.Size(1198, 194);
             this.tabPageAutorAdd.TabIndex = 0;
             this.tabPageAutorAdd.Text = "Добавление автора";
-            this.tabPageAutorAdd.UseVisualStyleBackColor = true;
             // 
             // textBoxBiographyAutor
             // 
@@ -2665,89 +3038,88 @@
             this.textBoxBiographyAutor.Size = new System.Drawing.Size(314, 144);
             this.textBoxBiographyAutor.TabIndex = 29;
             this.textBoxBiographyAutor.Text = "";
-            this.textBoxBiographyAutor.TextChanged += new System.EventHandler(this.textBoxBiographyAutor_TextChanged);
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label41.ForeColor = System.Drawing.Color.White;
             this.label41.Location = new System.Drawing.Point(466, 8);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(154, 20);
             this.label41.TabIndex = 27;
             this.label41.Text = "Биография автора";
-            this.label41.Click += new System.EventHandler(this.label41_Click);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label32.ForeColor = System.Drawing.Color.White;
             this.label32.Location = new System.Drawing.Point(207, 83);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(98, 20);
             this.label32.TabIndex = 26;
             this.label32.Text = "Имя автора";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // textBoxSurnameAutor
             // 
             this.textBoxSurnameAutor.Location = new System.Drawing.Point(189, 60);
             this.textBoxSurnameAutor.Name = "textBoxSurnameAutor";
-            this.textBoxSurnameAutor.Size = new System.Drawing.Size(135, 20);
+            this.textBoxSurnameAutor.Size = new System.Drawing.Size(135, 21);
             this.textBoxSurnameAutor.TabIndex = 25;
-            this.textBoxSurnameAutor.TextChanged += new System.EventHandler(this.textBoxSurnameAutor_TextChanged);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label31.ForeColor = System.Drawing.Color.White;
             this.label31.Location = new System.Drawing.Point(183, 129);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(141, 20);
             this.label31.TabIndex = 24;
             this.label31.Text = "Отчество автора";
-            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // textBoxPatronymicAutor
             // 
             this.textBoxPatronymicAutor.Location = new System.Drawing.Point(187, 152);
             this.textBoxPatronymicAutor.Name = "textBoxPatronymicAutor";
-            this.textBoxPatronymicAutor.Size = new System.Drawing.Size(135, 20);
+            this.textBoxPatronymicAutor.Size = new System.Drawing.Size(135, 21);
             this.textBoxPatronymicAutor.TabIndex = 23;
-            this.textBoxPatronymicAutor.TextChanged += new System.EventHandler(this.textBoxPatronymicAutor_TextChanged);
             // 
             // buttonAutorAdd
             // 
+            this.buttonAutorAdd.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonAutorAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonAutorAdd.ForeColor = System.Drawing.Color.White;
             this.buttonAutorAdd.Location = new System.Drawing.Point(739, 72);
             this.buttonAutorAdd.Name = "buttonAutorAdd";
             this.buttonAutorAdd.Size = new System.Drawing.Size(205, 54);
             this.buttonAutorAdd.TabIndex = 13;
             this.buttonAutorAdd.Text = "Произвести добавление";
-            this.buttonAutorAdd.UseVisualStyleBackColor = true;
+            this.buttonAutorAdd.UseVisualStyleBackColor = false;
             this.buttonAutorAdd.Click += new System.EventHandler(this.buttonAutorAdd_Click);
             // 
             // label42
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label42.ForeColor = System.Drawing.Color.White;
             this.label42.Location = new System.Drawing.Point(185, 37);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(139, 20);
             this.label42.TabIndex = 5;
             this.label42.Text = "Фамилия автора";
-            this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
             // textBoxNameAutor
             // 
             this.textBoxNameAutor.Location = new System.Drawing.Point(189, 106);
             this.textBoxNameAutor.Name = "textBoxNameAutor";
-            this.textBoxNameAutor.Size = new System.Drawing.Size(135, 20);
+            this.textBoxNameAutor.Size = new System.Drawing.Size(135, 21);
             this.textBoxNameAutor.TabIndex = 4;
-            this.textBoxNameAutor.TextChanged += new System.EventHandler(this.textBoxNameAutor_TextChanged);
             // 
             // tabPageAutorEdit
             // 
+            this.tabPageAutorEdit.BackColor = System.Drawing.Color.DimGray;
             this.tabPageAutorEdit.Controls.Add(this.buttonAutorsEditing);
             this.tabPageAutorEdit.Controls.Add(this.textBoxBiographyAutorNewValue);
             this.tabPageAutorEdit.Controls.Add(this.label81);
@@ -2768,23 +3140,24 @@
             this.tabPageAutorEdit.Controls.Add(this.label78);
             this.tabPageAutorEdit.Controls.Add(this.textBoxNameAutorOldValue);
             this.tabPageAutorEdit.Controls.Add(this.labelHelpAutorsEditing);
-            this.tabPageAutorEdit.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAutorEdit.Location = new System.Drawing.Point(4, 24);
             this.tabPageAutorEdit.Name = "tabPageAutorEdit";
-            this.tabPageAutorEdit.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageAutorEdit.Size = new System.Drawing.Size(1198, 194);
             this.tabPageAutorEdit.TabIndex = 1;
             this.tabPageAutorEdit.Text = "Редактирование автора";
-            this.tabPageAutorEdit.UseVisualStyleBackColor = true;
             // 
             // buttonAutorsEditing
             // 
+            this.buttonAutorsEditing.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonAutorsEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.buttonAutorsEditing.ForeColor = System.Drawing.Color.White;
             this.buttonAutorsEditing.Location = new System.Drawing.Point(539, 76);
             this.buttonAutorsEditing.Name = "buttonAutorsEditing";
             this.buttonAutorsEditing.Size = new System.Drawing.Size(171, 85);
             this.buttonAutorsEditing.TabIndex = 62;
             this.buttonAutorsEditing.Tag = "Hidden";
             this.buttonAutorsEditing.Text = "Произвести редактирование";
-            this.buttonAutorsEditing.UseVisualStyleBackColor = true;
+            this.buttonAutorsEditing.UseVisualStyleBackColor = false;
             this.buttonAutorsEditing.Visible = false;
             this.buttonAutorsEditing.Click += new System.EventHandler(this.buttonAutorsEditing_Click);
             // 
@@ -2802,6 +3175,7 @@
             // 
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label81.ForeColor = System.Drawing.Color.White;
             this.label81.Location = new System.Drawing.Point(930, 53);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(154, 20);
@@ -2814,6 +3188,7 @@
             // 
             this.label82.AutoSize = true;
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label82.ForeColor = System.Drawing.Color.White;
             this.label82.Location = new System.Drawing.Point(734, 91);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(98, 20);
@@ -2824,9 +3199,9 @@
             // 
             // textBoxSurnameAutorNewValue
             // 
-            this.textBoxSurnameAutorNewValue.Location = new System.Drawing.Point(716, 71);
+            this.textBoxSurnameAutorNewValue.Location = new System.Drawing.Point(718, 65);
             this.textBoxSurnameAutorNewValue.Name = "textBoxSurnameAutorNewValue";
-            this.textBoxSurnameAutorNewValue.Size = new System.Drawing.Size(135, 20);
+            this.textBoxSurnameAutorNewValue.Size = new System.Drawing.Size(135, 21);
             this.textBoxSurnameAutorNewValue.TabIndex = 58;
             this.textBoxSurnameAutorNewValue.Tag = "Hidden";
             this.textBoxSurnameAutorNewValue.Visible = false;
@@ -2835,6 +3210,7 @@
             // 
             this.label83.AutoSize = true;
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label83.ForeColor = System.Drawing.Color.White;
             this.label83.Location = new System.Drawing.Point(712, 135);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(141, 20);
@@ -2847,7 +3223,7 @@
             // 
             this.textBoxPatronymicAutorNewValue.Location = new System.Drawing.Point(716, 158);
             this.textBoxPatronymicAutorNewValue.Name = "textBoxPatronymicAutorNewValue";
-            this.textBoxPatronymicAutorNewValue.Size = new System.Drawing.Size(135, 20);
+            this.textBoxPatronymicAutorNewValue.Size = new System.Drawing.Size(135, 21);
             this.textBoxPatronymicAutorNewValue.TabIndex = 56;
             this.textBoxPatronymicAutorNewValue.Tag = "Hidden";
             this.textBoxPatronymicAutorNewValue.Visible = false;
@@ -2856,7 +3232,8 @@
             // 
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label84.Location = new System.Drawing.Point(712, 48);
+            this.label84.ForeColor = System.Drawing.Color.White;
+            this.label84.Location = new System.Drawing.Point(714, 42);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(139, 20);
             this.label84.TabIndex = 55;
@@ -2868,7 +3245,7 @@
             // 
             this.textBoxNameAutorNewValue.Location = new System.Drawing.Point(716, 114);
             this.textBoxNameAutorNewValue.Name = "textBoxNameAutorNewValue";
-            this.textBoxNameAutorNewValue.Size = new System.Drawing.Size(135, 20);
+            this.textBoxNameAutorNewValue.Size = new System.Drawing.Size(135, 21);
             this.textBoxNameAutorNewValue.TabIndex = 54;
             this.textBoxNameAutorNewValue.Tag = "Hidden";
             this.textBoxNameAutorNewValue.Visible = false;
@@ -2877,6 +3254,7 @@
             // 
             this.label80.AutoSize = true;
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label80.ForeColor = System.Drawing.Color.White;
             this.label80.Location = new System.Drawing.Point(748, 10);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(239, 24);
@@ -2889,6 +3267,7 @@
             // 
             this.label79.AutoSize = true;
             this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label79.ForeColor = System.Drawing.Color.White;
             this.label79.Location = new System.Drawing.Point(106, 10);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(167, 24);
@@ -2912,6 +3291,7 @@
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label75.ForeColor = System.Drawing.Color.White;
             this.label75.Location = new System.Drawing.Point(298, 48);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(154, 20);
@@ -2924,7 +3304,8 @@
             // 
             this.label76.AutoSize = true;
             this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label76.Location = new System.Drawing.Point(33, 91);
+            this.label76.ForeColor = System.Drawing.Color.White;
+            this.label76.Location = new System.Drawing.Point(34, 86);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(98, 20);
             this.label76.TabIndex = 49;
@@ -2935,9 +3316,9 @@
             // textBoxSurnameAutorOldValue
             // 
             this.textBoxSurnameAutorOldValue.Enabled = false;
-            this.textBoxSurnameAutorOldValue.Location = new System.Drawing.Point(15, 71);
+            this.textBoxSurnameAutorOldValue.Location = new System.Drawing.Point(15, 63);
             this.textBoxSurnameAutorOldValue.Name = "textBoxSurnameAutorOldValue";
-            this.textBoxSurnameAutorOldValue.Size = new System.Drawing.Size(147, 20);
+            this.textBoxSurnameAutorOldValue.Size = new System.Drawing.Size(147, 21);
             this.textBoxSurnameAutorOldValue.TabIndex = 48;
             this.textBoxSurnameAutorOldValue.Tag = "Hidden";
             this.textBoxSurnameAutorOldValue.Visible = false;
@@ -2946,6 +3327,7 @@
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label77.ForeColor = System.Drawing.Color.White;
             this.label77.Location = new System.Drawing.Point(23, 135);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(141, 20);
@@ -2959,17 +3341,17 @@
             this.textBoxPatronymicAutorOldValue.Enabled = false;
             this.textBoxPatronymicAutorOldValue.Location = new System.Drawing.Point(15, 158);
             this.textBoxPatronymicAutorOldValue.Name = "textBoxPatronymicAutorOldValue";
-            this.textBoxPatronymicAutorOldValue.Size = new System.Drawing.Size(147, 20);
+            this.textBoxPatronymicAutorOldValue.Size = new System.Drawing.Size(147, 21);
             this.textBoxPatronymicAutorOldValue.TabIndex = 46;
             this.textBoxPatronymicAutorOldValue.Tag = "Hidden";
             this.textBoxPatronymicAutorOldValue.Visible = false;
-            this.textBoxPatronymicAutorOldValue.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label78
             // 
             this.label78.AutoSize = true;
             this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label78.Location = new System.Drawing.Point(23, 48);
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.Location = new System.Drawing.Point(18, 40);
             this.label78.Name = "label78";
             this.label78.Size = new System.Drawing.Size(139, 20);
             this.label78.TabIndex = 45;
@@ -2980,9 +3362,9 @@
             // textBoxNameAutorOldValue
             // 
             this.textBoxNameAutorOldValue.Enabled = false;
-            this.textBoxNameAutorOldValue.Location = new System.Drawing.Point(15, 114);
+            this.textBoxNameAutorOldValue.Location = new System.Drawing.Point(15, 107);
             this.textBoxNameAutorOldValue.Name = "textBoxNameAutorOldValue";
-            this.textBoxNameAutorOldValue.Size = new System.Drawing.Size(147, 20);
+            this.textBoxNameAutorOldValue.Size = new System.Drawing.Size(147, 21);
             this.textBoxNameAutorOldValue.TabIndex = 44;
             this.textBoxNameAutorOldValue.Tag = "Hidden";
             this.textBoxNameAutorOldValue.Visible = false;
@@ -2991,6 +3373,7 @@
             // 
             this.labelHelpAutorsEditing.AutoSize = true;
             this.labelHelpAutorsEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelHelpAutorsEditing.ForeColor = System.Drawing.Color.White;
             this.labelHelpAutorsEditing.Location = new System.Drawing.Point(168, 85);
             this.labelHelpAutorsEditing.Name = "labelHelpAutorsEditing";
             this.labelHelpAutorsEditing.Size = new System.Drawing.Size(944, 26);
@@ -3000,9 +3383,11 @@
             // 
             // groupBoxAutors
             // 
+            this.groupBoxAutors.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxAutors.Controls.Add(this.label30);
             this.groupBoxAutors.Controls.Add(this.textBoxFioAutorAutorsSearch);
             this.groupBoxAutors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxAutors.ForeColor = System.Drawing.Color.White;
             this.groupBoxAutors.Location = new System.Drawing.Point(858, 30);
             this.groupBoxAutors.Name = "groupBoxAutors";
             this.groupBoxAutors.Size = new System.Drawing.Size(364, 310);
@@ -3014,6 +3399,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label30.ForeColor = System.Drawing.Color.White;
             this.label30.Location = new System.Drawing.Point(97, 25);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(140, 26);
@@ -3067,6 +3453,7 @@
             // 
             // tabPageLibrarians
             // 
+            this.tabPageLibrarians.BackColor = System.Drawing.Color.DimGray;
             this.tabPageLibrarians.Controls.Add(this.tabControlLibrarians);
             this.tabPageLibrarians.Controls.Add(this.groupBoxLibrarians);
             this.tabPageLibrarians.Controls.Add(this.dataGridViewLibrarians);
@@ -3075,7 +3462,6 @@
             this.tabPageLibrarians.Size = new System.Drawing.Size(1232, 574);
             this.tabPageLibrarians.TabIndex = 4;
             this.tabPageLibrarians.Text = "Библиотекари";
-            this.tabPageLibrarians.UseVisualStyleBackColor = true;
             // 
             // tabControlLibrarians
             // 
@@ -3089,6 +3475,7 @@
             // 
             // tabPageLibrarian
             // 
+            this.tabPageLibrarian.BackColor = System.Drawing.Color.DimGray;
             this.tabPageLibrarian.Controls.Add(this.label87);
             this.tabPageLibrarian.Controls.Add(this.label53);
             this.tabPageLibrarian.Controls.Add(this.textBoxPasswordConfirmation);
@@ -3105,19 +3492,19 @@
             this.tabPageLibrarian.Controls.Add(this.textBoxMailLibrarian);
             this.tabPageLibrarian.Controls.Add(this.label51);
             this.tabPageLibrarian.Controls.Add(this.textBoxSurnameLibrarian);
-            this.tabPageLibrarian.Location = new System.Drawing.Point(4, 22);
+            this.tabPageLibrarian.Location = new System.Drawing.Point(4, 24);
             this.tabPageLibrarian.Name = "tabPageLibrarian";
             this.tabPageLibrarian.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLibrarian.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageLibrarian.Size = new System.Drawing.Size(1198, 194);
             this.tabPageLibrarian.TabIndex = 0;
             this.tabPageLibrarian.Text = "Добавление библиотекаря";
-            this.tabPageLibrarian.UseVisualStyleBackColor = true;
             // 
             // label87
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label87.Location = new System.Drawing.Point(275, 76);
+            this.label87.ForeColor = System.Drawing.Color.White;
+            this.label87.Location = new System.Drawing.Point(445, 71);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(45, 20);
             this.label87.TabIndex = 75;
@@ -3128,26 +3515,26 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label53.Location = new System.Drawing.Point(466, 105);
+            this.label53.ForeColor = System.Drawing.Color.White;
+            this.label53.Location = new System.Drawing.Point(636, 100);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(183, 20);
             this.label53.TabIndex = 36;
             this.label53.Text = "Подтвержение пароля";
-            this.label53.Click += new System.EventHandler(this.label53_Click);
             // 
             // textBoxPasswordConfirmation
             // 
-            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(470, 128);
+            this.textBoxPasswordConfirmation.Location = new System.Drawing.Point(640, 123);
             this.textBoxPasswordConfirmation.Name = "textBoxPasswordConfirmation";
-            this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(179, 20);
+            this.textBoxPasswordConfirmation.Size = new System.Drawing.Size(179, 21);
             this.textBoxPasswordConfirmation.TabIndex = 35;
-            this.textBoxPasswordConfirmation.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label52
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label52.Location = new System.Drawing.Point(505, 53);
+            this.label52.ForeColor = System.Drawing.Color.White;
+            this.label52.Location = new System.Drawing.Point(675, 48);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(67, 20);
             this.label52.TabIndex = 34;
@@ -3155,33 +3542,33 @@
             // 
             // textBoxPasswordLibrarian
             // 
-            this.textBoxPasswordLibrarian.Location = new System.Drawing.Point(470, 76);
+            this.textBoxPasswordLibrarian.Location = new System.Drawing.Point(640, 71);
             this.textBoxPasswordLibrarian.Name = "textBoxPasswordLibrarian";
-            this.textBoxPasswordLibrarian.Size = new System.Drawing.Size(179, 20);
+            this.textBoxPasswordLibrarian.Size = new System.Drawing.Size(179, 21);
             this.textBoxPasswordLibrarian.TabIndex = 33;
             // 
             // textBoxContactNumberLibrarian
             // 
             this.textBoxContactNumberLibrarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxContactNumberLibrarian.Location = new System.Drawing.Point(320, 76);
+            this.textBoxContactNumberLibrarian.Location = new System.Drawing.Point(490, 71);
             this.textBoxContactNumberLibrarian.Mask = "00-000-00-00";
             this.textBoxContactNumberLibrarian.Name = "textBoxContactNumberLibrarian";
             this.textBoxContactNumberLibrarian.Size = new System.Drawing.Size(124, 26);
             this.textBoxContactNumberLibrarian.TabIndex = 32;
-            this.textBoxContactNumberLibrarian.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textBoxContactNumberLibrarian_MaskInputRejected);
             // 
             // textBoxPatronymicLibrarian
             // 
-            this.textBoxPatronymicLibrarian.Location = new System.Drawing.Point(52, 145);
+            this.textBoxPatronymicLibrarian.Location = new System.Drawing.Point(222, 140);
             this.textBoxPatronymicLibrarian.Name = "textBoxPatronymicLibrarian";
-            this.textBoxPatronymicLibrarian.Size = new System.Drawing.Size(189, 20);
+            this.textBoxPatronymicLibrarian.Size = new System.Drawing.Size(189, 21);
             this.textBoxPatronymicLibrarian.TabIndex = 31;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label47.Location = new System.Drawing.Point(48, 122);
+            this.label47.ForeColor = System.Drawing.Color.White;
+            this.label47.Location = new System.Drawing.Point(218, 117);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(195, 20);
             this.label47.TabIndex = 30;
@@ -3191,7 +3578,8 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label48.Location = new System.Drawing.Point(69, 76);
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.Location = new System.Drawing.Point(239, 71);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(152, 20);
             this.label48.TabIndex = 29;
@@ -3199,26 +3587,29 @@
             // 
             // textBoxNameLibrarian
             // 
-            this.textBoxNameLibrarian.Location = new System.Drawing.Point(52, 99);
+            this.textBoxNameLibrarian.Location = new System.Drawing.Point(222, 94);
             this.textBoxNameLibrarian.Name = "textBoxNameLibrarian";
-            this.textBoxNameLibrarian.Size = new System.Drawing.Size(189, 20);
+            this.textBoxNameLibrarian.Size = new System.Drawing.Size(189, 21);
             this.textBoxNameLibrarian.TabIndex = 28;
             // 
             // buttonLibrariansAdd
             // 
+            this.buttonLibrariansAdd.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonLibrariansAdd.ForeColor = System.Drawing.Color.White;
             this.buttonLibrariansAdd.Location = new System.Drawing.Point(862, 81);
             this.buttonLibrariansAdd.Name = "buttonLibrariansAdd";
             this.buttonLibrariansAdd.Size = new System.Drawing.Size(205, 54);
             this.buttonLibrariansAdd.TabIndex = 27;
             this.buttonLibrariansAdd.Text = "Произвести добавление";
-            this.buttonLibrariansAdd.UseVisualStyleBackColor = true;
+            this.buttonLibrariansAdd.UseVisualStyleBackColor = false;
             this.buttonLibrariansAdd.Click += new System.EventHandler(this.buttonLibrariansAdd_Click);
             // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label49.Location = new System.Drawing.Point(275, 53);
+            this.label49.ForeColor = System.Drawing.Color.White;
+            this.label49.Location = new System.Drawing.Point(445, 48);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(175, 20);
             this.label49.TabIndex = 26;
@@ -3228,7 +3619,8 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label50.Location = new System.Drawing.Point(329, 105);
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.Location = new System.Drawing.Point(499, 100);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(57, 20);
             this.label50.TabIndex = 25;
@@ -3236,16 +3628,17 @@
             // 
             // textBoxMailLibrarian
             // 
-            this.textBoxMailLibrarian.Location = new System.Drawing.Point(279, 126);
+            this.textBoxMailLibrarian.Location = new System.Drawing.Point(449, 121);
             this.textBoxMailLibrarian.Name = "textBoxMailLibrarian";
-            this.textBoxMailLibrarian.Size = new System.Drawing.Size(171, 20);
+            this.textBoxMailLibrarian.Size = new System.Drawing.Size(171, 21);
             this.textBoxMailLibrarian.TabIndex = 24;
             // 
             // label51
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label51.Location = new System.Drawing.Point(48, 30);
+            this.label51.ForeColor = System.Drawing.Color.White;
+            this.label51.Location = new System.Drawing.Point(218, 25);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(193, 20);
             this.label51.TabIndex = 23;
@@ -3253,13 +3646,14 @@
             // 
             // textBoxSurnameLibrarian
             // 
-            this.textBoxSurnameLibrarian.Location = new System.Drawing.Point(52, 53);
+            this.textBoxSurnameLibrarian.Location = new System.Drawing.Point(222, 48);
             this.textBoxSurnameLibrarian.Name = "textBoxSurnameLibrarian";
-            this.textBoxSurnameLibrarian.Size = new System.Drawing.Size(189, 20);
+            this.textBoxSurnameLibrarian.Size = new System.Drawing.Size(189, 21);
             this.textBoxSurnameLibrarian.TabIndex = 22;
             // 
             // tabPageEditLibrarian
             // 
+            this.tabPageEditLibrarian.BackColor = System.Drawing.Color.DimGray;
             this.tabPageEditLibrarian.Controls.Add(this.label74);
             this.tabPageEditLibrarian.Controls.Add(this.label89);
             this.tabPageEditLibrarian.Controls.Add(this.label92);
@@ -3285,17 +3679,17 @@
             this.tabPageEditLibrarian.Controls.Add(this.label97);
             this.tabPageEditLibrarian.Controls.Add(this.textBoxSurnameLibrarianOldValue);
             this.tabPageEditLibrarian.Controls.Add(this.labelHelpLibrariansEditing);
-            this.tabPageEditLibrarian.Location = new System.Drawing.Point(4, 22);
+            this.tabPageEditLibrarian.Location = new System.Drawing.Point(4, 24);
             this.tabPageEditLibrarian.Name = "tabPageEditLibrarian";
-            this.tabPageEditLibrarian.Size = new System.Drawing.Size(1198, 196);
+            this.tabPageEditLibrarian.Size = new System.Drawing.Size(1198, 194);
             this.tabPageEditLibrarian.TabIndex = 1;
             this.tabPageEditLibrarian.Text = "Редактирование библиотекаря";
-            this.tabPageEditLibrarian.UseVisualStyleBackColor = true;
             // 
             // label74
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label74.ForeColor = System.Drawing.Color.White;
             this.label74.Location = new System.Drawing.Point(874, 121);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(45, 20);
@@ -3308,6 +3702,7 @@
             // 
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label89.ForeColor = System.Drawing.Color.White;
             this.label89.Location = new System.Drawing.Point(874, 52);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(195, 20);
@@ -3320,6 +3715,7 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label92.ForeColor = System.Drawing.Color.White;
             this.label92.Location = new System.Drawing.Point(692, 98);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(152, 20);
@@ -3332,6 +3728,7 @@
             // 
             this.label98.AutoSize = true;
             this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label98.ForeColor = System.Drawing.Color.White;
             this.label98.Location = new System.Drawing.Point(675, 52);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(193, 20);
@@ -3345,20 +3742,22 @@
             this.textBoxContactNumberLibrarianOldValue.Location = new System.Drawing.Point(238, 121);
             this.textBoxContactNumberLibrarianOldValue.Name = "textBoxContactNumberLibrarianOldValue";
             this.textBoxContactNumberLibrarianOldValue.ReadOnly = true;
-            this.textBoxContactNumberLibrarianOldValue.Size = new System.Drawing.Size(167, 20);
+            this.textBoxContactNumberLibrarianOldValue.Size = new System.Drawing.Size(167, 21);
             this.textBoxContactNumberLibrarianOldValue.TabIndex = 70;
             this.textBoxContactNumberLibrarianOldValue.Tag = "Hidden";
             this.textBoxContactNumberLibrarianOldValue.Visible = false;
             // 
             // buttonLibrariansEdit
             // 
+            this.buttonLibrariansEdit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.buttonLibrariansEdit.ForeColor = System.Drawing.Color.White;
             this.buttonLibrariansEdit.Location = new System.Drawing.Point(438, 71);
             this.buttonLibrariansEdit.Name = "buttonLibrariansEdit";
             this.buttonLibrariansEdit.Size = new System.Drawing.Size(231, 74);
             this.buttonLibrariansEdit.TabIndex = 69;
             this.buttonLibrariansEdit.Tag = "Hidden";
             this.buttonLibrariansEdit.Text = "Произвести редактирование";
-            this.buttonLibrariansEdit.UseVisualStyleBackColor = true;
+            this.buttonLibrariansEdit.UseVisualStyleBackColor = false;
             this.buttonLibrariansEdit.Visible = false;
             this.buttonLibrariansEdit.Click += new System.EventHandler(this.buttonLibrariansEdit_Click);
             // 
@@ -3366,6 +3765,7 @@
             // 
             this.label85.AutoSize = true;
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label85.ForeColor = System.Drawing.Color.White;
             this.label85.Location = new System.Drawing.Point(795, 15);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(239, 24);
@@ -3378,6 +3778,7 @@
             // 
             this.label86.AutoSize = true;
             this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label86.ForeColor = System.Drawing.Color.White;
             this.label86.Location = new System.Drawing.Point(126, 15);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(167, 24);
@@ -3391,7 +3792,7 @@
             this.textBoxContactNumberLibrarianNewValue.Location = new System.Drawing.Point(923, 121);
             this.textBoxContactNumberLibrarianNewValue.Mask = "00-000-00-00";
             this.textBoxContactNumberLibrarianNewValue.Name = "textBoxContactNumberLibrarianNewValue";
-            this.textBoxContactNumberLibrarianNewValue.Size = new System.Drawing.Size(133, 20);
+            this.textBoxContactNumberLibrarianNewValue.Size = new System.Drawing.Size(133, 21);
             this.textBoxContactNumberLibrarianNewValue.TabIndex = 65;
             this.textBoxContactNumberLibrarianNewValue.Tag = "Hidden";
             this.textBoxContactNumberLibrarianNewValue.Visible = false;
@@ -3400,7 +3801,7 @@
             // 
             this.textBoxPatronymicLibrarianNewValue.Location = new System.Drawing.Point(878, 75);
             this.textBoxPatronymicLibrarianNewValue.Name = "textBoxPatronymicLibrarianNewValue";
-            this.textBoxPatronymicLibrarianNewValue.Size = new System.Drawing.Size(178, 20);
+            this.textBoxPatronymicLibrarianNewValue.Size = new System.Drawing.Size(178, 21);
             this.textBoxPatronymicLibrarianNewValue.TabIndex = 64;
             this.textBoxPatronymicLibrarianNewValue.Tag = "Hidden";
             this.textBoxPatronymicLibrarianNewValue.Visible = false;
@@ -3409,7 +3810,7 @@
             // 
             this.textBoxNameLibrarianNewValue.Location = new System.Drawing.Point(679, 121);
             this.textBoxNameLibrarianNewValue.Name = "textBoxNameLibrarianNewValue";
-            this.textBoxNameLibrarianNewValue.Size = new System.Drawing.Size(178, 20);
+            this.textBoxNameLibrarianNewValue.Size = new System.Drawing.Size(178, 21);
             this.textBoxNameLibrarianNewValue.TabIndex = 61;
             this.textBoxNameLibrarianNewValue.Tag = "Hidden";
             this.textBoxNameLibrarianNewValue.Visible = false;
@@ -3418,6 +3819,7 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label90.ForeColor = System.Drawing.Color.White;
             this.label90.Location = new System.Drawing.Point(881, 98);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(175, 20);
@@ -3430,6 +3832,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label91.ForeColor = System.Drawing.Color.White;
             this.label91.Location = new System.Drawing.Point(830, 144);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(57, 20);
@@ -3437,23 +3840,21 @@
             this.label91.Tag = "Hidden";
             this.label91.Text = "Почта";
             this.label91.Visible = false;
-            this.label91.Click += new System.EventHandler(this.label91_Click);
             // 
             // textBoxEmailLibrarianNewValue
             // 
             this.textBoxEmailLibrarianNewValue.Location = new System.Drawing.Point(799, 167);
             this.textBoxEmailLibrarianNewValue.Name = "textBoxEmailLibrarianNewValue";
-            this.textBoxEmailLibrarianNewValue.Size = new System.Drawing.Size(178, 20);
+            this.textBoxEmailLibrarianNewValue.Size = new System.Drawing.Size(178, 21);
             this.textBoxEmailLibrarianNewValue.TabIndex = 58;
             this.textBoxEmailLibrarianNewValue.Tag = "Hidden";
             this.textBoxEmailLibrarianNewValue.Visible = false;
-            this.textBoxEmailLibrarianNewValue.TextChanged += new System.EventHandler(this.textBoxEmailLibrarianNewValue_TextChanged);
             // 
             // textBoxSurnameLibrarianNewValue
             // 
             this.textBoxSurnameLibrarianNewValue.Location = new System.Drawing.Point(679, 75);
             this.textBoxSurnameLibrarianNewValue.Name = "textBoxSurnameLibrarianNewValue";
-            this.textBoxSurnameLibrarianNewValue.Size = new System.Drawing.Size(178, 20);
+            this.textBoxSurnameLibrarianNewValue.Size = new System.Drawing.Size(178, 21);
             this.textBoxSurnameLibrarianNewValue.TabIndex = 56;
             this.textBoxSurnameLibrarianNewValue.Tag = "Hidden";
             this.textBoxSurnameLibrarianNewValue.Visible = false;
@@ -3463,7 +3864,7 @@
             this.textBoxPatronymicLibrarianOldValue.Location = new System.Drawing.Point(38, 121);
             this.textBoxPatronymicLibrarianOldValue.Name = "textBoxPatronymicLibrarianOldValue";
             this.textBoxPatronymicLibrarianOldValue.ReadOnly = true;
-            this.textBoxPatronymicLibrarianOldValue.Size = new System.Drawing.Size(187, 20);
+            this.textBoxPatronymicLibrarianOldValue.Size = new System.Drawing.Size(187, 21);
             this.textBoxPatronymicLibrarianOldValue.TabIndex = 55;
             this.textBoxPatronymicLibrarianOldValue.Tag = "Hidden";
             this.textBoxPatronymicLibrarianOldValue.Visible = false;
@@ -3472,6 +3873,7 @@
             // 
             this.labelPatronymicLibrarianOldValue.AutoSize = true;
             this.labelPatronymicLibrarianOldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelPatronymicLibrarianOldValue.ForeColor = System.Drawing.Color.White;
             this.labelPatronymicLibrarianOldValue.Location = new System.Drawing.Point(32, 98);
             this.labelPatronymicLibrarianOldValue.Name = "labelPatronymicLibrarianOldValue";
             this.labelPatronymicLibrarianOldValue.Size = new System.Drawing.Size(195, 20);
@@ -3484,6 +3886,7 @@
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label94.ForeColor = System.Drawing.Color.White;
             this.label94.Location = new System.Drawing.Point(244, 52);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(152, 20);
@@ -3497,7 +3900,7 @@
             this.textBoxNameLibrarianOldValue.Location = new System.Drawing.Point(238, 75);
             this.textBoxNameLibrarianOldValue.Name = "textBoxNameLibrarianOldValue";
             this.textBoxNameLibrarianOldValue.ReadOnly = true;
-            this.textBoxNameLibrarianOldValue.Size = new System.Drawing.Size(167, 20);
+            this.textBoxNameLibrarianOldValue.Size = new System.Drawing.Size(167, 21);
             this.textBoxNameLibrarianOldValue.TabIndex = 52;
             this.textBoxNameLibrarianOldValue.Tag = "Hidden";
             this.textBoxNameLibrarianOldValue.Visible = false;
@@ -3506,6 +3909,7 @@
             // 
             this.labelContactNumberLibrarianOldValue.AutoSize = true;
             this.labelContactNumberLibrarianOldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelContactNumberLibrarianOldValue.ForeColor = System.Drawing.Color.White;
             this.labelContactNumberLibrarianOldValue.Location = new System.Drawing.Point(235, 98);
             this.labelContactNumberLibrarianOldValue.Name = "labelContactNumberLibrarianOldValue";
             this.labelContactNumberLibrarianOldValue.Size = new System.Drawing.Size(175, 20);
@@ -3518,6 +3922,7 @@
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label96.ForeColor = System.Drawing.Color.White;
             this.label96.Location = new System.Drawing.Point(209, 144);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(57, 20);
@@ -3525,23 +3930,22 @@
             this.label96.Tag = "Hidden";
             this.label96.Text = "Почта";
             this.label96.Visible = false;
-            this.label96.Click += new System.EventHandler(this.label96_Click);
             // 
             // textBoxEmailLibrarianOldValue
             // 
             this.textBoxEmailLibrarianOldValue.Location = new System.Drawing.Point(156, 167);
             this.textBoxEmailLibrarianOldValue.Name = "textBoxEmailLibrarianOldValue";
             this.textBoxEmailLibrarianOldValue.ReadOnly = true;
-            this.textBoxEmailLibrarianOldValue.Size = new System.Drawing.Size(167, 20);
+            this.textBoxEmailLibrarianOldValue.Size = new System.Drawing.Size(167, 21);
             this.textBoxEmailLibrarianOldValue.TabIndex = 49;
             this.textBoxEmailLibrarianOldValue.Tag = "Hidden";
             this.textBoxEmailLibrarianOldValue.Visible = false;
-            this.textBoxEmailLibrarianOldValue.TextChanged += new System.EventHandler(this.textBoxEmailLibrarianOldValue_TextChanged);
             // 
             // label97
             // 
             this.label97.AutoSize = true;
             this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label97.ForeColor = System.Drawing.Color.White;
             this.label97.Location = new System.Drawing.Point(32, 52);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(193, 20);
@@ -3549,23 +3953,22 @@
             this.label97.Tag = "Hidden";
             this.label97.Text = "Фамилия библиотекаря";
             this.label97.Visible = false;
-            this.label97.Click += new System.EventHandler(this.label97_Click);
             // 
             // textBoxSurnameLibrarianOldValue
             // 
             this.textBoxSurnameLibrarianOldValue.Location = new System.Drawing.Point(36, 75);
             this.textBoxSurnameLibrarianOldValue.Name = "textBoxSurnameLibrarianOldValue";
             this.textBoxSurnameLibrarianOldValue.ReadOnly = true;
-            this.textBoxSurnameLibrarianOldValue.Size = new System.Drawing.Size(189, 20);
+            this.textBoxSurnameLibrarianOldValue.Size = new System.Drawing.Size(189, 21);
             this.textBoxSurnameLibrarianOldValue.TabIndex = 47;
             this.textBoxSurnameLibrarianOldValue.Tag = "Hidden";
             this.textBoxSurnameLibrarianOldValue.Visible = false;
-            this.textBoxSurnameLibrarianOldValue.TextChanged += new System.EventHandler(this.textBoxSurnameLibrarianOldValue_TextChanged);
             // 
             // labelHelpLibrariansEditing
             // 
             this.labelHelpLibrariansEditing.AutoSize = true;
             this.labelHelpLibrariansEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelHelpLibrariansEditing.ForeColor = System.Drawing.Color.White;
             this.labelHelpLibrariansEditing.Location = new System.Drawing.Point(79, 92);
             this.labelHelpLibrariansEditing.Name = "labelHelpLibrariansEditing";
             this.labelHelpLibrariansEditing.Size = new System.Drawing.Size(944, 26);
@@ -3575,6 +3978,7 @@
             // 
             // groupBoxLibrarians
             // 
+            this.groupBoxLibrarians.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxLibrarians.Controls.Add(this.label29);
             this.groupBoxLibrarians.Controls.Add(this.textBoxMailLibrariansSearch);
             this.groupBoxLibrarians.Controls.Add(this.label34);
@@ -3582,6 +3986,7 @@
             this.groupBoxLibrarians.Controls.Add(this.textBoxFioLibrarianLibrariansSearch);
             this.groupBoxLibrarians.Controls.Add(this.textBoxContactNumberLibrariansSearch);
             this.groupBoxLibrarians.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.groupBoxLibrarians.ForeColor = System.Drawing.Color.White;
             this.groupBoxLibrarians.Location = new System.Drawing.Point(858, 30);
             this.groupBoxLibrarians.Name = "groupBoxLibrarians";
             this.groupBoxLibrarians.Size = new System.Drawing.Size(364, 310);
@@ -3593,6 +3998,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label29.ForeColor = System.Drawing.Color.White;
             this.label29.Location = new System.Drawing.Point(137, 135);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(74, 26);
@@ -3613,6 +4019,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label34.ForeColor = System.Drawing.Color.White;
             this.label34.Location = new System.Drawing.Point(55, 80);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(252, 26);
@@ -3623,6 +4030,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label35.ForeColor = System.Drawing.Color.White;
             this.label35.Location = new System.Drawing.Point(69, 25);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(214, 26);
@@ -3698,277 +4106,26 @@
             this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
             // 
-            // label101
+            // labelNowLibrarian
             // 
-            this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label101.ForeColor = System.Drawing.Color.White;
-            this.label101.Location = new System.Drawing.Point(506, 358);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(197, 31);
-            this.label101.TabIndex = 28;
-            this.label101.Tag = "Autorization";
-            this.label101.Text = "Забыли пароль?";
-            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonPasswordRecovery
-            // 
-            this.buttonPasswordRecovery.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonPasswordRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonPasswordRecovery.ForeColor = System.Drawing.Color.White;
-            this.buttonPasswordRecovery.Location = new System.Drawing.Point(435, 392);
-            this.buttonPasswordRecovery.Name = "buttonPasswordRecovery";
-            this.buttonPasswordRecovery.Size = new System.Drawing.Size(368, 58);
-            this.buttonPasswordRecovery.TabIndex = 29;
-            this.buttonPasswordRecovery.Tag = "Autorization";
-            this.buttonPasswordRecovery.Text = "Восстановить пароль";
-            this.buttonPasswordRecovery.UseVisualStyleBackColor = false;
-            this.buttonPasswordRecovery.Click += new System.EventHandler(this.buttonPasswordRecovery_Click);
-            // 
-            // textBoxCodeConfirmation
-            // 
-            this.textBoxCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxCodeConfirmation.Location = new System.Drawing.Point(526, 184);
-            this.textBoxCodeConfirmation.Name = "textBoxCodeConfirmation";
-            this.textBoxCodeConfirmation.Size = new System.Drawing.Size(186, 30);
-            this.textBoxCodeConfirmation.TabIndex = 30;
-            this.textBoxCodeConfirmation.Tag = "ConfirmationCode";
-            this.textBoxCodeConfirmation.Visible = false;
-            this.textBoxCodeConfirmation.TextChanged += new System.EventHandler(this.textBoxCodeConfirmation_TextChanged);
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label103.ForeColor = System.Drawing.Color.White;
-            this.label103.Location = new System.Drawing.Point(463, 150);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(323, 31);
-            this.label103.TabIndex = 31;
-            this.label103.Tag = "ConfirmationCode";
-            this.label103.Text = "Введите код подтвержения";
-            this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label103.Visible = false;
-            this.label103.Click += new System.EventHandler(this.label103_Click);
-            // 
-            // buttonCancelChangePassword
-            // 
-            this.buttonCancelChangePassword.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonCancelChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonCancelChangePassword.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelChangePassword.Location = new System.Drawing.Point(442, 284);
-            this.buttonCancelChangePassword.Name = "buttonCancelChangePassword";
-            this.buttonCancelChangePassword.Size = new System.Drawing.Size(368, 58);
-            this.buttonCancelChangePassword.TabIndex = 33;
-            this.buttonCancelChangePassword.Tag = "ConfirmationCode";
-            this.buttonCancelChangePassword.Text = "Отменить смену пароля";
-            this.buttonCancelChangePassword.UseVisualStyleBackColor = false;
-            this.buttonCancelChangePassword.Visible = false;
-            this.buttonCancelChangePassword.Click += new System.EventHandler(this.buttonCancelChangePassword_Click);
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label104.ForeColor = System.Drawing.Color.White;
-            this.label104.Location = new System.Drawing.Point(476, 199);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(297, 31);
-            this.label104.TabIndex = 40;
-            this.label104.Tag = "NewPassword";
-            this.label104.Text = "Подтвержение пароля";
-            this.label104.Visible = false;
-            // 
-            // textBoxConfirmationNewPassword
-            // 
-            this.textBoxConfirmationNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxConfirmationNewPassword.Location = new System.Drawing.Point(531, 233);
-            this.textBoxConfirmationNewPassword.Name = "textBoxConfirmationNewPassword";
-            this.textBoxConfirmationNewPassword.PasswordChar = '*';
-            this.textBoxConfirmationNewPassword.Size = new System.Drawing.Size(179, 30);
-            this.textBoxConfirmationNewPassword.TabIndex = 39;
-            this.textBoxConfirmationNewPassword.Tag = "NewPassword";
-            this.textBoxConfirmationNewPassword.Visible = false;
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.label105.ForeColor = System.Drawing.Color.White;
-            this.label105.Location = new System.Drawing.Point(524, 102);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(193, 31);
-            this.label105.TabIndex = 38;
-            this.label105.Tag = "NewPassword";
-            this.label105.Text = "Новый пароль";
-            this.label105.Visible = false;
-            // 
-            // textBoxNewPassword
-            // 
-            this.textBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.textBoxNewPassword.Location = new System.Drawing.Point(530, 136);
-            this.textBoxNewPassword.Name = "textBoxNewPassword";
-            this.textBoxNewPassword.PasswordChar = '*';
-            this.textBoxNewPassword.Size = new System.Drawing.Size(179, 30);
-            this.textBoxNewPassword.TabIndex = 37;
-            this.textBoxNewPassword.Tag = "NewPassword";
-            this.textBoxNewPassword.Visible = false;
-            // 
-            // buttonConfirmNewPassword
-            // 
-            this.buttonConfirmNewPassword.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonConfirmNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonConfirmNewPassword.ForeColor = System.Drawing.Color.White;
-            this.buttonConfirmNewPassword.Location = new System.Drawing.Point(435, 297);
-            this.buttonConfirmNewPassword.Name = "buttonConfirmNewPassword";
-            this.buttonConfirmNewPassword.Size = new System.Drawing.Size(368, 58);
-            this.buttonConfirmNewPassword.TabIndex = 41;
-            this.buttonConfirmNewPassword.Tag = "NewPassword";
-            this.buttonConfirmNewPassword.Text = "Сменить пароль";
-            this.buttonConfirmNewPassword.UseVisualStyleBackColor = false;
-            this.buttonConfirmNewPassword.Visible = false;
-            this.buttonConfirmNewPassword.Click += new System.EventHandler(this.buttonConfirmNewPassword_Click);
-            // 
-            // buttonCodeConfirmation
-            // 
-            this.buttonCodeConfirmation.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonCodeConfirmation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonCodeConfirmation.ForeColor = System.Drawing.Color.White;
-            this.buttonCodeConfirmation.Location = new System.Drawing.Point(442, 220);
-            this.buttonCodeConfirmation.Name = "buttonCodeConfirmation";
-            this.buttonCodeConfirmation.Size = new System.Drawing.Size(368, 58);
-            this.buttonCodeConfirmation.TabIndex = 42;
-            this.buttonCodeConfirmation.Tag = "ConfirmationCode";
-            this.buttonCodeConfirmation.Text = "Подтвердить код подтверждения";
-            this.buttonCodeConfirmation.UseVisualStyleBackColor = false;
-            this.buttonCodeConfirmation.Visible = false;
-            this.buttonCodeConfirmation.Click += new System.EventHandler(this.buttonCodeConfirmation_Click);
-            // 
-            // buttonCancelChangePassword2
-            // 
-            this.buttonCancelChangePassword2.BackColor = System.Drawing.Color.SaddleBrown;
-            this.buttonCancelChangePassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.buttonCancelChangePassword2.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelChangePassword2.Location = new System.Drawing.Point(435, 361);
-            this.buttonCancelChangePassword2.Name = "buttonCancelChangePassword2";
-            this.buttonCancelChangePassword2.Size = new System.Drawing.Size(368, 58);
-            this.buttonCancelChangePassword2.TabIndex = 43;
-            this.buttonCancelChangePassword2.Tag = "NewPassword";
-            this.buttonCancelChangePassword2.Text = "Отменить смену пароля";
-            this.buttonCancelChangePassword2.UseVisualStyleBackColor = false;
-            this.buttonCancelChangePassword2.Visible = false;
-            this.buttonCancelChangePassword2.Click += new System.EventHandler(this.buttonCancelChangePassword2_Click);
-            // 
-            // checkBoxShowPasswordConfirmationPassword
-            // 
-            this.checkBoxShowPasswordConfirmationPassword.AutoSize = true;
-            this.checkBoxShowPasswordConfirmationPassword.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxShowPasswordConfirmationPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxShowPasswordConfirmationPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPasswordConfirmationPassword.Location = new System.Drawing.Point(531, 268);
-            this.checkBoxShowPasswordConfirmationPassword.Name = "checkBoxShowPasswordConfirmationPassword";
-            this.checkBoxShowPasswordConfirmationPassword.Size = new System.Drawing.Size(189, 29);
-            this.checkBoxShowPasswordConfirmationPassword.TabIndex = 44;
-            this.checkBoxShowPasswordConfirmationPassword.Tag = "NewPassword";
-            this.checkBoxShowPasswordConfirmationPassword.Text = "Показать пароль";
-            this.checkBoxShowPasswordConfirmationPassword.UseVisualStyleBackColor = true;
-            this.checkBoxShowPasswordConfirmationPassword.Visible = false;
-            this.checkBoxShowPasswordConfirmationPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordConfirmationPassword_CheckedChanged);
-            // 
-            // checkBoxShowPasswordNewPassword
-            // 
-            this.checkBoxShowPasswordNewPassword.AutoSize = true;
-            this.checkBoxShowPasswordNewPassword.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxShowPasswordNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxShowPasswordNewPassword.ForeColor = System.Drawing.Color.White;
-            this.checkBoxShowPasswordNewPassword.Location = new System.Drawing.Point(530, 165);
-            this.checkBoxShowPasswordNewPassword.Name = "checkBoxShowPasswordNewPassword";
-            this.checkBoxShowPasswordNewPassword.Size = new System.Drawing.Size(189, 29);
-            this.checkBoxShowPasswordNewPassword.TabIndex = 45;
-            this.checkBoxShowPasswordNewPassword.Tag = "NewPassword";
-            this.checkBoxShowPasswordNewPassword.Text = "Показать пароль";
-            this.checkBoxShowPasswordNewPassword.UseVisualStyleBackColor = true;
-            this.checkBoxShowPasswordNewPassword.Visible = false;
-            this.checkBoxShowPasswordNewPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPasswordNewPassword_CheckedChanged);
-            // 
-            // FioReader
-            // 
-            this.FioReader.Frozen = true;
-            this.FioReader.HeaderText = "ФИО Читателя";
-            this.FioReader.Name = "FioReader";
-            this.FioReader.ReadOnly = true;
-            this.FioReader.Width = 195;
-            // 
-            // NameBook
-            // 
-            this.NameBook.Frozen = true;
-            this.NameBook.HeaderText = "Наименование книги";
-            this.NameBook.Name = "NameBook";
-            this.NameBook.ReadOnly = true;
-            this.NameBook.Width = 128;
-            // 
-            // fioLibrarian
-            // 
-            this.fioLibrarian.Frozen = true;
-            this.fioLibrarian.HeaderText = "ФИО Библиотекаря выдавшего книгу";
-            this.fioLibrarian.Name = "fioLibrarian";
-            this.fioLibrarian.ReadOnly = true;
-            this.fioLibrarian.Width = 195;
-            // 
-            // dateOfIssue
-            // 
-            this.dateOfIssue.Frozen = true;
-            this.dateOfIssue.HeaderText = "Дата выдачи";
-            this.dateOfIssue.Name = "dateOfIssue";
-            this.dateOfIssue.ReadOnly = true;
-            this.dateOfIssue.Width = 90;
-            // 
-            // ReturnDate
-            // 
-            this.ReturnDate.Frozen = true;
-            this.ReturnDate.HeaderText = "Дата возврата";
-            this.ReturnDate.Name = "ReturnDate";
-            this.ReturnDate.ReadOnly = true;
-            this.ReturnDate.Width = 99;
-            // 
-            // IdInstances
-            // 
-            this.IdInstances.Frozen = true;
-            this.IdInstances.HeaderText = "Номер экземпляра";
-            this.IdInstances.Name = "IdInstances";
-            this.IdInstances.ReadOnly = true;
-            this.IdInstances.Width = 120;
-            // 
-            // checkBoxOnlyDebtorsBookDelivery
-            // 
-            this.checkBoxOnlyDebtorsBookDelivery.AutoSize = true;
-            this.checkBoxOnlyDebtorsBookDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.checkBoxOnlyDebtorsBookDelivery.Location = new System.Drawing.Point(868, 301);
-            this.checkBoxOnlyDebtorsBookDelivery.Name = "checkBoxOnlyDebtorsBookDelivery";
-            this.checkBoxOnlyDebtorsBookDelivery.Size = new System.Drawing.Size(304, 29);
-            this.checkBoxOnlyDebtorsBookDelivery.TabIndex = 3;
-            this.checkBoxOnlyDebtorsBookDelivery.Text = "Выводить только должников";
-            this.checkBoxOnlyDebtorsBookDelivery.UseVisualStyleBackColor = true;
-            this.checkBoxOnlyDebtorsBookDelivery.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged);
-            // 
-            // checkBoxOnlyDebtors
-            // 
-            this.checkBoxOnlyDebtors.AutoSize = true;
-            this.checkBoxOnlyDebtors.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
-            this.checkBoxOnlyDebtors.Location = new System.Drawing.Point(28, 275);
-            this.checkBoxOnlyDebtors.Name = "checkBoxOnlyDebtors";
-            this.checkBoxOnlyDebtors.Size = new System.Drawing.Size(304, 29);
-            this.checkBoxOnlyDebtors.TabIndex = 12;
-            this.checkBoxOnlyDebtors.Text = "Выводить только должников";
-            this.checkBoxOnlyDebtors.UseVisualStyleBackColor = true;
-            this.checkBoxOnlyDebtors.CheckedChanged += new System.EventHandler(this.checkBoxOnlyDebtors_CheckedChanged_1);
+            this.labelNowLibrarian.AutoSize = true;
+            this.labelNowLibrarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.labelNowLibrarian.ForeColor = System.Drawing.Color.White;
+            this.labelNowLibrarian.Location = new System.Drawing.Point(377, 9);
+            this.labelNowLibrarian.Name = "labelNowLibrarian";
+            this.labelNowLibrarian.Size = new System.Drawing.Size(351, 31);
+            this.labelNowLibrarian.TabIndex = 46;
+            this.labelNowLibrarian.Tag = "NewPassword";
+            this.labelNowLibrarian.Text = "Текующий библиотекарь - ";
+            this.labelNowLibrarian.Visible = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.labelNowLibrarian);
             this.Controls.Add(this.tabControlMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -4006,8 +4163,6 @@
             this.tabPageEditBook.ResumeLayout(false);
             this.tabPageEditBook.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxYearOfIssueNewValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBookEditOldValue)).EndInit();
             this.groupBoxBookSearch.ResumeLayout(false);
             this.groupBoxBookSearch.PerformLayout();
             this.tabPageInstances.ResumeLayout(false);
@@ -4045,6 +4200,7 @@
             this.groupBoxLibrarians.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLibrarians)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -4109,14 +4265,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBoxFioReaderReturnsBooks;
-        private System.Windows.Forms.DataGridView dataGridViewBookDeliveryReturnBooks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxNameBookBooks;
         private System.Windows.Forms.Label label19;
@@ -4227,9 +4375,7 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox textBoxNameBookEditOldValue;
         private System.Windows.Forms.Label labelHelpBooksEditing;
-        private System.Windows.Forms.PictureBox pictureBoxBookEditOldValue;
         private System.Windows.Forms.ComboBox comboBoxFioAutorEditNewValue;
-        private System.Windows.Forms.PictureBox pictureBoxEdit;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.TextBox textBoxCategoryBookNewValue;
         private System.Windows.Forms.Label label60;
@@ -4331,7 +4477,6 @@
         private System.Windows.Forms.TextBox textBoxCountOfReaders;
         private System.Windows.Forms.Label label102;
         private System.Windows.Forms.PictureBox pictureBoxMainValue;
-        private System.Windows.Forms.Label labelTotalFound;
         private System.Windows.Forms.Label labelNumberCurrentBook;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonBooksEdit;
@@ -4351,14 +4496,27 @@
         private System.Windows.Forms.TextBox textBoxNewPassword;
         private System.Windows.Forms.CheckBox checkBoxShowPasswordNewPassword;
         private System.Windows.Forms.CheckBox checkBoxShowPasswordConfirmationPassword;
+        private System.Windows.Forms.CheckBox checkBoxOnlyDebtorsBookDelivery;
+        private System.Windows.Forms.CheckBox checkBoxOnlyDebtors;
+        private System.Windows.Forms.CheckBox checkBoxOnlyInStock;
+        private System.Windows.Forms.Label labelNotFound;
+        private System.Windows.Forms.Button buttonSendMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn FioReader;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn fioLibrarian;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfIssue;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReturnDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdInstances;
-        private System.Windows.Forms.CheckBox checkBoxOnlyDebtorsBookDelivery;
-        private System.Windows.Forms.CheckBox checkBoxOnlyDebtors;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountDays;
+        private System.Windows.Forms.DataGridView dataGridViewBookDeliveryReturnBooks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.Label labelNowLibrarian;
     }
 }
 

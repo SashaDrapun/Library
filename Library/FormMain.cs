@@ -54,9 +54,11 @@ namespace Library
         }
 
         private Book AddedBook = null;
+        private Librarian AutorizationLibrarian = null;
         private List<Book> BooksForDisplay = new List<Book>();
         private int CurrentBookNumber;
         private int ConfirmationCode = 0;
+        private static Random random = new Random();
 
         #region Authorization
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -103,9 +105,11 @@ namespace Library
                     bookDeliveries[i].FioLibrarian,
                     bookDeliveries[i].DateOfIssue,
                     bookDeliveries[i].ReturnDate,
-                    bookDeliveries[i].IdInstances
-                });
+                    bookDeliveries[i].IdInstances,
+                    string.IsNullOrEmpty(bookDeliveries[i].ReturnDate)?bookDeliveries[i].NumberOfDaysAfterIssue.ToString() : ""
+                }) ;
             }
+            ColorDatagridViews();
         }
 
         #region LoadBookDeliverySideContent
@@ -203,17 +207,18 @@ namespace Library
 
         private void buttonBookIssuance_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBoxFIOReader.Text))
+            if (string.IsNullOrEmpty(comboBoxFIOReader.Text) || !DatabaseSelectorSomeInformation.IsReaderExists(comboBoxFIOReader.Text))
             {
                 MessageBox.Show("Выберите читателя из списка");
                 return;
             }
-            if (string.IsNullOrEmpty(comboBoxNameBook.Text))
+            if (string.IsNullOrEmpty(comboBoxNameBook.Text) || !DatabaseSelectorSomeInformation.IsBookExists(comboBoxNameBook.Text))
             {
                 MessageBox.Show("Выберите наименование книги и номер экземпляра из соответствующих списков");
                 return;
             }
-            if (string.IsNullOrEmpty(comboBoxIdInstance.Text))
+            if (string.IsNullOrEmpty(comboBoxIdInstance.Text) || 
+                !DatabaseSelectorSomeInformation.IsInstancesExists(Convert.ToInt32(comboBoxIdInstance.Text)))
             {
                 MessageBox.Show("Выберите номер экземпляра из списка");
                 return;
@@ -230,7 +235,6 @@ namespace Library
         {
             List<BookDelivery> bookDeliveries = DatabaseSelectorAllInformation.GetAllBookDelivery(comboBoxFioReaderReturnsBooks.Text);
             dataGridViewBookDeliveryReturnBooks.Rows.Clear();
-            Image ig = Image.FromFile("1.jpg");
             for (int i = 0; i < bookDeliveries.Count; i++)
             {
                 dataGridViewBookDeliveryReturnBooks.Rows.Add(new object[]
@@ -241,19 +245,54 @@ namespace Library
                     bookDeliveries[i].DateOfIssue,
                     bookDeliveries[i].ReturnDate,
                     bookDeliveries[i].IdInstances,
-                    ig
+                    string.IsNullOrEmpty(bookDeliveries[i].ReturnDate)?bookDeliveries[i].NumberOfDaysAfterIssue.ToString() : ""
                });
+            }
+            ColorDatagridViews();
+        }
+
+        private void ColorDatagridViews()
+        {
+            for (int i = 0; i < dataGridViewBookDeliveryReturnBooks.Rows.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(dataGridViewBookDeliveryReturnBooks[6, i].Value.ToString()))
+                {
+                    int value = Convert.ToInt32(dataGridViewBookDeliveryReturnBooks[6, i].Value.ToString());
+
+                    if (value > 30)
+                    {
+                        dataGridViewBookDeliveryReturnBooks[6, i].Style.BackColor = Color.Red;
+                    }
+                }
+            }
+
+            for (int i = 0; i < dataGridViewBookDelivery.Rows.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(dataGridViewBookDelivery[6, i].Value.ToString()))
+                {
+                    int value = Convert.ToInt32(dataGridViewBookDelivery[6, i].Value.ToString());
+
+                    if (value > 30)
+                    {
+                        dataGridViewBookDelivery[6, i].Style.BackColor = Color.Red;
+                    }
+                }
             }
         }
 
         private void dataGridViewBookDeliveryReturnBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBoxFioReaderReturnsBooks.Text))
+            if (string.IsNullOrEmpty(comboBoxFioReaderReturnsBooks.Text) || 
+                !DatabaseSelectorSomeInformation.IsReaderExists(comboBoxFioReaderReturnsBooks.Text))
             {
-                MessageBox.Show("Сперва выберите ФИО читателя");
+                PrintMessage.WarningMessage("Сперва выберите ФИО читателя");
             }
             else
             {
+                if (e.RowIndex == -1 || e.RowIndex == dataGridViewBookDeliveryReturnBooks.Rows.Count-1) 
+                {
+                    return;
+                }
                 BookDelivery bookDelivery = new BookDelivery(
                     dataGridViewBookDeliveryReturnBooks[3, e.RowIndex].Value.ToString(),
                     dataGridViewBookDeliveryReturnBooks[0, e.RowIndex].Value.ToString(),
@@ -286,14 +325,15 @@ namespace Library
         #region Books
         private void LoadBookMainContent()
         {
-            List<Book> books = DatabaseSelectorAllInformation.GetAllBooks(GetSearchSettingsBooks());
+            List<Book> books = DatabaseSelectorAllInformation.GetAllBooks(GetSearchSettingsBooks(), checkBoxOnlyInStock.Checked);
             BooksForDisplay = books;
 
             CurrentBookNumber = 0;
 
             if(books.Count == 0)
             {
-
+                HideBooks();
+                
             }
             else
             {
@@ -301,16 +341,44 @@ namespace Library
             }
         }
 
+        private void HideBooks()
+        {
+            for (int i = 0; i < tabControlMain.TabPages["tabPageBooks"].Controls.Count; i++)
+            {
+                Control control = tabControlMain.TabPages["tabPageBooks"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = false;
+                }
+            }
+            labelNotFound.Visible = true;
+        }
+
+        private void ShowBooks()
+        {
+            for (int i = 0; i < tabControlMain.TabPages["tabPageBooks"].Controls.Count; i++)
+            {
+                Control control = tabControlMain.TabPages["tabPageBooks"].Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Hidden")
+                {
+                    control.Visible = true;
+                }
+            }
+            labelNotFound.Visible = false;
+        }
+
+
         private void ShowBook(int numberBook)
         {
+            ShowBooks();
             textBoxNameBookMainValue.Text = BooksForDisplay[numberBook].NameBook;
             textBoxFioAutorMainValue.Text = BooksForDisplay[numberBook].FioAutor;
             textBoxYearOfIssueMainValue.Text = BooksForDisplay[numberBook].YearOfIssue.ToString();
             textBoxCategoryMainValue.Text = BooksForDisplay[numberBook].Category;
             textBoxCountInStockMainValue.Text = BooksForDisplay[numberBook].CountInStock.ToString();
+            textBoxCountOfReaders.Text = BooksForDisplay[numberBook].CountOnHand.ToString();
             pictureBoxMainValue.Load(BooksForDisplay[numberBook].Picture);
             labelNumberCurrentBook.Text = "Книга " + (numberBook+1) + " из " + BooksForDisplay.Count;
-
         }
 
         private void LoadBooksSideContent()
@@ -610,15 +678,8 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageReaders"];
-            tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageEditReader"];
-        }
-
-        
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+            tabControlReaders.SelectedTab = tabControlReaders.TabPages["tabPageAddaReader"];
+        } 
 
         private void buttonLoadPicture_Click(object sender, EventArgs e)
         {
@@ -654,10 +715,6 @@ namespace Library
             }
         }
 
-
-
-        private static Random random = new Random();
-
         private void buttonBooksAdd_Click(object sender, EventArgs e)
         {
             if (CheckInformationAndPrintMessage.IsBookCorrect(textBoxNameBookBooks.Text, comboBoxFioAutor.Text,
@@ -692,11 +749,6 @@ namespace Library
             tabControlInstances.SelectedTab = tabControlInstances.TabPages["tabPageAddInstances"];
         }
 
-        private void tabPageInstances_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(AddedBook != null)
@@ -729,21 +781,6 @@ namespace Library
             AddedBook = null;
         }
 
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPageInstances_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabControlMain_Deselected(object sender, TabControlEventArgs e)
-        {
-            
-        }
-
         private void tabControlMain_Deselecting(object sender, TabControlCancelEventArgs e)
         {
             if (tabControlMain.SelectedTab == tabControlMain.TabPages["tabPageInstances"])
@@ -769,16 +806,12 @@ namespace Library
                     }
                 }
             }
-        }
 
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
+            if(tabControlMain.SelectedTab == tabControlMain.TabPages["tabPageAutorization"] && AutorizationLibrarian == null)
+            {
+                PrintMessage.WarningMessage("Чтобы приступить к работе необходимо авторизоваться");
+                e.Cancel = true;
+            }
         }
 
         private void buttonReadersAdd_Click(object sender, EventArgs e)
@@ -803,16 +836,6 @@ namespace Library
                 DatabaseInserter.InsertIntoAutors(new Autor(fioAutor, textBoxBiographyAutor.Text));
                 AutorsChange?.Invoke();
             }
-        }
-
-        private void label53_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonLibrariansAdd_Click(object sender, EventArgs e)
@@ -851,13 +874,11 @@ namespace Library
                 File.Move(fullFileName, fullNewFileName);
                 File.Copy(fullNewFileName, newFileName);
                 File.Move(fullNewFileName, fullFileName);
-                pictureBoxEdit.Load(newFileName);
                 textBoxPictureEdit.Text = newFileName;
             }
             else
             {
                 File.Copy(fullFileName, fileName);
-                pictureBoxEdit.Load(fileName);
                 textBoxPictureEdit.Text = fileName;
             }
         }
@@ -987,16 +1008,6 @@ namespace Library
             labelHelpAutorsEditing.Visible = true;
         }
 
-        private void pictureBoxEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewReaders_DoubleClick(object sender, EventArgs e)
-        {
-           
-        }
-
         private void dataGridViewReaders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex != -1)
@@ -1107,56 +1118,6 @@ namespace Library
             }
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSurnameAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label42_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNameAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxPatronymicAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxBiographyAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridViewAutors_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex != -1)
@@ -1261,70 +1222,14 @@ namespace Library
         private void buttonGoToAddBook_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageBooks"];
-            tabControlBooks.SelectedTab = tabControlReaders.TabPages["tabPageAddBook"];
+            tabControlBooks.SelectedTab = tabControlBooks.TabPages["tabPageAddBook"];
         }
 
         private void buttonGoToAddInstances_Click(object sender, EventArgs e)
         {
             tabControlMain.SelectedTab = tabControlMain.TabPages["tabPageInstances"];
-            tabControlInstances.SelectedTab = tabControlReaders.TabPages["tabPageAddInstances"];
+            tabControlInstances.SelectedTab = tabControlInstances.TabPages["tabPageAddInstances"];
         }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxMailReader_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label69_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxMailReaderNewValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label97_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSurnameLibrarianOldValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label96_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmailLibrarianOldValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label91_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmailLibrarianNewValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxContactNumberLibrarian_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void dataGridViewLibrarians_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -1431,56 +1336,6 @@ namespace Library
             }
         }
 
-        private void label93_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label88_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label95_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label100_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label99_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonPreviousBook_Click(object sender, EventArgs e)
         {
             if (CurrentBookNumber != 0)
@@ -1504,7 +1359,6 @@ namespace Library
             textBoxFioAutorEditOldValue.Text = textBoxFioAutorMainValue.Text;
             textBoxCategoryEditOldValue.Text = textBoxCategoryMainValue.Text;
             textBoxYearOfIssueEditOldValue.Text = textBoxYearOfIssueMainValue.Text;
-            pictureBoxBookEditOldValue.Image = pictureBoxMainValue.Image;
             tabControlBooks.SelectedTab = tabControlBooks.TabPages["tabPageEditBook"];
         }
 
@@ -1611,16 +1465,6 @@ namespace Library
                 "Cкрыть пароль" : "Показать пароль";
         }
 
-        private void textBoxCodeConfirmation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label103_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonConfirmNewPassword_Click(object sender, EventArgs e)
         {
             if(textBoxNewPassword.Text != textBoxConfirmationNewPassword.Text)
@@ -1644,6 +1488,201 @@ namespace Library
         private void checkBoxOnlyDebtors_CheckedChanged_1(object sender, EventArgs e)
         {
             LoadReadersMainContent();
+        }
+
+        private void checkBoxOnlyInStock_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadBookMainContent();
+        }
+
+        private void comboBoxFIOReader_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsReaderExists(comboBoxFIOReader.Text))
+            {
+                comboBoxFIOReader.Items.Clear();
+
+                List<Reader> readers = DatabaseSelectorAllInformation.GetAllReaders(comboBoxFIOReader.Text);
+
+                for (int i = 0; i < readers.Count; i++)
+                {
+                    comboBoxFIOReader.Items.Add(readers[i].FioReader);
+                }
+
+                comboBoxFIOReader.SelectionStart = comboBoxFIOReader.Text.Length;
+            }
+        }
+
+        private void comboBoxNameBook_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsBookExists(comboBoxNameBook.Text))
+            {
+                comboBoxNameBook.Items.Clear();
+
+                List<string> namesBooks = DatabaseSelectorAllInformation.GetNamesOfBooks(comboBoxNameBook.Text);
+
+                for (int i = 0; i < namesBooks.Count; i++)
+                {
+                    comboBoxNameBook.Items.Add(namesBooks[i]);
+                }
+
+                comboBoxNameBook.SelectionStart = comboBoxNameBook.Text.Length;
+            }
+        }
+
+        private void comboBoxFioAutor_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsAutorExists(comboBoxFioAutor.Text))
+            {
+                comboBoxFioAutor.Items.Clear();
+
+                List<Autor> autors = DatabaseSelectorAllInformation.GetAllAutors(comboBoxFioAutor.Text);
+
+                for (int i = 0; i < autors.Count; i++)
+                {
+                    comboBoxFioAutor.Items.Add(autors[i].FioAutor);
+                }
+
+                comboBoxFioAutor.SelectionStart = comboBoxFioAutor.Text.Length;
+            }
+        }
+
+        private void comboBoxFioAutorEditNewValue_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsAutorExists(comboBoxFioAutorEditNewValue.Text))
+            {
+                comboBoxFioAutorEditNewValue.Items.Clear();
+
+                List<Autor> autors = DatabaseSelectorAllInformation.GetAllAutors(comboBoxFioAutorEditNewValue.Text);
+
+                for (int i = 0; i < autors.Count; i++)
+                {
+                    comboBoxFioAutorEditNewValue.Items.Add(autors[i].FioAutor);
+                }
+
+                comboBoxFioAutorEditNewValue.SelectionStart = comboBoxFioAutorEditNewValue.Text.Length;
+            }
+        }
+
+        private void comboBoxFioReaderReturnsBooks_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsReaderExists(comboBoxFioReaderReturnsBooks.Text))
+            {
+                comboBoxFioReaderReturnsBooks.Items.Clear();
+
+                List<string> values = DatabaseSelectorAllInformation.GetFiosReader(comboBoxFioReaderReturnsBooks.Text);
+
+                for (int i = 0; i < values.Count; i++)
+                {
+                    comboBoxFioReaderReturnsBooks.Items.Add(values[i]);
+                }
+
+                comboBoxFioReaderReturnsBooks.SelectionStart = comboBoxFioReaderReturnsBooks.Text.Length;
+            }
+        }
+
+        private void comboBoxNameBookInstances_TextChanged(object sender, EventArgs e)
+        {
+            if (!DatabaseSelectorSomeInformation.IsBookExists(comboBoxNameBookInstances.Text))
+            {
+                comboBoxNameBookInstances.Items.Clear();
+
+                List<string> namesBooks = DatabaseSelectorAllInformation.GetNamesOfBooks(comboBoxNameBookInstances.Text);
+
+                for (int i = 0; i < namesBooks.Count; i++)
+                {
+                    comboBoxNameBookInstances.Items.Add(namesBooks[i]);
+                }
+
+                comboBoxNameBookInstances.SelectionStart = comboBoxNameBookInstances.Text.Length;
+            }
+        }
+
+        private void buttonSendMail_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(comboBoxFioReaderReturnsBooks.Text) ||
+               !DatabaseSelectorSomeInformation.IsReaderExists(comboBoxFioReaderReturnsBooks.Text))
+            {
+                PrintMessage.WarningMessage("Сперва выберите ФИО читателя");
+            }
+            else
+            {
+                string fioReader = comboBoxFioReaderReturnsBooks.Text;
+                string messageBox = "Вы уверены, что хотите отправить сообщение читателю " +
+                    fioReader + " о текующих выданных ему книгах?";
+                string caption = "Отправка сообщения";
+                var result = MessageBox.Show(messageBox, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    List<BookDelivery> bookDeliveries = DatabaseSelectorAllInformation.GetAllBookDelivery(comboBoxFioReaderReturnsBooks.Text);
+                    string emailReader = DatabaseSelectorSomeInformation.GetReaderEmail(fioReader);
+
+                    string message = "<h1>" + "Здравствуйте " + fioReader + " вас приветствует библиотека" + "</h1>" +
+                        "<h2>" + "Хотим напомнить вам, что вы взяли в библиотеке книги:" + "</h2>";
+
+                    for (int i = 0; i < bookDeliveries.Count; i++)
+                    {
+                        message += "<p>" + (i+1)+") "+ bookDeliveries[i].NameBook + " количество дней со дня выдачи - "+
+                           bookDeliveries[i].NumberOfDaysAfterIssue + "</p>";
+                    }
+
+                    message += "<p><strong>" + "Напоминаем, что наша библиотека выдаёт книги на 30 дней, просим в ближайшее" +
+                        "время вернуть книги, которые находятся у вас более 30 дней" + "</strong></p>";
+                    message += "<p><strong>" + "С уважением, ваша библиотека" + "</strong></p>";
+
+                    MessageToEmail.SendMessageAsync(emailReader, message);
+                    PrintMessage.InformationMessage("Отправка сообщения прошла успешно");
+                }
+            }
+        }
+
+        private void buttonAutorization_Click(object sender, EventArgs e)
+        {
+            if(!DatabaseSelectorSomeInformation.IsLibrarianExists(comboBoxNameLibrarian.Text))
+            {
+                PrintMessage.InformationMessage("Выбирите библиотекаря из списка", "Библиотекарь не выбран");
+            }
+            else
+            {
+                string password = DatabaseSelectorSomeInformation.GetLibrarianPassword(comboBoxNameLibrarian.Text);
+
+                if(password != textBoxPassword.Text)
+                {
+                    PrintMessage.WarningMessage("Пароль введен неверно");
+                }
+                else
+                {
+                    string email = DatabaseSelectorSomeInformation.GetLibrarianEmail(comboBoxNameLibrarian.Text);
+                    AutorizationLibrarian = new Librarian(comboBoxNameLibrarian.Text, email, password);
+                    tabControlMain.TabPages["tabPageAutorization"].Text = "Выйти";
+                    labelNowLibrarian.Text = "Текующий библиотекарь - ";
+                    comboBoxNameLibrarian.Text = "";
+                    textBoxPassword.Text = "";
+                    PrintMessage.InformationMessage("Авторизация прошла успешно");
+                }
+            }
+        }
+
+        private void tabControlMain_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (tabControlMain.SelectedTab == tabControlMain.TabPages["tabPageAutorization"])
+            {
+                string messageBox = "Вы уверены, что хотите cменить библиотекаря?";
+                string caption = "Смена библиотекаря";
+                var result = MessageBox.Show(messageBox, caption,
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    AutorizationLibrarian = null;
+                    tabControlMain.TabPages["tabPageAutorization"].Text = "Авторизация";
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
